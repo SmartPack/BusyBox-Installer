@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name" translatable="false">BusyBox Installer</string>
+
+    <string name="about">BusyBox Installer is a one-click BusyBox installation utility for various android architectures (ARM/ARM64 and x86).\n\n&#169;<b>sunilpaulmathew</b>\n\n<b>Credits</b>\n<b><i>https://busybox.net/</i></b> - <i>BusyBox Binaries</i>\n<b><i>Grarak</i></b> - A bunch of Code\n<b><i>sajid_islam</i></b> - <i>App Icon</i></string>
+    <string name="cancel">Cancel</string>
+    <string name="dark">Dark</string>
+    <string name="install">Install</string>
+    <string name="light">Light</string>
+    <string name="reboot">Reboot</string>
+    <string name="install_busybox">Install BusyBox!</string>
+    <string name="install_busybox_overwrite">A previous installation of latest BusyBox (v %s) by this app is detected! Do you want to re-install v</string>
+    <string name="install_busybox_message">Are you sure to install BusyBox %s?</string>
+    <string name="install_busybox_unavailable">Unfortunately, BuyBox installation from this app is not yet available for your architecture (%s)!</string>
+    <string name="install_busybox_update">An old BusyBox installation (v%s) detected! Do you want to update to v</string>
+    <string name="install_busybox_failed">BusyBox installation failed!</string>
+    <string name="install_busybox_success">BusyBox installation Finished! Do you want to reboot your device?</string>
+    <string name="installing">Installing BusyBox v%s</string>
+    <string name="no_permission_message">BusyBox installation won\'t work without Storage Write Access! Aborting</string>
+    <string name="no_root_message">BusyBox installation won\'t work without Root Access! Aborting</string>
+    <string name="press_back">Press back again to exit!</string>
+    <string name="support_group">Support Group</string>
+    <string name="source_code">Source Code</string>
+    <string name="switch_theme">Switching to %s Theme!</string>
+</resources>
