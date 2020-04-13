@@ -12,6 +12,7 @@
         android:gravity="top|center_vertical"
         android:orientation="horizontal"
         android:background="@color/colorPrimary"
+        android:padding="10dp"
         tools:ignore="MissingConstraints">
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -21,12 +22,20 @@
             android:layout_gravity="start"
             android:gravity="center_vertical"
             android:text="@string/app_name"
-            android:padding="10dp"
             android:textSize="20sp"
             android:textColor="@color/colorWhite" />
 
         <androidx.appcompat.widget.AppCompatImageButton
-            android:layout_width="50dp"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:background="@null"
+            android:tint="@color/colorWhite"
+            android:layout_gravity="end|center_vertical"
+            android:src="@drawable/ic_donate"
+            android:onClick="donateToMe" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:layout_width="40dp"
             android:layout_height="50dp"
             android:background="@null"
             android:tint="@color/colorWhite"
@@ -35,7 +44,16 @@
             android:onClick="switchTheme" />
 
         <androidx.appcompat.widget.AppCompatImageButton
-            android:layout_width="50dp"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:background="@null"
+            android:tint="@color/colorWhite"
+            android:layout_gravity="end|center_vertical"
+            android:src="@drawable/ic_share"
+            android:onClick="shareApp" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:layout_width="40dp"
             android:layout_height="50dp"
             android:background="@null"
             android:tint="@color/colorWhite"
@@ -52,8 +70,8 @@
         android:padding="16dp">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
             android:onClick="installDialog"
             app:srcCompat="@mipmap/ic_launcher_round" />
 

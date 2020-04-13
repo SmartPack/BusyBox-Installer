@@ -82,6 +82,10 @@ public class MainActivity extends AppCompatActivity {
         install.show();
     }
 
+    public void donateToMe(View view) {
+        Utils.launchUrl("https://www.paypal.me/menacherry", this);
+    }
+
     public void switchTheme(View view) {
         if (Utils.getBoolean("dark_theme", true, this)) {
             Utils.saveBoolean("dark_theme", false, this);
@@ -94,6 +98,16 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
+    }
+
+    public void shareApp(View view) {
+        Intent shareapp = new Intent();
+        shareapp.setAction(Intent.ACTION_SEND);
+        shareapp.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name));
+        shareapp.putExtra(Intent.EXTRA_TEXT, getString(R.string.share_app, "v" + BuildConfig.VERSION_NAME));
+        shareapp.setType("text/plain");
+        Intent shareIntent = Intent.createChooser(shareapp, null);
+        startActivity(shareIntent);
     }
 
     public void aboutDialog(View view) {
