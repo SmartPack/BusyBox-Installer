@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                             "/system/xbin/bb_version")) + Utils.version + "?");
                 }
             } else {
-                install.setMessage(getString(R.string.install_busybox_message,Utils.version));
+                install.setMessage(getString(R.string.install_busybox_message, Utils.version));
             }
             install.setNegativeButton(R.string.cancel, (dialog, which) -> {
             });
@@ -112,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
                 })
                 .show();
     }
+
     @Override
     public void onBackPressed() {
         if (mExit) {

@@ -34,6 +34,7 @@ Please Note: Purchasing [SmartPack Donation Package](https://play.google.com/sto
 ## Credits
 * [Grarak](https://github.com/Grarak), Kernel Adiutor, from where I took [Utils](https://raw.githubusercontent.com/Grarak/KernelAdiutor/master/app/src/main/java/com/grarak/kerneladiutor/utils/Utils.java), [RootUtils](https://raw.githubusercontent.com/Grarak/KernelAdiutor/master/app/src/main/java/com/grarak/kerneladiutor/utils/root/RootUtils.java) & [RootFile](https://raw.githubusercontent.com/Grarak/KernelAdiutor/master/app/src/main/java/com/grarak/kerneladiutor/utils/root/RootFile.java)
 * [https://busybox.net/](https://busybox.net/), BusyBox Binaries
+* [SmgKhOaRn](https://github.com/SmgKhOaRn), Korean Translations
 * [sajid_islam](https://t.me/sajid_islam), App Icon
 
 ## License
