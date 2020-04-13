@@ -52,8 +52,8 @@ public class Utils {
         MobileAds.initialize(context, "ca-app-pub-2781194772510522~1549441426");
     }
 
-    private static String create(String text, String path) {
-        return RootUtils.runCommand("echo '" + text + "' > " + path);
+    private static void create(String text, String path) {
+        RootUtils.runCommand("echo '" + text + "' > " + path);
     }
 
     private static void delete(String path) {
@@ -172,6 +172,23 @@ public class Utils {
         return RootUtils.runCommand("uname -m");
     }
 
+    private static void copyBinary(Context context) {
+        AssetManager assetManager = context.getAssets();
+        InputStream in;
+        OutputStream out;
+        try {
+            in = assetManager.open(getArch());
+            File outFile = new File(Environment.getExternalStorageDirectory().getPath() + "/busybox_" + version);
+            out = new FileOutputStream(outFile);
+            byte[] buffer = new byte[1024];
+            int read;
+            while((read = in.read(buffer)) != -1){
+                out.write(buffer, 0, read);
+            }
+        } catch (Exception ignored) {
+        }
+    }
+
     public static void installBusyBox(Context context) {
         new AsyncTask<Void, Void, Void>() {
             private ProgressDialog mProgressDialog;
@@ -185,38 +202,28 @@ public class Utils {
             }
             @Override
             protected Void doInBackground(Void... voids) {
-                AssetManager assetManager = context.getAssets();
-                InputStream in;
-                OutputStream out;
-                try {
-                    mountSystem("rw");
-                    mountRootFS("rw");
-                    sleep(2);
-                    in = assetManager.open(getArch());
-                    File outFile = new File(Environment.getExternalStorageDirectory().getPath() + "/busybox_" + version);
-                    out = new FileOutputStream(outFile);
-                    byte[] buffer = new byte[1024];
-                    int read;
-                    while((read = in.read(buffer)) != -1){
-                        out.write(buffer, 0, read);
-                    }
-                    move(Environment.getExternalStorageDirectory().getPath() + "/busybox_" + version, "/system/xbin/");
-                    // Detect 'su' binary
-                    if (existFile("/system/xbin/su")) superUser = true;
-                    chmod("755","/system/xbin/busybox_" + version);
+                mountRootFS("rw");
+                mountSystem("rw");
+                sleep(1);
+                copyBinary(context);
+                move(Environment.getExternalStorageDirectory().getPath() + "/busybox_" + version, "/system/xbin/");
+                // Detect 'su' binary
+                if (existFile("/system/xbin/su")) superUser = true;
+                if (existFile("/system/xbin/busybox_" + version)) {
+                    chmod("755", "/system/xbin/busybox_" + version);
                     RootUtils.runCommand("cd /system/xbin/");
                     RootUtils.runCommand("busybox_" + version + " --install .");
                     delete("busybox_" + version);
                     if (!superUser) {
                         // Remove 'su' binary to avoid SafetyNet failure
-                        delete("su");
+                        delete("/system/xbin/su");
                     }
                     create(version, "/system/xbin/bb_version");
-                    mountSystem("ro");
-                    mountRootFS("ro");
-                } catch (Exception ignored) {
+                    RootUtils.runCommand("sync");
+                    sleep(1);
                 }
-                RootUtils.runCommand("sync");
+                mountSystem("ro");
+                mountRootFS("ro");
                 return null;
             }
             @Override
