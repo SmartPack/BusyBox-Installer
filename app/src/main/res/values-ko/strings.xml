@@ -1,0 +1,24 @@
+<resources>
+    <!--Author: SmgKhOaRn <smgkhoarn@protonmail.com>-->
+
+    <string name="about">다양한 안드로이드 아키텍처 (ARM/ARM64 and x86) 를 위한 원클릭 비지박스 바이너리 설치기.\n\n&#169;<b>sunilpaulmathew</b>\n\n<b>도움을 주신 분들</b>\n<b><i>https://busybox.net/</i></b> - <i>비지박스 바이너리</i>\n<b><i>Grarak</i></b> - <i>코드 기반</i>\n<b><i>SmgKhOaRn</i></b> - <i>한국어 번역</i>\n<b><i>sajid_islam</i></b> - <i>앱 아이콘</i></string>
+    <string name="cancel">취소</string>
+    <string name="dark">다크 테마</string>
+    <string name="install">설치</string>
+    <string name="install_busybox">비지박스 설치하기!</string>
+    <string name="install_busybox_overwrite">이 앱에서 설치한 최신 비지박스 바이너리 (v%s) 가 감지되었습니다! v을(를) 다시 설치하시겠어요?</string>
+    <string name="install_busybox_message">비지박스 (%s) 를 설치합니다. 계속하시겠어요?</string>
+    <string name="install_busybox_unavailable">유감스럽게도, 이 앱은 여러분의 기기의 아키텍처 (%s) 를 위한 비지박스 바이너리를 지원하지 않습니다!</string>
+    <string name="install_busybox_update">오래된 비지박스 바이너리 (v%s)가 감지되었습니다! v을(를) 업데이트하시겠어요?</string>
+    <string name="install_busybox_failed">비지박스 설치를 실패했습니다!</string>
+    <string name="install_busybox_success">비지박스 설치를 완료했습니다! 기기를 다시 시작하시겠어요?</string>
+    <string name="installing">비지박스 v%s를 설치하는 중</string>
+    <string name="light">라이트 테마</string>
+    <string name="no_permission_message">이 기능은 저장공간 쓰기 권한 없이 작동하지 않습니다!</string>
+    <string name="no_root_message">이 기능은 루트 권한 없이 작동하지 않습니다!</string>
+    <string name="press_back">나가려면 뒤로가기 버튼을 다시 누르세요</string>
+    <string name="reboot">다시 시작</string>
+    <string name="source_code">소스 코드</string>
+    <string name="support_group">지원 받기</string>
+    <string name="switch_theme">%s를 적용하는 중!</string>
+</resources>
