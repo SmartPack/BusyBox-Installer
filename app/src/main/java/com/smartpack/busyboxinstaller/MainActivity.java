@@ -12,9 +12,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.CheckBox;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatTextView;
 import androidx.core.app.ActivityCompat;
 
 import com.google.android.gms.ads.AdRequest;
@@ -39,6 +41,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        AppCompatTextView installText = findViewById(R.id.install_text);
+        if (Utils.existFile("/system/xbin/bb_version")) {
+            if (Utils.readFile("/system/xbin/bb_version").equals(Utils.version)) {
+                installText.setText(R.string.updated_message);
+            } else {
+                installText.setText(R.string.update_busybox);
+            }
+        } else {
+            installText.setText(R.string.install_busybox);
+        }
+
         // Initialize Banner Ads
         AdView mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
@@ -57,24 +70,34 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         AlertDialog.Builder install = new AlertDialog.Builder(this);
+        install.setIcon(R.mipmap.ic_launcher);
         if (Utils.getArch().equals("aarch64") || Utils.getArch().equals("armv7l") || Utils.getArch().equals("i686")) {
             if (Utils.existFile("/system/xbin/bb_version")) {
                 if (Utils.readFile("/system/xbin/bb_version").equals(Utils.version)) {
-                    install.setMessage(getString(R.string.install_busybox_overwrite, Utils.readFile(
-                            "/system/xbin/bb_version")) + Utils.version + "?");
+                    install.setTitle(R.string.updated_message);
+                    install.setMessage(getString(R.string.install_busybox_latest, Utils.version));
+                    install.setPositiveButton(R.string.cancel, (dialog, which) -> {
+                    });
                 } else {
-                    install.setMessage(getString(R.string.install_busybox_update, Utils.readFile(
-                            "/system/xbin/bb_version")) + Utils.version + "?");
+                    install.setTitle(R.string.update_busybox);
+                    install.setMessage(getString(R.string.install_busybox_update, Utils.version));
+                    install.setNegativeButton(R.string.cancel, (dialog, which) -> {
+                    });
+                    install.setPositiveButton(R.string.update, (dialog, which) -> {
+                        Utils.installBusyBox(this);
+                    });
                 }
             } else {
-                install.setMessage(getString(R.string.install_busybox_message, Utils.version));
+                install.setTitle(R.string.install_busybox);
+                install.setMessage((getString(R.string.install_busybox_message, Utils.version)));
+                install.setNegativeButton(R.string.cancel, (dialog, which) -> {
+                });
+                install.setPositiveButton(R.string.install, (dialog, which) -> {
+                    Utils.installBusyBox(this);
+                });
             }
-            install.setNegativeButton(R.string.cancel, (dialog, which) -> {
-            });
-            install.setPositiveButton(R.string.install, (dialog, which) -> {
-                Utils.installBusyBox(this);
-            });
         } else {
+            install.setTitle(R.string.upsupported);
             install.setMessage(getString(R.string.install_busybox_unavailable, Utils.getArch()));
             install.setPositiveButton(R.string.cancel, (dialog, which) -> {
             });
@@ -125,6 +148,43 @@ public class MainActivity extends AppCompatActivity {
                     Utils.launchUrl("https://github.com/SmartPack/BusyBox-Installer", this);
                 })
                 .show();
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        if (!RootUtils.rootAccess() || !Utils.checkWriteStoragePermission(this)
+                || !Utils.getBoolean("update_dialogue", true, this)) {
+            return;
+        }
+
+        if (Utils.getArch().equals("aarch64") || Utils.getArch().equals("armv7l") || Utils.getArch().equals("i686")) {
+            if (Utils.existFile("/system/xbin/bb_version") && !Utils.readFile("/system/xbin/bb_version").equals(Utils.version)) {
+                View checkBoxView = View.inflate(this, R.layout.rv_checkbox, null);
+                CheckBox checkBox = checkBoxView.findViewById(R.id.checkbox);
+                checkBox.setText(getString(R.string.hide));
+                checkBox.setChecked(false);
+                checkBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
+                    if (isChecked) {
+                        Utils.saveBoolean("update_dialogue", false, this);
+                    }
+                });
+
+                AlertDialog.Builder update = new AlertDialog.Builder(this);
+                update.setIcon(R.mipmap.ic_launcher);
+                update.setTitle(getString(R.string.update_busybox));
+                update.setMessage(getString(R.string.install_busybox_update, Utils.version));
+                update.setCancelable(false);
+                update.setView(checkBoxView);
+                update.setNegativeButton(R.string.cancel, (dialog, which) -> {
+                });
+                update.setPositiveButton(R.string.update, (dialog, which) -> {
+                    Utils.installBusyBox(this);
+                });
+                update.show();
+            }
+        }
     }
 
     @Override

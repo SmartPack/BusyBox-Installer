@@ -4,12 +4,13 @@
     <string name="about">BusyBox Installer is a one-click BusyBox installation utility for various android architectures (ARM/ARM64 and x86).\n\n&#169;<b>sunilpaulmathew</b>\n\n<b>Credits</b>\n<b><i>https://busybox.net/</i></b> - <i>BusyBox Binaries</i>\n<b><i>Grarak</i></b> - A bunch of Code\n<b><i>SmgKhOaRn</i></b> - <i>Korean Translations</i>\n<b><i>sajid_islam</i></b> - <i>App Icon</i></string>
     <string name="cancel">Cancel</string>
     <string name="dark">Dark</string>
+    <string name="hide">Hide</string>
     <string name="install">Install</string>
     <string name="install_busybox">Install BusyBox!</string>
-    <string name="install_busybox_overwrite">A previous installation of latest BusyBox (v%s) by this app is detected! Do you want to re-install v</string>
+    <string name="install_busybox_latest">Congrats! The latest version of BusyBox (v%s) available on this app is already installed on your device!</string>
     <string name="install_busybox_message">Are you sure to install BusyBox %s?</string>
     <string name="install_busybox_unavailable">Unfortunately, BuyBox installation from this app is not yet available for your architecture (%s)!</string>
-    <string name="install_busybox_update">An old BusyBox installation (v%s) detected! Do you want to update to v</string>
+    <string name="install_busybox_update">New update available! Do you want to update BusyBox to v%s?</string>
     <string name="install_busybox_failed">Unfortunately, BusyBox installer is failed to write BusyBox applets on your device\'s \'/system/xbin\' folder!</string>
     <string name="install_busybox_success">BusyBox installation Finished! Do you want to reboot your device?</string>
     <string name="installing">Installing BusyBox v%s</string>
@@ -22,4 +23,8 @@
     <string name="source_code">Source Code</string>
     <string name="support_group">Support Group</string>
     <string name="switch_theme">Switching to %s Theme!</string>
+    <string name="update">Update</string>
+    <string name="update_busybox">BusyBox Update Available!</string>
+    <string name="updated_message">Congrats! You\'re Up-to-date!</string>
+    <string name="upsupported">Unsupported Architecture!</string>
 </resources>

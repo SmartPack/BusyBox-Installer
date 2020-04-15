@@ -76,14 +76,14 @@
             app:srcCompat="@mipmap/ic_launcher_round" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/install_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="installDialog"
             android:padding="15dp"
             android:gravity="center"
             android:textSize="20sp"
-            android:textColor="?android:attr/colorAccent"
-            android:text="@string/install_busybox" />
+            android:textColor="?android:attr/colorAccent" />
     </LinearLayout>
 
     <LinearLayout

@@ -13,11 +13,6 @@ public class RootFile {
     private final String mFile;
     private RootUtils.SU mSU;
 
-    public RootFile(String file) {
-        mFile = file;
-        mSU = RootUtils.getSU();
-    }
-
     RootFile(String file, RootUtils.SU su) {
         mFile = file;
         mSU = su;
