@@ -1,24 +1,36 @@
 <resources>
     <!--Author: SmgKhOaRn <smgkhoarn@protonmail.com>-->
 
-    <string name="about">다양한 안드로이드 아키텍처 (ARM/ARM64 and x86) 를 위한 원클릭 비지박스 바이너리 설치기.\n\n&#169;<b>sunilpaulmathew</b>\n\n<b>도움을 주신 분들</b>\n<b><i>https://busybox.net/</i></b> - <i>비지박스 바이너리</i>\n<b><i>Grarak</i></b> - <i>코드 기반</i>\n<b><i>SmgKhOaRn</i></b> - <i>한국어 번역</i>\n<b><i>sajid_islam</i></b> - <i>앱 아이콘</i></string>
+    <string name="about">다양한 안드로이드 아키텍처 (ARM/ARM64/x86) 를 위한 원클릭 비지박스 설치기.\n\n&#169;<b>sunilpaulmathew</b>\n\n<b>도움을 주신 분들</b>\n<b><i>https://busybox.net/</i></b> - 비지박스 바이너리\n<b><i>Grarak</i></b> - 코드 기반\n<b><i>SmgKhOaRn</i></b> - 한국어 번역\n<b><i>sajid_islam</i></b> - 앱 아이콘</string>
     <string name="cancel">취소</string>
-    <string name="dark">다크 테마</string>
+    <string name="dark">어두운</string>
+    <string name="hide">숨기기</string>
     <string name="install">설치</string>
-    <string name="install_busybox">비지박스 설치하기!</string>
-    <string name="install_busybox_overwrite">이 앱에서 설치한 최신 비지박스 바이너리 (v%s) 가 감지되었습니다! v을(를) 다시 설치하시겠어요?</string>
-    <string name="install_busybox_message">비지박스 (%s) 를 설치합니다. 계속하시겠어요?</string>
-    <string name="install_busybox_unavailable">유감스럽게도, 이 앱은 여러분의 기기의 아키텍처 (%s) 를 위한 비지박스 바이너리를 지원하지 않습니다!</string>
-    <string name="install_busybox_update">오래된 비지박스 바이너리 (v%s)가 감지되었습니다! v을(를) 업데이트하시겠어요?</string>
-    <string name="install_busybox_failed">비지박스 설치를 실패했습니다!</string>
+    <string name="install_busybox">비지박스 설치</string>
+    <string name="install_busybox_latest">축하합니다! 이미 이 앱에서 설치 가능한 최신 버전의 비지박스 (v%s) 가 기기에 설치되었습니다!</string>
+    <string name="install_busybox_message">비지박스 (v%s) 를 설치합니다. 계속하시겠어요?</string>
+    <string name="install_busybox_unavailable">유감스럽게도, 이 앱은 이 기기의 아키텍처 (%s) 를 위한 비지박스 바이너리를 지원하지 않습니다!</string>
+    <string name="install_busybox_update">최신 버전의 비지박스 (v%s) 로 업데이트가 가능합니다! 지금 설치하시겠어요?</string>
+    <string name="install_busybox_failed">유감스럽게도, Busybox Installer가 이 기기의 \'/system/xbin\' 폴더에 비지박스를 설치하는데 실패했습니다!</string>
     <string name="install_busybox_success">비지박스 설치를 완료했습니다! 기기를 다시 시작하시겠어요?</string>
-    <string name="installing">비지박스 v%s를 설치하는 중</string>
-    <string name="light">라이트 테마</string>
+    <string name="installing">비지박스 (v%s) 를 설치하는 중</string>
+    <string name="light">밝은</string>
     <string name="no_permission_message">이 기능은 저장공간 쓰기 권한 없이 작동하지 않습니다!</string>
     <string name="no_root_message">이 기능은 루트 권한 없이 작동하지 않습니다!</string>
     <string name="press_back">나가려면 뒤로가기 버튼을 다시 누르세요</string>
     <string name="reboot">다시 시작</string>
+    <string name="remove">제거</string>
+    <string name="remove_busybox_message">\'/system/xbin\'에서 비지박스 (v%s) 를 제거하시겠어요?\n\n알아두기: 기기에서 이 앱을 사용하여 설치한 비지박스 바이너리만 지울 것입니다!</string>
+    <string name="remove_busybox_invalid">이 앱에서 설치된 비지박스가 기기에서 발견되지 않았습니다!</string>
+    <string name="removing_busybox">비지박스 (v%s) 를 제거하는 중</string>
+    <string name="remove_busybox_completed">비지박스 (v%s) 제거를 완료했습니다! 기기를 다시 시작하시겠어요?</string>
+    <string name="remove_busybox_failed">유감스럽게도, Busybox Installer가 이 기기의 \'/system/xbin\' 폴더에서 비지박스 (v%s) 를 제거하는데 실패했습니다!</string>
+    <string name="share_app">Busybox Installer %s은(는) 아래에서 다운받을 수 있습니다.\n깃허브: https://github.com/SmartPack/BusyBox-Installer/releases</string>
     <string name="source_code">소스 코드</string>
     <string name="support_group">지원 받기</string>
-    <string name="switch_theme">%s를 적용하는 중!</string>
+    <string name="switch_theme">%s 테마를 적용하는 중!</string>
+    <string name="update">업데이트</string>
+    <string name="update_busybox">비지박스 업데이트 가능!</string>
+    <string name="updated_message">최신 버전의 비지박스 사용 중!</string>
+    <string name="upsupported">지원되지 않는 아키택처!</string>
 </resources>
