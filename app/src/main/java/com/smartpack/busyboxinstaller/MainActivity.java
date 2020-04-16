@@ -16,6 +16,7 @@ import android.widget.CheckBox;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.core.app.ActivityCompat;
 
@@ -53,6 +54,18 @@ public class MainActivity extends AppCompatActivity {
         } else {
             installText.setText(R.string.install_busybox);
         }
+
+        AppCompatImageView installImage = findViewById(R.id.install_image);
+        installImage.setOnLongClickListener(item -> {
+            new AlertDialog.Builder(this)
+                    .setIcon(R.mipmap.ic_launcher)
+                    .setTitle(R.string.list_applets)
+                    .setMessage(getString(R.string.list_applets_summary, Utils.appletsList.replace(" ", "\n - ")))
+                    .setPositiveButton(R.string.cancel, (dialog, which) -> {
+                    })
+                    .show();
+            return false;
+        });
 
         // Initialize Banner Ads
         AdView mAdView = findViewById(R.id.adView);

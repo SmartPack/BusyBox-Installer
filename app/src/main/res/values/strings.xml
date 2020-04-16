@@ -15,6 +15,8 @@
     <string name="install_busybox_success">BusyBox installation Finished! Do you want to reboot your device?</string>
     <string name="installing">Installing BusyBox v%s</string>
     <string name="light">Light</string>
+    <string name="list_applets">Applets List</string>
+    <string name="list_applets_summary">The following applets are included in this package!\n\n - %s</string>
     <string name="no_permission_message">BusyBox installation won\'t work without Storage Write Access! Aborting</string>
     <string name="no_root_message">BusyBox installation won\'t work without Root Access! Aborting</string>
     <string name="press_back">Press back again to exit!</string>

@@ -80,9 +80,11 @@
         android:padding="16dp">
 
         <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/install_image"
             android:layout_width="125dp"
             android:layout_height="125dp"
             android:onClick="installDialog"
+            android:longClickable="true"
             app:srcCompat="@mipmap/ic_launcher_round" />
 
         <androidx.appcompat.widget.AppCompatTextView
