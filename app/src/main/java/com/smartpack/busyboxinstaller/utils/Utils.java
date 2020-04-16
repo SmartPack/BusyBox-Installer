@@ -1,5 +1,6 @@
 package com.smartpack.busyboxinstaller.utils;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
@@ -26,6 +27,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.lang.ref.WeakReference;
 
 /*
  * Created by sunilpaulmathew <sunil.kde@gmail.com> on April 11, 2020
@@ -189,14 +191,16 @@ public class Utils {
         }
     }
 
-    public static void installBusyBox(Context context) {
+    //TODO: Don't delegate this to the Utils class as it will hold a reference to the activity
+    // here workarounded using a WeakReference
+    public static void installBusyBox(WeakReference<Activity> activityRef) {
         new AsyncTask<Void, Void, Void>() {
             private ProgressDialog mProgressDialog;
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                mProgressDialog = new ProgressDialog(context);
-                mProgressDialog.setMessage(context.getString(R.string.installing,version) + " ...");
+                mProgressDialog = new ProgressDialog(activityRef.get());
+                mProgressDialog.setMessage(activityRef.get().getString(R.string.installing,version) + " ...");
                 mProgressDialog.setCancelable(false);
                 mProgressDialog.show();
             }
@@ -205,7 +209,7 @@ public class Utils {
                 mountRootFS("rw");
                 mountSystem("rw");
                 sleep(1);
-                copyBinary(context);
+                copyBinary(activityRef.get());
                 move(Environment.getExternalStorageDirectory().getPath() + "/busybox_" + version, "/system/xbin/");
                 // Detect 'su' binary
                 if (existFile("/system/xbin/su")) superUser = true;
@@ -229,11 +233,14 @@ public class Utils {
             @Override
             protected void onPostExecute(Void aVoid) {
                 super.onPostExecute(aVoid);
+                Activity activity = activityRef.get();
+                if (activity.isFinishing() || activity.isDestroyed()) return;
+
                 try {
                     mProgressDialog.dismiss();
                 } catch (IllegalArgumentException ignored) {
                 }
-                AlertDialog.Builder reboot = new AlertDialog.Builder(context);
+                AlertDialog.Builder reboot = new AlertDialog.Builder(activity);
                 reboot.setIcon(R.mipmap.ic_launcher_round);
                 if (existFile("/system/xbin/bb_version") && readFile("/system/xbin/bb_version").equals(version)) {
                     reboot.setMessage(R.string.install_busybox_success);
