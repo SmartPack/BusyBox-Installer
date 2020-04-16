@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="about">BusyBox Installer is a one-click BusyBox installation utility for various android architectures (ARM/ARM64 and x86).\n\n&#169;<b>sunilpaulmathew</b>\n\n<b>Credits</b>\n<b><i>https://busybox.net/</i></b> - <i>BusyBox Binaries</i>\n<b><i>Grarak</i></b> - A bunch of Code\n<b><i>SmgKhOaRn</i></b> - <i>Korean Translations</i>\n<b><i>sajid_islam</i></b> - <i>App Icon</i></string>
+    <string name="cancel">Cancelar</string>
+    <string name="dark">Escuro</string>
+    <string name="hide">Esconder</string>
+    <string name="install">Instalar</string>
+    <string name="install_busybox">Instalar BusyBox!</string>
+    <string name="install_busybox_latest">Parabéns! A versão mais recente do BusyBox (v%s) disponível neste aplicativo já está instalada no seu dispositivo!</string>
+    <string name="install_busybox_message">Deseja realmente instalar o BusyBox %s?</string>
+    <string name="install_busybox_unavailable">Infelizmente, a instalação do BuyBox deste aplicativo ainda não está disponível para sua arquitetura (%s)!</string>
+    <string name="install_busybox_update">Nova atualização disponível! Deseja atualizar o BusyBox para v%s?</string>
+    <string name="install_busybox_failed">Infelizmente, o instalador do BusyBox não conseguiu gravar os applets BusyBox na pasta \'/system/xbin\' do seu dispositivo!</string>
+    <string name="install_busybox_success">Instalação do BusyBox foi concluída! Deseja reiniciar o seu dispositivo?</string>
+    <string name="installing">Instalando o BusyBox v%s</string>
+    <string name="light">Claro</string>
+    <string name="no_permission_message">A instalação do BusyBox não funcionará sem o acesso à gravação no armazenamento! Abortando</string>
+    <string name="no_root_message">A instalação do BusyBox não funcionará sem o Acesso Root! Abortando</string>
+    <string name="press_back">Pressione voltar novamente para sair!</string>
+    <string name="reboot">Reiniciar</string>
+    <string name="share_app">Obtenha o Instalador do BusyBox %s no GitHub: https://github.com/SmartPack/BusyBox-Installer/releases</string>
+    <string name="source_code">Código-fonte</string>
+    <string name="support_group">Grupo de suporte</string>
+    <string name="switch_theme">Mudando para o Tema %s!</string>
+    <string name="update">Atualizar</string>
+    <string name="update_busybox">Atualização do BusyBox disponível!</string>
+    <string name="updated_message">Parabéns! Você está atualizado!</string>
+    <string name="upsupported">Arquitetura não suportada!</string>
+</resources>
