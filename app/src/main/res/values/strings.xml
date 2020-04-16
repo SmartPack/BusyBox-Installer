@@ -19,6 +19,12 @@
     <string name="no_root_message">BusyBox installation won\'t work without Root Access! Aborting</string>
     <string name="press_back">Press back again to exit!</string>
     <string name="reboot">Reboot</string>
+    <string name="remove">Remove</string>
+    <string name="remove_busybox_completed">BusyBox v%s is successfully removed from your device. Do you wan\'t to reboot?</string>
+    <string name="remove_busybox_failed">Unfortunately, removing BusyBox v%s from your device failed!</string>
+    <string name="remove_busybox_message">Are you sure to remove BusyBox (v%s) applets from \'/system/xbin\'?\n\nPlease Note: It will only remove the applets installed by this app on your device!</string>
+    <string name="remove_busybox_invalid">BusyBox installation from this app is not detected on your device!</string>
+    <string name="removing_busybox">Removing BusyBox v%s</string>
     <string name="share_app">Get BusyBox Installer %s from GitHub: https://github.com/SmartPack/BusyBox-Installer/releases</string>
     <string name="source_code">Source Code</string>
     <string name="support_group">Support Group</string>

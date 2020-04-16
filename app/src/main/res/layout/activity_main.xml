@@ -59,6 +59,15 @@
             android:background="@null"
             android:tint="@color/colorWhite"
             android:layout_gravity="end|center_vertical"
+            android:src="@drawable/ic_delete"
+            android:onClick="removeBusyBox" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:background="@null"
+            android:tint="@color/colorWhite"
+            android:layout_gravity="end|center_vertical"
             android:src="@drawable/ic_info"
             android:onClick="aboutDialog" />
     </LinearLayout>

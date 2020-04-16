@@ -107,6 +107,21 @@ public class MainActivity extends AppCompatActivity {
         install.show();
     }
 
+    public void removeBusyBox(View view) {
+        if (Utils.existFile("/system/xbin/bb_version")) {
+            new AlertDialog.Builder(this)
+                    .setMessage(getString(R.string.remove_busybox_message, Utils.version))
+                    .setNegativeButton(R.string.cancel, (dialog, which) -> {
+                    })
+                    .setPositiveButton(R.string.remove, (dialog, which) -> {
+                        Utils.removeBusyBox(new WeakReference<>(this));
+                    })
+                    .show();
+        } else {
+            Utils.toast(R.string.remove_busybox_invalid, this);
+        }
+    }
+
     public void donateToMe(View view) {
         Utils.launchUrl("https://www.paypal.me/menacherry", this);
     }
