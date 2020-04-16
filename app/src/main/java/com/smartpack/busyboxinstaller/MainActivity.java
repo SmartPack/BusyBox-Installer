@@ -24,6 +24,8 @@ import com.google.android.gms.ads.AdView;
 import com.smartpack.busyboxinstaller.utils.RootUtils;
 import com.smartpack.busyboxinstaller.utils.Utils;
 
+import java.lang.ref.WeakReference;
+
 /*
  * Created by sunilpaulmathew <sunil.kde@gmail.com> on April 11, 2020
  */
@@ -84,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
                     install.setNegativeButton(R.string.cancel, (dialog, which) -> {
                     });
                     install.setPositiveButton(R.string.update, (dialog, which) -> {
-                        Utils.installBusyBox(this);
+                        Utils.installBusyBox(new WeakReference<>(this));
                     });
                 }
             } else {
@@ -93,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
                 install.setNegativeButton(R.string.cancel, (dialog, which) -> {
                 });
                 install.setPositiveButton(R.string.install, (dialog, which) -> {
-                    Utils.installBusyBox(this);
+                    Utils.installBusyBox(new WeakReference<>(this));
                 });
             }
         } else {
@@ -179,9 +181,7 @@ public class MainActivity extends AppCompatActivity {
                 update.setView(checkBoxView);
                 update.setNegativeButton(R.string.cancel, (dialog, which) -> {
                 });
-                update.setPositiveButton(R.string.update, (dialog, which) -> {
-                    Utils.installBusyBox(this);
-                });
+                update.setPositiveButton(R.string.update, (dialog, which) -> Utils.installBusyBox(new WeakReference<>(this)));
                 update.show();
             }
         }
