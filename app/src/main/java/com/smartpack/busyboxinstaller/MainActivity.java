@@ -68,9 +68,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Initialize Banner Ads
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+        if (Utils.isNotDonated(this)) {
+            AdView mAdView = findViewById(R.id.adView);
+            AdRequest adRequest = new AdRequest.Builder().build();
+            mAdView.loadAd(adRequest);
+        }
     }
 
     public void installDialog(View view) {
