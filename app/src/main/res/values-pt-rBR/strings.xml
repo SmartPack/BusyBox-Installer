@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="about">BusyBox Installer is a one-click BusyBox installation utility for various android architectures (ARM/ARM64 and x86).\n\n&#169;<b>sunilpaulmathew</b>\n\n<b>Credits</b>\n<b><i>https://busybox.net/</i></b> - <i>BusyBox Binaries</i>\n<b><i>Grarak</i></b> - A bunch of Code\n<b><i>SmgKhOaRn</i></b> - <i>Korean Translations</i>\n<b><i>sajid_islam</i></b> - <i>App Icon</i></string>
+    <string name="about">BusyBox Installer é um utilitário de instalação do BusyBox de um clique para várias arquiteturas do Android (ARM/ARM64 e x86).\n\n&#169;<b>sunilpaulmathew</b>\n\n<b>Créditos</b>\n<b><i>https://busybox.net/</i></b> - <i>Binários BusyBox</i>\n<b><i>Grarak</i></b> - Um monte de código\n<b><i>SmgKhOaRn</i></b> - <i>Tradução para Coreano</i>\n<b><i>sajid_islam</i></b> - <i>Ícone do App</i></string>
     <string name="cancel">Cancelar</string>
     <string name="dark">Escuro</string>
     <string name="hide">Esconder</string>
@@ -26,4 +26,12 @@
     <string name="update_busybox">Atualização do BusyBox disponível!</string>
     <string name="updated_message">Parabéns! Você está atualizado!</string>
     <string name="upsupported">Arquitetura não suportada!</string>
+    <string name="removing_busybox">Removendo BusyBox v%s</string>
+    <string name="remove_busybox_invalid">Instalação do BusyBox deste aplicativo não foi detectada no seu dispositivo!</string>
+    <string name="remove_busybox_message">Tem certeza de que remove os applets do BusyBox (v%s) de \'/system /xbin\'?\n\nNota: isso removerá apenas os applets instalados por este aplicativo no seu dispositivo!</string>
+    <string name="remove_busybox_failed">Infelizmente, a remoção do BusyBox v%s do seu dispositivo falhou!</string>
+    <string name="remove_busybox_completed">O BusyBox v%s foi removido com sucesso do seu dispositivo. Você quer reiniciar?</string>
+    <string name="remove">Remover</string>
+    <string name="list_applets_summary">Os seguintes applets estão incluídos neste pacote! - %s</string>
+    <string name="list_applets">Lista de Applets</string>
 </resources>
