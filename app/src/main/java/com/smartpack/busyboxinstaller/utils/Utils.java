@@ -16,6 +16,7 @@ import android.widget.Toast;
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.AppCompatTextView;
 
 import com.google.android.gms.ads.MobileAds;
 import com.smartpack.busyboxinstaller.BuildConfig;
@@ -38,6 +39,7 @@ import java.lang.ref.WeakReference;
 
 public class Utils {
 
+    public static AppCompatTextView mInstallText = null;
     public static final String version = "1.31.0";
     private static boolean superUser = false;
 
@@ -250,6 +252,7 @@ public class Utils {
                     mProgressDialog.dismiss();
                 } catch (IllegalArgumentException ignored) {
                 }
+                refreshTitles();
                 AlertDialog.Builder reboot = new AlertDialog.Builder(activity);
                 reboot.setIcon(R.mipmap.ic_launcher_round);
                 if (existFile("/system/xbin/bb_version") && readFile("/system/xbin/bb_version").equals(version)) {
@@ -305,6 +308,7 @@ public class Utils {
                     mProgressDialog.dismiss();
                 } catch (IllegalArgumentException ignored) {
                 }
+                refreshTitles();
                 AlertDialog.Builder result = new AlertDialog.Builder(activity);
                 result.setIcon(R.mipmap.ic_launcher_round);
                 if (existFile("/system/xbin/bb_version")) {
@@ -338,6 +342,18 @@ public class Utils {
 
     public static String getAppletsList() {
         return RootUtils.runCommand("/system/xbin/busybox_" + version + " --list").replace("su\n", "");
+    }
+
+    public static void refreshTitles() {
+        if (Utils.existFile("/system/xbin/bb_version")) {
+            if (Utils.readFile("/system/xbin/bb_version").equals(Utils.version)) {
+                mInstallText.setText(R.string.updated_message);
+            } else {
+                mInstallText.setText(R.string.update_busybox);
+            }
+        } else {
+            mInstallText.setText(R.string.install_busybox);
+        }
     }
 
 }

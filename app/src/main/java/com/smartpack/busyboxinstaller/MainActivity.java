@@ -18,7 +18,6 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.appcompat.widget.AppCompatImageView;
-import androidx.appcompat.widget.AppCompatTextView;
 import androidx.core.app.ActivityCompat;
 
 import com.google.android.gms.ads.AdRequest;
@@ -45,16 +44,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        AppCompatTextView installText = findViewById(R.id.install_text);
-        if (Utils.existFile("/system/xbin/bb_version")) {
-            if (Utils.readFile("/system/xbin/bb_version").equals(Utils.version)) {
-                installText.setText(R.string.updated_message);
-            } else {
-                installText.setText(R.string.update_busybox);
-            }
-        } else {
-            installText.setText(R.string.install_busybox);
-        }
+        Utils.mInstallText = findViewById(R.id.install_text);
+        Utils.refreshTitles();
 
         AppCompatImageView installImage = findViewById(R.id.install_image);
         if (Utils.existFile("/system/xbin/busybox_" + Utils.version)) {
