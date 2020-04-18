@@ -23,7 +23,7 @@
     <string name="removing_busybox">Удаление BusyBox v%s</string>
     <string name="reboot">перезагружать</string>
     <string name="remove">удалять</string>
-    <string name="share_app">Загрузите установщик BusyBox%s с GitHub: https://github.com/SmartPack/BusyBox-Installer/releases.</string>
+    <string name="share_app">Загрузите установщик BusyBox%s с https://play.google.com/store/apps/details?id=com.smartpack.busyboxinstaller</string>
     <string name="source_code">Исходный код</string>
     <string name="support_group">Группа поддержки</string>
     <string name="switch_theme">Переход на%s тему!</string>

@@ -27,7 +27,7 @@
     <string name="remove_busybox_message">እርግጠኛ ነዎት BusyBox (v%s) አፕልትን ከ \'/system/xbin\' ያስወግዳሉ?\n\nእባክዎ ልብ ይበሉ: - በዚህ መተግበሪያ መሣሪያዎ ላይ የተጫኑትን ፖምዎች ብቻ ያስወግዳል!</string>
     <string name="remove_busybox_invalid">በዚህ መተግበሪያ busyBox ጭነት በእርስዎ መሣሪያ ላይ አልተገኘም!</string>
     <string name="removing_busybox">BusyBox v%s ን በማስወገድ ላይ</string>
-    <string name="share_app">ቢዚቦክስ ጫኝ%s ን ከ GitHub ያግኙ: https://github.com/SmartPack/busybox-Installer/releases</string>
+    <string name="share_app">ቢዚቦክስ ጫኝ%s ን ከ ያግኙ https://play.google.com/store/apps/details?id=com.smartpack.busyboxinstaller</string>
     <string name="source_code">ምንጭ ኮድ</string>
     <string name="support_group">የድጋፍ ቡድን</string>
     <string name="switch_theme">ወደ%s ጭብጥ በመቀየር ላይ!</string>

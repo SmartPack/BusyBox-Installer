@@ -3,6 +3,14 @@
 ## Introduction
 ### BusyBox Installer is a one-click BusyBox installation utility for Android.
 
+## Download
+[<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png"
+     alt=""
+     height="80">](https://play.google.com/store/apps/details?id=com.smartpack.busyboxinstaller)
+[<img src="https://i.ibb.co/q0mdc4Z/get-it-on-github.png"
+     alt=""
+     height="80">](https://github.com/SmartPack/BusyBox-Installer/releases/latest)
+
 ## Requirements
 * ROOT Access
 

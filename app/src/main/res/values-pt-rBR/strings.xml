@@ -18,7 +18,7 @@
     <string name="no_root_message">A instalação do BusyBox não funcionará sem o Acesso Root! Abortando</string>
     <string name="press_back">Pressione voltar novamente para sair!</string>
     <string name="reboot">Reiniciar</string>
-    <string name="share_app">Obtenha o Instalador do BusyBox %s no GitHub: https://github.com/SmartPack/BusyBox-Installer/releases</string>
+    <string name="share_app">Obtenha o Instalador do BusyBox %s no https://play.google.com/store/apps/details?id=com.smartpack.busyboxinstaller</string>
     <string name="source_code">Código-fonte</string>
     <string name="support_group">Grupo de suporte</string>
     <string name="switch_theme">Mudando para o Tema %s!</string>
