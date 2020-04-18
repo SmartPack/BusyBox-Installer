@@ -1,0 +1,38 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <!--Author: Mikesew1320 <mikesew1320@gmail.com>-->
+
+    <string name="about">ቢዚቦክስ ጫኝ ለተለያዩ የ አንድሮይድ ሥነ ሕንፃዎች (አርምቪ7 / አርም64 እና x86) የ “ቢዚቦክስ” መጫኛ የአንድ ጊዜ ጠቅታ ነው።\n\n&#169;<b>sunilpaulmathew</b>\n\n<b><i> https://busybox.net/</i></b> - <i>ቢዚቦክስ ባይነሪዎች</i>\n<b><i>Grarak</i></b> - <i>መነሻ ኮድ</i>\n<b><i>SmgKhOaRn</i></b> - <i>የኮሪያኛ ትርጉም</i>\n<b><i>sajid_islam</i></b> - <i>የመተግበሪያ አዶ</i></string>
+    <string name="cancel">ይቅር</string>
+    <string name="dark">ጨለማ</string>
+    <string name="hide">ደብቅ</string>
+    <string name="install">ጫን</string>
+    <string name="install_busybox">ቢዚቦክስ ን ይጫኑ!</string>
+    <string name="install_busybox_latest">እንኳን ደስ አለዎት! በዚህ መተግበሪያ ላይ ያለው አዲሱ የ ቢዚቦክስ (v%s) ስሪት ቀድሞውኑ በእርስዎ መሣሪያ ላይ ተጭኗል!</string>
+    <string name="install_busybox_message">እርግጠኛ ነዎት ቢዚቦክስ %s ን መጫን ይፈልጋሉ?</string>
+    <string name="install_busybox_unavailable">እንደ አለመታደል ሆኖ ከዚህ መተግበሪያ ቢዚቦክስ ጭነት ለእርስዎ ሥነ ሕንፃ (%s) ገና አይገኝም!</string>
+    <string name="install_busybox_update">አዲስ ዝመና ይገኛል! ቢዚቦክስ ን ወደ v%s ማዘመን ይፈልጋሉ?</string>
+    <string name="install_busybox_failed">እንደ አለመታደል ሆኖ የ ቢዚቦክስ ጫኝ በመሣሪያዎ ‹s \'/system/xbin\' አቃፊ ላይ የ ቢዚቦክስ አፕልትን ለመፃፍ አልተሳካም!</string>
+    <string name="install_busybox_success">ቢዚቦክስ ጭነት ተጠናቅቋል! መሣሪያዎን ድጋሚ ማስነሳት ይፈልጋሉ?</string>
+    <string name="installing">ቢዚቦክስ v%s ን በመጫን ላይ</string>
+    <string name="light">ብርሃን</string>
+    <string name="list_applets">የአፕሌቶች ዝርዝር</string>
+    <string name="list_applets_summary">የሚከተሉት አፕልቶች በዚህ ጥቅል ውስጥ ተካተዋል!\n\n -%s</string>
+    <string name="no_permission_message">ቢዚቦክስ ጭነት ያለ ማከማቻ ይፃፋል ተደራሽነት የለውም! ውርጃ</string>
+    <string name="no_root_message">ቢዚቦክስ ጭነት ያለ Root መዳረሻ አይሰራም! ውርጃ</string>
+    <string name="press_back">ለመውጣት መልሰህ ተጫን!</string>
+    <string name="reboot">ድጋሚ አስነሳ</string>
+    <string name="remove">አስወግድ</string>
+    <string name="remove_busybox_completed">BusyBox v%s በተሳካ ሁኔታ ከመሣሪያዎ ተወግ isል። ዳግም ማስጀመር ይፈልጋሉ?</string>
+    <string name="remove_busybox_failed">እንደአጋጣሚ ሆኖ BusyBox v%s ን ከመሣሪያዎ ማስወገድ አልተሳካም!</string>
+    <string name="remove_busybox_message">እርግጠኛ ነዎት BusyBox (v%s) አፕልትን ከ \'/system/xbin\' ያስወግዳሉ?\n\nእባክዎ ልብ ይበሉ: - በዚህ መተግበሪያ መሣሪያዎ ላይ የተጫኑትን ፖምዎች ብቻ ያስወግዳል!</string>
+    <string name="remove_busybox_invalid">በዚህ መተግበሪያ busyBox ጭነት በእርስዎ መሣሪያ ላይ አልተገኘም!</string>
+    <string name="removing_busybox">BusyBox v%s ን በማስወገድ ላይ</string>
+    <string name="share_app">ቢዚቦክስ ጫኝ%s ን ከ GitHub ያግኙ: https://github.com/SmartPack/busybox-Installer/releases</string>
+    <string name="source_code">ምንጭ ኮድ</string>
+    <string name="support_group">የድጋፍ ቡድን</string>
+    <string name="switch_theme">ወደ%s ጭብጥ በመቀየር ላይ!</string>
+    <string name="update">አዘምን</string>
+    <string name="update_busybox">ቢዚቦክስ ማዘመኛ አለ!</string>
+    <string name="updated_message">እንኳን ደስ አለዎት! እርስዎ ወቅታዊ ናቸው!</string>
+    <string name="upsupported">የማይደገፍ ስነ-ህንፃ!</string>
+</resources>
