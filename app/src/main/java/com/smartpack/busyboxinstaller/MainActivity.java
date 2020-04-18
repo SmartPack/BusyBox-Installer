@@ -16,6 +16,7 @@ import android.widget.CheckBox;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.core.app.ActivityCompat;
@@ -66,6 +67,21 @@ public class MainActivity extends AppCompatActivity {
                     .show();
             return false;
         });
+
+        AppCompatImageButton info = findViewById(R.id.info_Icon);
+        if (Utils.existFile("/system/xbin/busybox_" + Utils.version)) {
+            info.setOnLongClickListener(item -> {
+                Utils.getBusyBoxVersion();
+                new AlertDialog.Builder(this)
+                        .setIcon(R.mipmap.ic_launcher)
+                        .setTitle(R.string.busybox_version)
+                        .setMessage(Utils.getBusyBoxVersion())
+                        .setPositiveButton(R.string.cancel, (dialog, which) -> {
+                        })
+                        .show();
+                return false;
+            });
+        }
 
         // Initialize Banner Ads
         if (Utils.isNotDonated(this)) {

@@ -229,7 +229,6 @@ public class Utils {
                     chmod("755", "/system/xbin/busybox_" + version);
                     RootUtils.runCommand("cd /system/xbin/");
                     RootUtils.runCommand("busybox_" + version + " --install .");
-                    delete("busybox_" + version);
                     if (!superUser) {
                         // Remove 'su' binary to avoid SafetyNet failure
                         delete("/system/xbin/su");
@@ -290,6 +289,7 @@ public class Utils {
                 RootUtils.runCommand("cd /system/xbin/");
                 RootUtils.runCommand("rm -r " + appletsList);
                 delete("/system/xbin/bb_version");
+                delete("/system/xbin/busybox_" + version);
                 RootUtils.runCommand("sync");
                 sleep(1);
                 mountSystem("ro");
@@ -323,6 +323,18 @@ public class Utils {
                 result.show();
             }
         }.execute();
+    }
+
+    public static String getBusyBoxVersion() {
+        try {
+            for (String line : RootUtils.runCommand("/system/xbin/busybox_" + version).split("\\r?\\n")) {
+                if (line.startsWith("BusyBox v")) {
+                    return line.replace("BusyBox v", "");
+                }
+            }
+        } catch (Exception ignored) {
+        }
+        return null;
     }
 
 }

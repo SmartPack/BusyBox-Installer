@@ -63,9 +63,11 @@
             android:onClick="removeBusyBox" />
 
         <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/info_Icon"
             android:layout_width="40dp"
             android:layout_height="50dp"
             android:background="@null"
+            android:longClickable="true"
             android:tint="@color/colorWhite"
             android:layout_gravity="end|center_vertical"
             android:src="@drawable/ic_info"
