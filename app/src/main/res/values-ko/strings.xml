@@ -15,6 +15,8 @@
     <string name="install_busybox_success">비지박스 설치를 완료했습니다! 기기를 다시 시작하시겠어요?</string>
     <string name="installing">비지박스 (v%s) 를 설치하는 중</string>
     <string name="light">밝은</string>
+    <string name="list_applets">애플릿 종류</string>
+    <string name="list_applets_summary">다음과 같은 애플릿들이 이 패키지에 포함되어 있습니다!\n\n - %s</string>
     <string name="no_permission_message">이 기능은 저장공간 쓰기 권한 없이 작동하지 않습니다!</string>
     <string name="no_root_message">이 기능은 루트 권한 없이 작동하지 않습니다!</string>
     <string name="press_back">나가려면 뒤로가기 버튼을 다시 누르세요</string>
