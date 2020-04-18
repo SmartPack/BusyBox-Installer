@@ -57,16 +57,18 @@ public class MainActivity extends AppCompatActivity {
         }
 
         AppCompatImageView installImage = findViewById(R.id.install_image);
-        installImage.setOnLongClickListener(item -> {
-            new AlertDialog.Builder(this)
-                    .setIcon(R.mipmap.ic_launcher)
-                    .setTitle(R.string.list_applets)
-                    .setMessage(getString(R.string.list_applets_summary, Utils.appletsList.replace(" ", "\n - ")))
-                    .setPositiveButton(R.string.cancel, (dialog, which) -> {
-                    })
-                    .show();
-            return false;
-        });
+        if (Utils.existFile("/system/xbin/busybox_" + Utils.version)) {
+            installImage.setOnLongClickListener(item -> {
+                new AlertDialog.Builder(this)
+                        .setIcon(R.mipmap.ic_launcher)
+                        .setTitle(R.string.list_applets)
+                        .setMessage(getString(R.string.list_applets_summary, Utils.getAppletsList().replace("\n", "\n - ")))
+                        .setPositiveButton(R.string.cancel, (dialog, which) -> {
+                        })
+                        .show();
+                return false;
+            });
+        }
 
         AppCompatImageButton info = findViewById(R.id.info_Icon);
         if (Utils.existFile("/system/xbin/busybox_" + Utils.version)) {
