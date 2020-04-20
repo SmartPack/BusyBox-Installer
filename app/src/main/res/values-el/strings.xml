@@ -1,0 +1,39 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <!--Author: kopsomanas <kgstradviolin@outlook.com>-->
+
+    <string name="about">Το BusyBox Installer είναι μια εφαρμογή εγκατάστασης BusyBox με ένα κλικ για διάφορες αρχιτεκτονικές android (ARM/ARM64 και x86).\n\n&#169;<b>sunilpaulmathew</b>\n\n<b>Ευχαριστίες</b>\n<b><i>https://busybox.net/</i></b> - <i>BusyBox Binaries</i>\n<b><i>Grarak</i></b> - <i>Συνεισφορές Κώδικα</i>\n<b><i>Lennoard</i></b> - <i>Συνεργάτες Κώδικα/pt-Br Μετάφραση</i>\n<b><i>SmgKhOaRn</i></b> - <i>Κορεατική Μετάφραση</i>\n<b><i>Mikesew1320</i></b> - <i>Amharic &amp; Ρωσική Μετάφραση</i>\n<b><i>tsiflimagas</i></b> - <i>Ελληνική μετάφραση</i>\n<b><i>sajid_islam</i></b> - <i>Εικονίδιο Εφαρμογής</i></string>
+    <string name="busybox_version">Έκδοση BusyBox</string>
+    <string name="cancel">Ακύρωση</string>
+    <string name="dark">Σκούρο</string>
+    <string name="hide">Απόκρυψη</string>
+    <string name="install">Εγκατάσταση</string>
+    <string name="install_busybox">Εγκατάσταση BusyBox!</string>
+    <string name="install_busybox_latest">Συγχαρητήρια! Η πιο πρόσφατη έκδοση του BusyBox (v%s) διαθέσιμη σε αυτήν την εφαρμογή είναι ήδη εγκατεστημένη σε αυτήν τη συσκευή!</string>
+    <string name="install_busybox_message">Είστε σίγουρος ότι θέλετε να εγκαταστήσετε το BusyBox %s?</string>
+    <string name="install_busybox_unavailable">Δυστυχώς, η εγκατάσταση BusyBox από αυτήν την εφαρμογή δεν είναι ακόμη διαθέσιμη για τη συσκευή σας (%s)!</string>
+    <string name="install_busybox_update">Νέα ενημέρωση διαθέσιμη! Θέλετε να ενημερώσετε το BusyBox σε v%s?</string>
+    <string name="install_busybox_failed">Δυστυχώς, το BusyBox installer απέτυχε να εγγράψει τα BusyBox applets στη συσκευή σας\'s \'/system/xbin\' φάκελος!</string>
+    <string name="install_busybox_success">Η εγκατάσταση του BusyBox ολοκληρώθηκε! Επιθυμείτε να επανεκκίνησετε τη συσκευή σας;</string>
+    <string name="installing">Εγκατάσταση BusyBox v%s</string>
+    <string name="light">Φωτεινό</string>
+    <string name="list_applets">Λίστα Applets</string>
+    <string name="list_applets_summary">Τα ακόλουθα applets συμπεριλαμβάνονται σε αυτό το πακέτο!\n\n - %s</string>
+    <string name="no_permission_message">Η εγκατάσταση BusyBox δε θα λειτουργήσει χωρίς Πρόσβαση στον Αποθηκευτικό Χώρο! Διακοπή</string>
+    <string name="no_root_message">Η εγκατάσταση BusyBox δε θα λειτουργήσει χωρίς Πρόσβαση Root! Διακοπή</string>
+    <string name="press_back">Πατήστε ξανά πίσω για έξοδο!</string>
+    <string name="reboot">Επανεκκίνηση</string>
+    <string name="remove">Αφαίρεση</string>
+    <string name="remove_busybox_completed">Το BusyBox v%s απεγκαταστάθηκε επιτυχώς από τη συσκευή σας. Επιθυμείτε να επανεκκινήσετε;</string>
+    <string name="remove_busybox_failed">Δυστυχώς, η αφαίρεση του BusyBox v%s από τη συσκευή σας απέτυχε!</string>
+    <string name="remove_busybox_message">Είστε σίγουρος ότι θέλετε να αφαιρέσετε τα BusyBox (v%s) applets από \'/system/xbin\'?\n\nΠαρακαλώ να σημειωθεί: Θα αφαιρέσει μόνον τα εγκατεστημένα από αυτήν την εφαρμογή applets στη συσκευή!</string>
+    <string name="remove_busybox_invalid">Η εγκατάσταση BusyBox από αυτήν την εφαρμογή δεν εντοπίστηκε στη συσκευή σας!</string>
+    <string name="removing_busybox">Αφαίρεση BusyBox v%s</string>
+    <string name="share_app">Αποκτήστε το BusyBox Installer %s από https://play.google.com/store/apps/details?id=com.smartpack.busyboxinstaller</string>
+    <string name="source_code">Πηγαίος Κώδικας</string>
+    <string name="support_group">Ομάδα Υποστήριξης</string>
+    <string name="switch_theme">Μετάβαση σε %s Θέμα!</string>
+    <string name="update">Ενημέρωση</string>
+    <string name="update_busybox">Ενημέρωση για το BusyBox διαθέσιμη!</string>
+    <string name="updated_message">Συγχαρητήρια! Είσαστε ενημερωμένος!</string>
+    <string name="upsupported">Μη Υποστηριζόμενη Αρχιτεκτονική!</string>
+</resources>
