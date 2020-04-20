@@ -44,6 +44,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        AppCompatImageButton donation = findViewById(R.id.donate_Icon);
+        if (Utils.isNotDonated(this)) {
+            donation.setVisibility(View.VISIBLE);
+        }
+
         Utils.mInstallText = findViewById(R.id.install_text);
         Utils.refreshTitles();
 
@@ -147,7 +152,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void donateToMe(View view) {
-        Utils.launchUrl("https://www.paypal.me/menacherry", this);
+        new AlertDialog.Builder(this)
+                .setIcon(R.mipmap.ic_launcher)
+                .setTitle(getString(R.string.support_developer))
+                .setMessage(getString(R.string.support_developer_message))
+                .setNeutralButton(getString(R.string.cancel), (dialog1, id1) -> {
+                })
+                .setPositiveButton(getString(R.string.donation_app), (dialogInterface, i) -> {
+                    Utils.launchUrl("https://play.google.com/store/apps/details?id=com.smartpack.donate", this);
+                })
+                .show();
     }
 
     public void switchTheme(View view) {

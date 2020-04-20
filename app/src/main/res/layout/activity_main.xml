@@ -27,12 +27,14 @@
             android:textColor="@color/colorWhite" />
 
         <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/donate_Icon"
             android:layout_width="40dp"
             android:layout_height="50dp"
             android:background="@null"
             android:tint="@color/colorWhite"
             android:layout_gravity="end|center_vertical"
             android:src="@drawable/ic_donate"
+            android:visibility="gone"
             android:onClick="donateToMe" />
 
         <androidx.appcompat.widget.AppCompatImageButton
