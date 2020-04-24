@@ -11,20 +11,18 @@ import androidx.annotation.NonNull;
 public class RootFile {
 
     private final String mFile;
-    private RootUtils.SU mSU;
 
-    RootFile(String file, RootUtils.SU su) {
+    RootFile(String file) {
         mFile = file;
-        mSU = su;
     }
 
     boolean exists() {
-        String output = mSU.runCommand("[ -e " + mFile + " ] && echo true");
-        return output != null && output.equals("true");
+        String output = RootUtils.runCommand("[ -e " + mFile + " ] && echo true");
+        return !output.isEmpty() && output.equals("true");
     }
 
     String readFile() {
-        return mSU.runCommand("cat '" + mFile + "'");
+        return RootUtils.runCommand("cat '" + mFile + "'");
     }
 
     @Override
