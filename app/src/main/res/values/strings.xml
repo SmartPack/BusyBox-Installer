@@ -1,7 +1,7 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="app_name" translatable="false">BusyBox Installer</string>
 
-    <string name="about">BusyBox Installer is a one-click BusyBox installation utility for various android architectures (ARM/ARM64 and x86).\n\n&#169;<b>sunilpaulmathew</b>\n\n<b>Credits</b>\n<b><i>https://busybox.net/</i></b> - <i>BusyBox Binaries</i>\n<b><i>Grarak</i></b> - <i>Code contributions</i>\n<b><i>Lennoard</i></b> - <i>Code contributions/pt-Br Translations</i>\n<b><i>SmgKhOaRn</i></b> - <i>Korean Translations</i>\n<b><i>Mikesew1320</i></b> - <i>Amharic &amp; Russian Translations</i>\n<b><i>tsiflimagas</i></b> - <i>Greek translations</i>\n<b><i>sajid_islam</i></b> - <i>App Icon</i></string>
+    <string name="about">BusyBox Installer is a one-click BusyBox installation utility for various android architectures (ARM/ARM64 and x86).\n\n&#169;<b>sunilpaulmathew</b>\n\n<b>Credits</b>\n<b><i>https://busybox.net/</i></b> - <i>BusyBox Binaries</i>\n<b><i>Grarak</i></b> - <i>Code contributions</i>\n<b><i>topjohnwu</i></b> - <i>libsu</i>\n<b><i>Lennoard</i></b> - <i>Code contributions/pt-Br Translations</i>\n<b><i>SmgKhOaRn</i></b> - <i>Korean Translations</i>\n<b><i>Mikesew1320</i></b> - <i>Amharic &amp; Russian Translations</i>\n<b><i>tsiflimagas</i></b> - <i>Greek translations</i>\n<b><i>sajid_islam</i></b> - <i>App Icon</i></string>
     <string name="busybox_version">BusyBox Version</string>
     <string name="cancel">Cancel</string>
     <string name="dark">Dark</string>
@@ -25,7 +25,6 @@
     <string name="reboot">Reboot</string>
     <string name="remove">Remove</string>
     <string name="remove_busybox_completed">BusyBox v%s is successfully removed from your device. Do you wan\'t to reboot?</string>
-    <string name="remove_busybox_failed">Unfortunately, removing BusyBox v%s from your device failed!</string>
     <string name="remove_busybox_message">Are you sure to remove BusyBox (v%s) applets from \'/system/xbin\'?\n\nPlease Note: It will only remove the applets installed by this app on your device!</string>
     <string name="remove_busybox_invalid">BusyBox installation from this app is not detected on your device!</string>
     <string name="removing_busybox">Removing BusyBox v%s</string>

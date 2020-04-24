@@ -23,7 +23,6 @@
     <string name="reboot">ድጋሚ አስነሳ</string>
     <string name="remove">አስወግድ</string>
     <string name="remove_busybox_completed">BusyBox v%s በተሳካ ሁኔታ ከመሣሪያዎ ተወግ isል። ዳግም ማስጀመር ይፈልጋሉ?</string>
-    <string name="remove_busybox_failed">እንደአጋጣሚ ሆኖ BusyBox v%s ን ከመሣሪያዎ ማስወገድ አልተሳካም!</string>
     <string name="remove_busybox_message">እርግጠኛ ነዎት BusyBox (v%s) አፕልትን ከ \'/system/xbin\' ያስወግዳሉ?\n\nእባክዎ ልብ ይበሉ: - በዚህ መተግበሪያ መሣሪያዎ ላይ የተጫኑትን ፖምዎች ብቻ ያስወግዳል!</string>
     <string name="remove_busybox_invalid">በዚህ መተግበሪያ busyBox ጭነት በእርስዎ መሣሪያ ላይ አልተገኘም!</string>
     <string name="removing_busybox">BusyBox v%s ን በማስወገድ ላይ</string>

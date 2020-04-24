@@ -24,7 +24,6 @@
     <string name="reboot">Επανεκκίνηση</string>
     <string name="remove">Αφαίρεση</string>
     <string name="remove_busybox_completed">Το BusyBox v%s απεγκαταστάθηκε επιτυχώς από τη συσκευή σας. Επιθυμείτε να επανεκκινήσετε;</string>
-    <string name="remove_busybox_failed">Δυστυχώς, η αφαίρεση του BusyBox v%s από τη συσκευή σας απέτυχε!</string>
     <string name="remove_busybox_message">Είστε σίγουρος ότι θέλετε να αφαιρέσετε τα BusyBox (v%s) applets από \'/system/xbin\'?\n\nΠαρακαλώ να σημειωθεί: Θα αφαιρέσει μόνον τα εγκατεστημένα από αυτήν την εφαρμογή applets στη συσκευή!</string>
     <string name="remove_busybox_invalid">Η εγκατάσταση BusyBox από αυτήν την εφαρμογή δεν εντοπίστηκε στη συσκευή σας!</string>
     <string name="removing_busybox">Αφαίρεση BusyBox v%s</string>

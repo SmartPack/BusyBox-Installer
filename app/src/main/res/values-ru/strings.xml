@@ -17,7 +17,6 @@
     <string name="light">Светлый</string>
     <string name="list_applets">Список апплетов</string>
     <string name="remove_busybox_completed">BusyBox v%s успешно удален с вашего устройства. Вы хотите перезагрузить компьютер?</string>
-    <string name="remove_busybox_failed">К сожалению, удалить BusyBox v%s с вашего устройства не удалось!</string>
     <string name="remove_busybox_message">Вы уверены, что удалили апплеты BusyBox (v%s) из \'/system/xbin\'?\n\nПожалуйста, обратите внимание: он удалит только те апплеты, которые установлены этим приложением на вашем устройстве!</string>
     <string name="remove_busybox_invalid">Установка BusyBox из этого приложения не обнаружена на вашем устройстве!</string>
     <string name="removing_busybox">Удаление BusyBox v%s</string>
