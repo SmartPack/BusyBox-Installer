@@ -29,6 +29,8 @@
     <string name="remove_busybox_message">Are you sure to remove BusyBox (v%s) applets from \'/system/xbin\'?\n\nPlease Note: It will only remove the applets installed by this app on your device!</string>
     <string name="remove_busybox_invalid">BusyBox installation from this app is not detected on your device!</string>
     <string name="removing_busybox">Removing BusyBox v%s</string>
+    <string name="save_log">Save Log</string>
+    <string name="save_log_summary">Installation log file is exported as \'%s\'!</string>
     <string name="share_app">Get BusyBox Installer %s from https://play.google.com/store/apps/details?id=com.smartpack.busyboxinstaller</string>
     <string name="source_code">Source Code</string>
     <string name="support_developer">Support Developer!</string>
