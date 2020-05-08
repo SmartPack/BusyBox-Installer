@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,8 +21,8 @@ import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.core.app.ActivityCompat;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
+import com.facebook.ads.AdSize;
+import com.facebook.ads.AdView;
 import com.smartpack.busyboxinstaller.utils.RootUtils;
 import com.smartpack.busyboxinstaller.utils.Utils;
 
@@ -38,9 +39,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // Initialize App Theme & Google Ads
+        // Initialize App Theme & FaceBook Ads
         Utils.initializeAppTheme(this);
-        Utils.initializeGoogleAds(this);
+        Utils.initializeFaceBookAds(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -83,9 +84,10 @@ public class MainActivity extends AppCompatActivity {
 
         // Initialize Banner Ads
         if (Utils.isNotDonated(this)) {
-            AdView mAdView = findViewById(R.id.adView);
-            AdRequest adRequest = new AdRequest.Builder().build();
-            mAdView.loadAd(adRequest);
+            AdView mAdView = new AdView(this, "660748211413849_660748534747150", AdSize.BANNER_HEIGHT_50);
+            LinearLayout adContainer = findViewById(R.id.banner_container);
+            adContainer.addView(mAdView);
+            mAdView.loadAd();
         }
     }
 

@@ -15,10 +15,6 @@
         android:requestLegacyExternalStorage="true"
         tools:targetApi="q">
 
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-2781194772510522~1549441426" />
-
         <activity android:name="com.smartpack.busyboxinstaller.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

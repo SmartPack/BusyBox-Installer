@@ -18,7 +18,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.AppCompatTextView;
 
-import com.google.android.gms.ads.MobileAds;
+import com.facebook.ads.AudienceNetworkAds;
 import com.smartpack.busyboxinstaller.BuildConfig;
 import com.smartpack.busyboxinstaller.R;
 
@@ -66,12 +66,12 @@ public class Utils {
         }
     }
 
-    public static void initializeGoogleAds(Context context) {
-        MobileAds.initialize(context, "ca-app-pub-2781194772510522~1549441426");
+    public static void initializeFaceBookAds(Context context) {
+        AudienceNetworkAds.initialize(context);
     }
 
-    private static String create(String text, String path) {
-        return RootUtils.runCommand("echo '" + text + "' > " + path);
+    private static void create(String text, String path) {
+        RootUtils.runCommand("echo '" + text + "' > " + path);
     }
 
     private static String delete(String path) {
@@ -255,7 +255,7 @@ public class Utils {
                     if (existFile("/system/xbin/busybox_" + version)) {
                         mOutput.append("** Detecting 'su' binary: ");
                         if (existFile("/system/xbin/su")) superUser = true;
-                        mOutput.append(superUser ? "Detected *\n" : "Not Detected *\n");
+                        mOutput.append(superUser ? "Detected *\n\n" : "Not Detected *\n\n");
                         mOutput.append("** Setting permissions: Done *\n");
                         mOutput.append(chmod("755", "/system/xbin/busybox_" + version)).append("\n");
                         mOutput.append("** Installing applets: ");
