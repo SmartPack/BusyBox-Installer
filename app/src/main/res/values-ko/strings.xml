@@ -1,7 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <!--Author: SmgKhOaRn <smgkhoarn@protonmail.com>-->
 
-    <string name="about">다양한 안드로이드 아키텍처 (ARM/ARM64/x86) 를 위한 원클릭 비지박스 설치기.\n\n&#169;<b>sunilpaulmathew</b>\n\n<b>도움을 주신 분들</b>\n<b><i>https://busybox.net/</i></b> - 비지박스 바이너리\n<b><i>Grarak</i></b> - 코드 기반\n<b><i>SmgKhOaRn</i></b> - 한국어 번역\n<b><i>sajid_islam</i></b> - 앱 아이콘</string>
+    <string name="about">다양한 안드로이드 아키텍처 (ARM/ARM64/x86) 를 위한 원클릭 비지박스 설치기.\n\n&#169;<b>sunilpaulmathew</b>\n\n<b>도움을 주신 분들</b>\n<b><i>https://busybox.net/</i></b> - 비지박스 바이너리\n<b><i>Grarak</i></b> - 코드 기여\n<b><i>topjohnwu</i></b> - libsu 라이브러리\n<b><i>Lennoard</i></b> - 코드 기여/포르투갈어(브라질) 번역\n<b><i>SmgKhOaRn</i></b> - 한국어 번역\n<b><i>Mikesew1320</i></b> - 에티오피아어/러시아어 번역\n<b><i>tsiflimagas</i></b> - 그리스어 번역\n<b><i>sajid_islam</i></b> - 앱 아이콘</string>
     <string name="cancel">취소</string>
     <string name="dark">어두운</string>
     <string name="hide">숨기기</string>
@@ -22,11 +22,13 @@
     <string name="press_back">나가려면 뒤로가기 버튼을 다시 누르세요</string>
     <string name="reboot">다시 시작</string>
     <string name="remove">제거</string>
+    <string name="remove_busybox_completed">비지박스 (v%s) 제거를 완료했습니다! 기기를 다시 시작하시겠어요?</string>
     <string name="remove_busybox_message">\'/system/xbin\'에서 비지박스 (v%s) 를 제거하시겠어요?\n\n알아두기: 기기에서 이 앱을 사용하여 설치한 비지박스 바이너리만 지울 것입니다!</string>
     <string name="remove_busybox_invalid">이 앱에서 설치된 비지박스가 기기에서 발견되지 않았습니다!</string>
     <string name="removing_busybox">비지박스 (v%s) 를 제거하는 중</string>
-    <string name="remove_busybox_completed">비지박스 (v%s) 제거를 완료했습니다! 기기를 다시 시작하시겠어요?</string>
-    <string name="share_app">Busybox Installer %s은(는) 아래에서 다운받을 수 있습니다 https://play.google.com/store/apps/details?id=com.smartpack.busyboxinstaller</string>
+    <string name="save_log">로그 저장</string>
+    <string name="save_log_summary">설치 로그 파일이 \'%s\'에 저장되었습니다!</string>
+    <string name="share_app">Busybox Installer %s은(는) 아래에서 다운받을 수 있습니다.\n깃허브: https://github.com/SmartPack/BusyBox-Installer/releases</string>
     <string name="source_code">소스 코드</string>
     <string name="support_group">지원 받기</string>
     <string name="switch_theme">%s 테마를 적용하는 중!</string>
