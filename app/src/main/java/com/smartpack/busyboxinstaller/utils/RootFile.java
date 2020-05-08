@@ -17,12 +17,12 @@ public class RootFile {
     }
 
     boolean exists() {
-        String output = RootUtils.runCommand("[ -e " + mFile + " ] && echo true");
+        String output = RootUtils.runAndGetOutput("[ -e " + mFile + " ] && echo true");
         return !output.isEmpty() && output.equals("true");
     }
 
     String readFile() {
-        return RootUtils.runCommand("cat '" + mFile + "'");
+        return RootUtils.runAndGetOutput("cat '" + mFile + "'");
     }
 
     @Override

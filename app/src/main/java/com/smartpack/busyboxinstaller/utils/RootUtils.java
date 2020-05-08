@@ -39,8 +39,28 @@ public class RootUtils {
         return s;
     }
 
+    static void runCommand(String command) {
+        Shell.su(command).exec();
+    }
+
     @NonNull
-    static String runCommand(String command) {
+    public static String runAndGetOutput(String command) {
+        StringBuilder sb = new StringBuilder();
+        try {
+            List<String> outputs = Shell.su(command).exec().getOut();
+            if (ShellUtils.isValidOutput(outputs)) {
+                for (String output : outputs) {
+                    sb.append(output).append("\n");
+                }
+            }
+            return removeSuffix(sb.toString()).trim();
+        } catch (Exception e) {
+            return "";
+        }
+    }
+
+    @NonNull
+    public static String runAndGetError(String command) {
         StringBuilder sb = new StringBuilder();
         List<String> outputs = new ArrayList<>();
         List<String> stderr = new ArrayList<>();
@@ -57,5 +77,4 @@ public class RootUtils {
             return "";
         }
     }
-
 }

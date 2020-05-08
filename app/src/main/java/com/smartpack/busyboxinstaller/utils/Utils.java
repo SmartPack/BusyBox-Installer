@@ -74,19 +74,18 @@ public class Utils {
         RootUtils.runCommand("echo '" + text + "' > " + path);
     }
 
-    private static String delete(String path) {
+    private static void delete(String path) {
         if (Utils.existFile(path)) {
-            return RootUtils.runCommand("rm -r " + path);
+            RootUtils.runCommand("rm -r " + path);
         }
-        return null;
     }
 
-    private static String move(String source, String dest) {
-        return RootUtils.runCommand("mv " + source + " " + dest);
+    private static void move(String source, String dest) {
+        RootUtils.runCommand("mv " + source + " " + dest);
     }
 
     static String chmod(String permission, String path) {
-        return RootUtils.runCommand("chmod " + permission + " " + path);
+        return RootUtils.runAndGetOutput("chmod " + permission + " " + path);
     }
 
     public static void toast(String message, Context context) {
@@ -111,11 +110,11 @@ public class Utils {
     }
 
     private static String mountSystem(String command) {
-        return RootUtils.runCommand("mount -o remount," + command + " /system");
+        return RootUtils.runAndGetError("mount -o remount," + command + " /system");
     }
 
     private static String mountRootFS(String command) {
-        return RootUtils.runCommand("mount -o remount," + command + " /");
+        return RootUtils.runAndGetError("mount -o remount," + command + " /");
     }
 
     public static void sleep(int s) {
@@ -181,7 +180,7 @@ public class Utils {
     }
 
     public static String getArch() {
-        return RootUtils.runCommand("uname -m");
+        return RootUtils.runAndGetOutput("uname -m");
     }
 
     private static boolean isWritableSystem() {
@@ -260,7 +259,7 @@ public class Utils {
                         mOutput.append(chmod("755", "/system/xbin/busybox_" + version)).append("\n");
                         mOutput.append("** Installing applets: ");
                         RootUtils.runCommand("cd /system/xbin/");
-                        RootUtils.runCommand("busybox_" + version + " --install .");
+                        mOutput.append(RootUtils.runAndGetError("busybox_" + version + " --install ."));
                         mOutput.append("Done *\n\n");
                         if (!superUser) {
                             mOutput.append("** Removing 'su' binary to avoid SafetyNet failure: ");
@@ -391,7 +390,7 @@ public class Utils {
 
     public static String getBusyBoxVersion() {
         try {
-            for (String line : RootUtils.runCommand("/system/xbin/busybox_" + version).split("\\r?\\n")) {
+            for (String line : RootUtils.runAndGetOutput("/system/xbin/busybox_" + version).split("\\r?\\n")) {
                 if (line.startsWith("BusyBox v")) {
                     return line.replace("BusyBox v", "");
                 }
@@ -402,7 +401,7 @@ public class Utils {
     }
 
     public static String getAppletsList() {
-        return RootUtils.runCommand("/system/xbin/busybox_" + version + " --list").replace("su\n", "");
+        return RootUtils.runAndGetOutput("/system/xbin/busybox_" + version + " --list").replace("su\n", "");
     }
 
     public static void refreshTitles() {
