@@ -11,14 +11,15 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Environment;
 import android.preference.PreferenceManager;
+import android.view.View;
 import android.widget.Toast;
 
-import androidx.annotation.StringRes;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.AppCompatTextView;
 
 import com.facebook.ads.AudienceNetworkAds;
+import com.google.android.material.snackbar.Snackbar;
 import com.smartpack.busyboxinstaller.BuildConfig;
 import com.smartpack.busyboxinstaller.R;
 
@@ -88,16 +89,18 @@ public class Utils {
         return RootUtils.runAndGetOutput("chmod " + permission + " " + path);
     }
 
-    public static void toast(String message, Context context) {
+    private static void toast(String message, Context context) {
         toast(message, context, Toast.LENGTH_SHORT);
-    }
-
-    public static void toast(@StringRes int id, Context context) {
-        toast(context.getString(id), context);
     }
 
     private static void toast(String message, Context context, int duration) {
         Toast.makeText(context, message, duration).show();
+    }
+
+    public static void snackbar(View view, String message) {
+        Snackbar snackbar;
+        snackbar = Snackbar.make(view, message, Snackbar.LENGTH_LONG);
+        snackbar.show();
     }
 
     public static void launchUrl(String url, Context context) {

@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean mExit;
     private Handler mHandler = new Handler();
+    private LinearLayout mInstall;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
         Utils.mInstallText = findViewById(R.id.install_text);
         Utils.refreshTitles();
 
+        mInstall = findViewById(R.id.install);
+        mInstall.setVisibility(View.VISIBLE);
         AppCompatImageView installImage = findViewById(R.id.install_image);
         if (Utils.existFile("/system/xbin/busybox_" + Utils.version)) {
             installImage.setOnLongClickListener(item -> {
@@ -93,13 +96,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void installDialog(View view) {
         if (!RootUtils.rootAccess()) {
-            Utils.toast(R.string.no_root_message, this);
+            Utils.snackbar(mInstall, getString(R.string.no_root_message));
             return;
         }
         if (!Utils.checkWriteStoragePermission(this)) {
             ActivityCompat.requestPermissions(this, new String[]{
                     Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
-            Utils.toast(R.string.no_permission_message, this);
+            Utils.snackbar(mInstall, getString(R.string.no_permission_message));
             return;
         }
         AlertDialog.Builder install = new AlertDialog.Builder(this);
@@ -149,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
                     })
                     .show();
         } else {
-            Utils.toast(R.string.remove_busybox_invalid, this);
+            Utils.snackbar(mInstall, getString(R.string.remove_busybox_invalid));
         }
     }
 
@@ -169,9 +172,9 @@ public class MainActivity extends AppCompatActivity {
     public void switchTheme(View view) {
         if (Utils.getBoolean("dark_theme", true, this)) {
             Utils.saveBoolean("dark_theme", false, this);
-            Utils.toast(getString(R.string.switch_theme, getString(R.string.light)), this);
+            Utils.snackbar(mInstall, getString(R.string.switch_theme, getString(R.string.light)));
         } else {
-            Utils.toast(getString(R.string.switch_theme, getString(R.string.dark)), this);
+            Utils.snackbar(mInstall, getString(R.string.switch_theme, getString(R.string.dark)));
             Utils.saveBoolean("dark_theme", true, this);
         }
         Utils.sleep(1);
@@ -248,7 +251,7 @@ public class MainActivity extends AppCompatActivity {
             mExit = false;
             super.onBackPressed();
         } else {
-            Utils.toast(R.string.press_back, this);
+            Utils.snackbar(mInstall, getString(R.string.press_back));
             mExit = true;
             mHandler.postDelayed(() -> mExit = false, 2000);
         }
