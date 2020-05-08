@@ -1,9 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <!--Author: Mikesew1320 <mikesew1320@gmail.com>-->
 
-    <string name="about">BusyBox Installer - это утилита для установки BusyBox в один клик для различных архитектур Android (ARM / ARM64 и x86).\n\n&#169;<b>sunilpaulmathew</b>\n\n<b>Кредиты</b>\n<b><i>https://busybox.net/</i></b> - <i>двоичные файлы BusyBox</i>\n<b><i>Grarak</i></b> - <i>A связка кода</i>>\n<b><i>SmgKhOaRn</i></b> - <i>корейские переводы</i>\n<b><i>sajid_islam </i></b> - <i>Значок приложения</i></string>
+    <string name="about">О программе</string>
+    <string name="about_summary">BusyBox Installer - это утилита для установки BusyBox в один клик для различных архитектур Android (ARM / ARM64 и x86).\n\n&#169;<b>sunilpaulmathew</b>\n\n<b>Кредиты</b>\n<b><i>https://busybox.net/</i></b> - <i>двоичные файлы BusyBox</i>\n<b><i>Grarak</i></b> - <i>A связка кода</i>>\n<b><i>SmgKhOaRn</i></b> - <i>корейские переводы</i>\n<b><i>sajid_islam </i></b> - <i>Значок приложения</i></string>
     <string name="cancel">Отмена</string>
     <string name="dark">Тьма</string>
+    <string name="dark_theme">Тёмная тема</string>
     <string name="hide">Спрятать</string>
     <string name="install">устанавливать</string>
     <string name="install_busybox">Установите BusyBox!</string>
@@ -18,10 +20,10 @@
     <string name="list_applets">Список апплетов</string>
     <string name="remove_busybox_completed">BusyBox v%s успешно удален с вашего устройства. Вы хотите перезагрузить компьютер?</string>
     <string name="remove_busybox_message">Вы уверены, что удалили апплеты BusyBox (v%s) из \'/system/xbin\'?\n\nПожалуйста, обратите внимание: он удалит только те апплеты, которые установлены этим приложением на вашем устройстве!</string>
-    <string name="remove_busybox_invalid">Установка BusyBox из этого приложения не обнаружена на вашем устройстве!</string>
     <string name="removing_busybox">Удаление BusyBox v%s</string>
     <string name="reboot">перезагружать</string>
     <string name="remove">удалять</string>
+    <string name="share">Поделиться</string>
     <string name="share_app">Загрузите установщик BusyBox%s с https://play.google.com/store/apps/details?id=com.smartpack.busyboxinstaller</string>
     <string name="source_code">Исходный код</string>
     <string name="support_group">Группа поддержки</string>

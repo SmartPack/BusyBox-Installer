@@ -1,10 +1,13 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="app_name" translatable="false">BusyBox Installer</string>
 
-    <string name="about">BusyBox Installer is a one-click BusyBox installation utility for various android architectures (ARM/ARM64 and x86).\n\n&#169;<b>sunilpaulmathew</b>\n\n<b>Credits</b>\n<b><i>https://busybox.net/</i></b> - <i>BusyBox Binaries</i>\n<b><i>Grarak</i></b> - <i>Code contributions</i>\n<b><i>topjohnwu</i></b> - <i>libsu</i>\n<b><i>Lennoard</i></b> - <i>Code contributions/pt-Br Translations</i>\n<b><i>SmgKhOaRn</i></b> - <i>Korean Translations</i>\n<b><i>Mikesew1320</i></b> - <i>Amharic &amp; Russian Translations</i>\n<b><i>tsiflimagas</i></b> - <i>Greek translations</i>\n<b><i>sajid_islam</i></b> - <i>App Icon</i></string>
+    <string name="about">About</string>
+    <string name="about_summary">BusyBox Installer is a one-click BusyBox installation utility for various android architectures (ARM/ARM64 and x86).\n\n&#169;<b>sunilpaulmathew</b>\n\n<b>Credits</b>\n<b><i>https://busybox.net/</i></b> - <i>BusyBox Binaries</i>\n<b><i>Grarak</i></b> - <i>Code contributions</i>\n<b><i>topjohnwu</i></b> - <i>libsu</i>\n<b><i>Lennoard</i></b> - <i>Code contributions/pt-Br Translations</i>\n<b><i>SmgKhOaRn</i></b> - <i>Korean Translations</i>\n<b><i>Mikesew1320</i></b> - <i>Amharic &amp; Russian Translations</i>\n<b><i>tsiflimagas</i></b> - <i>Greek translations</i>\n<b><i>sajid_islam</i></b> - <i>App Icon</i></string>
     <string name="busybox_version">BusyBox Version</string>
     <string name="cancel">Cancel</string>
     <string name="dark">Dark</string>
+    <string name="dark_theme">Dark Theme</string>
+    <string name="donations">Donations</string>
     <string name="donation_app">Buy Donation App</string>
     <string name="hide">Hide</string>
     <string name="install">Install</string>
@@ -26,10 +29,10 @@
     <string name="remove">Remove</string>
     <string name="remove_busybox_completed">BusyBox v%s is successfully removed from your device. Do you wan\'t to reboot?</string>
     <string name="remove_busybox_message">Are you sure to remove BusyBox (v%s) applets from \'/system/xbin\'?\n\nPlease Note: It will only remove the applets installed by this app on your device!</string>
-    <string name="remove_busybox_invalid">BusyBox installation from this app is not detected on your device!</string>
     <string name="removing_busybox">Removing BusyBox v%s</string>
     <string name="save_log">Save Log</string>
     <string name="save_log_summary">Installation log file is exported as \'%s\'!</string>
+    <string name="share">Share</string>
     <string name="share_app">Get BusyBox Installer %s from https://play.google.com/store/apps/details?id=com.smartpack.busyboxinstaller</string>
     <string name="source_code">Source Code</string>
     <string name="support_developer">Support Developer!</string>
@@ -40,4 +43,5 @@
     <string name="update_busybox">BusyBox Update Available!</string>
     <string name="updated_message">Congrats! You\'re Up-to-date!</string>
     <string name="upsupported">Unsupported Architecture!</string>
+    <string name="version">Version</string>
 </resources>

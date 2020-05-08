@@ -1,9 +1,12 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <!--Author: Mikesew1320 <mikesew1320@gmail.com>-->
 
-    <string name="about">ቢዚቦክስ ጫኝ ለተለያዩ የ አንድሮይድ ሥነ ሕንፃዎች (አርምቪ7 / አርም64 እና x86) የ “ቢዚቦክስ” መጫኛ የአንድ ጊዜ ጠቅታ ነው።\n\n&#169;<b>sunilpaulmathew</b>\n\n<b><i> https://busybox.net/</i></b> - <i>ቢዚቦክስ ባይነሪዎች</i>\n<b><i>Grarak</i></b> - <i>መነሻ ኮድ</i>\n<b><i>SmgKhOaRn</i></b> - <i>የኮሪያኛ ትርጉም</i>\n<b><i>sajid_islam</i></b> - <i>የመተግበሪያ አዶ</i></string>
+    <string name="about">ስለ እኛ</string>
+    <string name="about_summary">ቢዚቦክስ ጫኝ ለተለያዩ የ አንድሮይድ ሥነ ሕንፃዎች (አርምቪ7 / አርም64 እና x86) የ “ቢዚቦክስ” መጫኛ የአንድ ጊዜ ጠቅታ ነው።\n\n&#169;<b>sunilpaulmathew</b>\n\n<b><i> https://busybox.net/</i></b> - <i>ቢዚቦክስ ባይነሪዎች</i>\n<b><i>Grarak</i></b> - <i>መነሻ ኮድ</i>\n<b><i>SmgKhOaRn</i></b> - <i>የኮሪያኛ ትርጉም</i>\n<b><i>sajid_islam</i></b> - <i>የመተግበሪያ አዶ</i></string>
     <string name="cancel">ይቅር</string>
     <string name="dark">ጨለማ</string>
+    <string name="dark_theme">ጠቆር ያለ ገፅታ</string>
+    <string name="donations">ልገሳ</string>
     <string name="hide">ደብቅ</string>
     <string name="install">ጫን</string>
     <string name="install_busybox">ቢዚቦክስ ን ይጫኑ!</string>
@@ -24,8 +27,8 @@
     <string name="remove">አስወግድ</string>
     <string name="remove_busybox_completed">BusyBox v%s በተሳካ ሁኔታ ከመሣሪያዎ ተወግ isል። ዳግም ማስጀመር ይፈልጋሉ?</string>
     <string name="remove_busybox_message">እርግጠኛ ነዎት BusyBox (v%s) አፕልትን ከ \'/system/xbin\' ያስወግዳሉ?\n\nእባክዎ ልብ ይበሉ: - በዚህ መተግበሪያ መሣሪያዎ ላይ የተጫኑትን ፖምዎች ብቻ ያስወግዳል!</string>
-    <string name="remove_busybox_invalid">በዚህ መተግበሪያ busyBox ጭነት በእርስዎ መሣሪያ ላይ አልተገኘም!</string>
     <string name="removing_busybox">BusyBox v%s ን በማስወገድ ላይ</string>
+    <string name="share">አጋራ</string>
     <string name="share_app">ቢዚቦክስ ጫኝ%s ን ከ ያግኙ https://play.google.com/store/apps/details?id=com.smartpack.busyboxinstaller</string>
     <string name="source_code">ምንጭ ኮድ</string>
     <string name="support_group">የድጋፍ ቡድን</string>

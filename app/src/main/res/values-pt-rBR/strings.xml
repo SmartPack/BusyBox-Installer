@@ -1,7 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="about">BusyBox Installer é um utilitário de instalação do BusyBox de um clique para várias arquiteturas do Android (ARM/ARM64 e x86).\n\n&#169;<b>sunilpaulmathew</b>\n\n<b>Créditos</b>\n<b><i>https://busybox.net/</i></b> - <i>Binários BusyBox</i>\n<b><i>Grarak</i></b> - Um monte de código\n<b><i>SmgKhOaRn</i></b> - <i>Tradução para Coreano</i>\n<b><i>sajid_islam</i></b> - <i>Ícone do App</i></string>
+
+    <string name="about">Sobre</string>
+    <string name="about_summary">BusyBox Installer é um utilitário de instalação do BusyBox de um clique para várias arquiteturas do Android (ARM/ARM64 e x86).\n\n&#169;<b>sunilpaulmathew</b>\n\n<b>Créditos</b>\n<b><i>https://busybox.net/</i></b> - <i>Binários BusyBox</i>\n<b><i>Grarak</i></b> - Um monte de código\n<b><i>SmgKhOaRn</i></b> - <i>Tradução para Coreano</i>\n<b><i>sajid_islam</i></b> - <i>Ícone do App</i></string>
     <string name="cancel">Cancelar</string>
     <string name="dark">Escuro</string>
+    <string name="dark_theme">Tema escuro</string>
+    <string name="donations">Doações</string>
     <string name="hide">Esconder</string>
     <string name="install">Instalar</string>
     <string name="install_busybox">Instalar BusyBox!</string>
@@ -18,6 +22,7 @@
     <string name="press_back">Pressione voltar novamente para sair!</string>
     <string name="reboot">Reiniciar</string>
     <string name="save_log">Salvar o Registro</string>
+    <string name="share">Compartilhar</string>
     <string name="share_app">Obtenha o Instalador do BusyBox %s no https://play.google.com/store/apps/details?id=com.smartpack.busyboxinstaller</string>
     <string name="source_code">Código-fonte</string>
     <string name="support_group">Grupo de suporte</string>
@@ -27,7 +32,6 @@
     <string name="updated_message">Parabéns! Você está atualizado!</string>
     <string name="upsupported">Arquitetura não suportada!</string>
     <string name="removing_busybox">Removendo BusyBox v%s</string>
-    <string name="remove_busybox_invalid">Instalação do BusyBox deste aplicativo não foi detectada no seu dispositivo!</string>
     <string name="remove_busybox_message">Tem certeza de que remove os applets do BusyBox (v%s) de \'/system /xbin\'?\n\nNota: isso removerá apenas os applets instalados por este aplicativo no seu dispositivo!</string>
     <string name="remove_busybox_completed">O BusyBox v%s foi removido com sucesso do seu dispositivo. Você quer reiniciar?</string>
     <string name="remove">Remover</string>

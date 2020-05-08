@@ -11,6 +11,8 @@ import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Menu;
+import android.view.SubMenu;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
@@ -18,7 +20,7 @@ import android.widget.LinearLayout;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageButton;
-import androidx.appcompat.widget.AppCompatImageView;
+import androidx.appcompat.widget.PopupMenu;
 import androidx.core.app.ActivityCompat;
 
 import com.facebook.ads.AdSize;
@@ -45,45 +47,80 @@ public class MainActivity extends AppCompatActivity {
         Utils.initializeFaceBookAds(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        AppCompatImageButton donation = findViewById(R.id.donate_Icon);
-        if (Utils.isNotDonated(this)) {
-            donation.setVisibility(View.VISIBLE);
-        }
-
         Utils.mInstallText = findViewById(R.id.install_text);
         Utils.refreshTitles();
 
         mInstall = findViewById(R.id.install);
         mInstall.setVisibility(View.VISIBLE);
-        AppCompatImageView installImage = findViewById(R.id.install_image);
-        if (Utils.existFile("/system/xbin/busybox_" + Utils.version)) {
-            installImage.setOnLongClickListener(item -> {
-                new AlertDialog.Builder(this)
-                        .setIcon(R.mipmap.ic_launcher)
-                        .setTitle(R.string.list_applets)
-                        .setMessage(getString(R.string.list_applets_summary, Utils.getAppletsList().replace("\n", "\n - ")))
-                        .setPositiveButton(R.string.cancel, (dialog, which) -> {
-                        })
-                        .show();
+        AppCompatImageButton settings = findViewById(R.id.settings_menu);
+        settings.setOnClickListener(v -> {
+            PopupMenu popupMenu = new PopupMenu(this, settings);
+            Menu menu = popupMenu.getMenu();
+            if (Utils.existFile("/system/xbin/bb_version")) {
+                menu.add(Menu.NONE, 1, Menu.NONE, getString(R.string.remove));
+            }
+            menu.add(Menu.NONE, 2, Menu.NONE, getString(R.string.dark_theme)).setCheckable(true)
+                    .setChecked(Utils.getBoolean("dark_theme", true, this));
+            if (Utils.existFile("/system/xbin/busybox_" + Utils.version)) {
+                menu.add(Menu.NONE, 3, Menu.NONE, getString(R.string.list_applets));
+                menu.add(Menu.NONE, 4, Menu.NONE, getString(R.string.version));
+            }
+            SubMenu about = menu.addSubMenu(Menu.NONE, 0, Menu.NONE, getString(R.string.about));
+            about.add(Menu.NONE, 5, Menu.NONE, getString(R.string.share));
+            about.add(Menu.NONE, 6, Menu.NONE, getString(R.string.source_code));
+            about.add(Menu.NONE, 7, Menu.NONE, getString(R.string.support_group));
+            if (Utils.isNotDonated(this)) {
+                about.add(Menu.NONE, 8, Menu.NONE, getString(R.string.donations));
+            }
+            about.add(Menu.NONE, 9, Menu.NONE, getString(R.string.about));
+            popupMenu.setOnMenuItemClickListener(item -> {
+                switch (item.getItemId()) {
+                    case 0:
+                        break;
+                    case 1:
+                        removeBusyBox();
+                        break;
+                    case 2:
+                        switchTheme();
+                        break;
+                    case 3:
+                        new AlertDialog.Builder(this)
+                                .setIcon(R.mipmap.ic_launcher)
+                                .setTitle(R.string.list_applets)
+                                .setMessage(getString(R.string.list_applets_summary, Utils.getAppletsList().replace("\n", "\n - ")))
+                                .setPositiveButton(R.string.cancel, (dialog, which) -> {
+                                })
+                                .show();
+                        break;
+                    case 4:
+                        new AlertDialog.Builder(this)
+                                .setIcon(R.mipmap.ic_launcher)
+                                .setTitle(R.string.busybox_version)
+                                .setMessage(Utils.getBusyBoxVersion())
+                                .setPositiveButton(R.string.cancel, (dialog, which) -> {
+                                })
+                                .show();
+                        break;
+                    case 5:
+                        shareApp();
+                        break;
+                    case 6:
+                        Utils.launchUrl("https://github.com/SmartPack/BusyBox-Installer", this);
+                        break;
+                    case 7:
+                        Utils.launchUrl("https://t.me/smartpack_kmanager", this);
+                        break;
+                    case 8:
+                        donateToMe();
+                        break;
+                    case 9:
+                        aboutDialog();
+                        break;
+                }
                 return false;
             });
-        }
-
-        AppCompatImageButton info = findViewById(R.id.info_Icon);
-        if (Utils.existFile("/system/xbin/busybox_" + Utils.version)) {
-            info.setOnLongClickListener(item -> {
-                Utils.getBusyBoxVersion();
-                new AlertDialog.Builder(this)
-                        .setIcon(R.mipmap.ic_launcher)
-                        .setTitle(R.string.busybox_version)
-                        .setMessage(Utils.getBusyBoxVersion())
-                        .setPositiveButton(R.string.cancel, (dialog, which) -> {
-                        })
-                        .show();
-                return false;
-            });
-        }
+            popupMenu.show();
+        });
 
         // Initialize Banner Ads
         if (Utils.isNotDonated(this)) {
@@ -141,8 +178,8 @@ public class MainActivity extends AppCompatActivity {
         install.show();
     }
 
-    public void removeBusyBox(View view) {
-        if (Utils.existFile("/system/xbin/bb_version")) {
+    public void removeBusyBox() {
+
             new AlertDialog.Builder(this)
                     .setMessage(getString(R.string.remove_busybox_message, Utils.version))
                     .setNegativeButton(R.string.cancel, (dialog, which) -> {
@@ -151,12 +188,9 @@ public class MainActivity extends AppCompatActivity {
                         Utils.removeBusyBox(new WeakReference<>(this));
                     })
                     .show();
-        } else {
-            Utils.snackbar(mInstall, getString(R.string.remove_busybox_invalid));
-        }
     }
 
-    public void donateToMe(View view) {
+    public void donateToMe() {
         new AlertDialog.Builder(this)
                 .setIcon(R.mipmap.ic_launcher)
                 .setTitle(getString(R.string.support_developer))
@@ -169,7 +203,7 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 
-    public void switchTheme(View view) {
+    public void switchTheme() {
         if (Utils.getBoolean("dark_theme", true, this)) {
             Utils.saveBoolean("dark_theme", false, this);
             Utils.snackbar(mInstall, getString(R.string.switch_theme, getString(R.string.light)));
@@ -183,7 +217,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void shareApp(View view) {
+    public void shareApp() {
         Intent shareapp = new Intent();
         shareapp.setAction(Intent.ACTION_SEND);
         shareapp.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name));
@@ -193,19 +227,13 @@ public class MainActivity extends AppCompatActivity {
         startActivity(shareIntent);
     }
 
-    public void aboutDialog(View view) {
+    public void aboutDialog() {
         new AlertDialog.Builder(this)
         .setIcon(R.mipmap.ic_launcher_round)
                 .setCancelable(false)
         .setTitle(getString(R.string.app_name) + "\nv" + BuildConfig.VERSION_NAME)
-                .setMessage(R.string.about)
-                .setNeutralButton(R.string.cancel, (dialog, which) -> {
-                })
-                .setNegativeButton(R.string.support_group, (dialog, which) -> {
-                    Utils.launchUrl("https://t.me/smartpack_kmanager", this);
-                })
-                .setPositiveButton(R.string.source_code, (dialog, which) -> {
-                    Utils.launchUrl("https://github.com/SmartPack/BusyBox-Installer", this);
+                .setMessage(R.string.about_summary)
+                .setPositiveButton(R.string.cancel, (dialog, which) -> {
                 })
                 .show();
     }

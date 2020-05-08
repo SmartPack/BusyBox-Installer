@@ -27,53 +27,13 @@
             android:textColor="@color/colorWhite" />
 
         <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/donate_Icon"
+            android:id="@+id/settings_menu"
             android:layout_width="40dp"
             android:layout_height="50dp"
             android:background="@null"
             android:tint="@color/colorWhite"
-            android:layout_gravity="end|center_vertical"
-            android:src="@drawable/ic_donate"
-            android:visibility="gone"
-            android:onClick="donateToMe" />
-
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:layout_width="40dp"
-            android:layout_height="50dp"
-            android:background="@null"
-            android:tint="@color/colorWhite"
-            android:layout_gravity="end|center_vertical"
-            android:src="@drawable/ic_theme"
-            android:onClick="switchTheme" />
-
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:layout_width="40dp"
-            android:layout_height="50dp"
-            android:background="@null"
-            android:tint="@color/colorWhite"
-            android:layout_gravity="end|center_vertical"
-            android:src="@drawable/ic_share"
-            android:onClick="shareApp" />
-
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:layout_width="40dp"
-            android:layout_height="50dp"
-            android:background="@null"
-            android:tint="@color/colorWhite"
-            android:layout_gravity="end|center_vertical"
-            android:src="@drawable/ic_delete"
-            android:onClick="removeBusyBox" />
-
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/info_Icon"
-            android:layout_width="40dp"
-            android:layout_height="50dp"
-            android:background="@null"
-            android:longClickable="true"
-            android:tint="@color/colorWhite"
-            android:layout_gravity="end|center_vertical"
-            android:src="@drawable/ic_info"
-            android:onClick="aboutDialog" />
+            android:layout_gravity="end|center"
+            android:src="@drawable/ic_settings" />
     </LinearLayout>
 
     <LinearLayout
@@ -86,11 +46,9 @@
         android:padding="16dp">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/install_image"
             android:layout_width="125dp"
             android:layout_height="125dp"
             android:onClick="installDialog"
-            android:longClickable="true"
             app:srcCompat="@mipmap/ic_launcher_round" />
 
         <androidx.appcompat.widget.AppCompatTextView

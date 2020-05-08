@@ -1,10 +1,13 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <!--Author: kopsomanas <kgstradviolin@outlook.com>-->
 
-    <string name="about">Το BusyBox Installer είναι μια εφαρμογή εγκατάστασης BusyBox με ένα κλικ για διάφορες αρχιτεκτονικές android (ARM/ARM64 και x86).\n\n&#169;<b>sunilpaulmathew</b>\n\n<b>Ευχαριστίες</b>\n<b><i>https://busybox.net/</i></b> - <i>BusyBox Binaries</i>\n<b><i>Grarak</i></b> - <i>Συνεισφορές Κώδικα</i>\n<b><i>Lennoard</i></b> - <i>Συνεργάτες Κώδικα/pt-Br Μετάφραση</i>\n<b><i>SmgKhOaRn</i></b> - <i>Κορεατική Μετάφραση</i>\n<b><i>Mikesew1320</i></b> - <i>Amharic &amp; Ρωσική Μετάφραση</i>\n<b><i>tsiflimagas</i></b> - <i>Ελληνική μετάφραση</i>\n<b><i>sajid_islam</i></b> - <i>Εικονίδιο Εφαρμογής</i></string>
+    <string name="about">Σχετικά με</string>
+    <string name="about_summary">Το BusyBox Installer είναι μια εφαρμογή εγκατάστασης BusyBox με ένα κλικ για διάφορες αρχιτεκτονικές android (ARM/ARM64 και x86).\n\n&#169;<b>sunilpaulmathew</b>\n\n<b>Ευχαριστίες</b>\n<b><i>https://busybox.net/</i></b> - <i>BusyBox Binaries</i>\n<b><i>Grarak</i></b> - <i>Συνεισφορές Κώδικα</i>\n<b><i>Lennoard</i></b> - <i>Συνεργάτες Κώδικα/pt-Br Μετάφραση</i>\n<b><i>SmgKhOaRn</i></b> - <i>Κορεατική Μετάφραση</i>\n<b><i>Mikesew1320</i></b> - <i>Amharic &amp; Ρωσική Μετάφραση</i>\n<b><i>tsiflimagas</i></b> - <i>Ελληνική μετάφραση</i>\n<b><i>sajid_islam</i></b> - <i>Εικονίδιο Εφαρμογής</i></string>
     <string name="busybox_version">Έκδοση BusyBox</string>
     <string name="cancel">Ακύρωση</string>
     <string name="dark">Σκούρο</string>
+    <string name="dark_theme">Σκούρο Θέμα</string>
+    <string name="donations">Δωρεές</string>
     <string name="hide">Απόκρυψη</string>
     <string name="install">Εγκατάσταση</string>
     <string name="install_busybox">Εγκατάσταση BusyBox!</string>
@@ -25,8 +28,8 @@
     <string name="remove">Αφαίρεση</string>
     <string name="remove_busybox_completed">Το BusyBox v%s απεγκαταστάθηκε επιτυχώς από τη συσκευή σας. Επιθυμείτε να επανεκκινήσετε;</string>
     <string name="remove_busybox_message">Είστε σίγουρος ότι θέλετε να αφαιρέσετε τα BusyBox (v%s) applets από \'/system/xbin\'?\n\nΠαρακαλώ να σημειωθεί: Θα αφαιρέσει μόνον τα εγκατεστημένα από αυτήν την εφαρμογή applets στη συσκευή!</string>
-    <string name="remove_busybox_invalid">Η εγκατάσταση BusyBox από αυτήν την εφαρμογή δεν εντοπίστηκε στη συσκευή σας!</string>
     <string name="removing_busybox">Αφαίρεση BusyBox v%s</string>
+    <string name="share">Κοινοποίηση</string>
     <string name="share_app">Αποκτήστε το BusyBox Installer %s από https://play.google.com/store/apps/details?id=com.smartpack.busyboxinstaller</string>
     <string name="source_code">Πηγαίος Κώδικας</string>
     <string name="support_group">Ομάδα Υποστήριξης</string>
