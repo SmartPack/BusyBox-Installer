@@ -2,8 +2,10 @@
     <!--Author: Mikesew1320 <mikesew1320@gmail.com>-->
 
     <string name="about">О программе</string>
-    <string name="about_summary">BusyBox Installer - это утилита для установки BusyBox в один клик для различных архитектур Android (ARM / ARM64 и x86).\n\n&#169;<b>sunilpaulmathew</b>\n\n<b>Кредиты</b>\n<b><i>https://busybox.net/</i></b> - <i>двоичные файлы BusyBox</i>\n<b><i>Grarak</i></b> - <i>A связка кода</i>>\n<b><i>SmgKhOaRn</i></b> - <i>корейские переводы</i>\n<b><i>sajid_islam </i></b> - <i>Значок приложения</i></string>
+    <string name="about_summary">BusyBox Installer - это утилита для установки BusyBox в один клик для различных архитектур Android (ARM / ARM64 и x86).\n\n&#169;<b>sunilpaulmathew</b></string>
     <string name="cancel">Отмена</string>
+    <string name="credits">Благодарности</string>
+    <string name="credits_summary"><b><i>https://busybox.net/</i></b> - <i>двоичные файлы BusyBox</i>\n<b><i>Grarak</i></b> - <i>A связка кода</i>>\n<b><i>SmgKhOaRn</i></b> - <i>корейские переводы</i>\n<b><i>sajid_islam </i></b> - <i>Значок приложения</i></string>
     <string name="dark">Тьма</string>
     <string name="dark_theme">Тёмная тема</string>
     <string name="hide">Спрятать</string>

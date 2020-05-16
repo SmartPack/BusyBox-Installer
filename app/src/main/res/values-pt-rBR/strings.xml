@@ -1,8 +1,10 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
     <string name="about">Sobre</string>
-    <string name="about_summary">BusyBox Installer é um utilitário de instalação do BusyBox de um clique para várias arquiteturas do Android (ARM/ARM64 e x86).\n\n&#169;<b>sunilpaulmathew</b>\n\n<b>Créditos</b>\n<b><i>https://busybox.net/</i></b> - <i>Binários BusyBox</i>\n<b><i>Grarak</i></b> - Um monte de código\n<b><i>SmgKhOaRn</i></b> - <i>Tradução para Coreano</i>\n<b><i>sajid_islam</i></b> - <i>Ícone do App</i></string>
+    <string name="about_summary">BusyBox Installer é um utilitário de instalação do BusyBox de um clique para várias arquiteturas do Android (ARM/ARM64 e x86).\n\n&#169;<b>sunilpaulmathew</b></string>
     <string name="cancel">Cancelar</string>
+    <string name="credits">Créditos</string>
+    <string name="credits_summary"><b><i>https://busybox.net/</i></b> - <i>Binários BusyBox</i>\n<b><i>Grarak</i></b> - Um monte de código\n<b><i>SmgKhOaRn</i></b> - <i>Tradução para Coreano</i>\n<b><i>sajid_islam</i></b> - <i>Ícone do App</i></string>
     <string name="dark">Escuro</string>
     <string name="dark_theme">Tema escuro</string>
     <string name="donations">Doações</string>

@@ -3,7 +3,7 @@ package com.smartpack.busyboxinstaller.utils;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.topjohnwu.superuser.BuildConfig;
+import com.smartpack.busyboxinstaller.BuildConfig;
 import com.topjohnwu.superuser.Shell;
 import com.topjohnwu.superuser.ShellUtils;
 
@@ -44,7 +44,7 @@ public class RootUtils {
     }
 
     @NonNull
-    public static String runAndGetOutput(String command) {
+    static String runAndGetOutput(String command) {
         StringBuilder sb = new StringBuilder();
         try {
             List<String> outputs = Shell.su(command).exec().getOut();
@@ -60,7 +60,7 @@ public class RootUtils {
     }
 
     @NonNull
-    public static String runAndGetError(String command) {
+    static String runAndGetError(String command) {
         StringBuilder sb = new StringBuilder();
         List<String> outputs = new ArrayList<>();
         List<String> stderr = new ArrayList<>();

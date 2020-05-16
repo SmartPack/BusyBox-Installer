@@ -62,6 +62,8 @@
             android:textColor="?android:attr/colorAccent" />
     </LinearLayout>
 
+    <include layout="@layout/rv_foreground_view" />
+
     <LinearLayout
         android:id="@+id/banner_container"
         android:layout_width="match_parent"

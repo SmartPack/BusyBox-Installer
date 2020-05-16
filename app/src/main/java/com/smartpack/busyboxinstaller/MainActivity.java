@@ -8,6 +8,7 @@
 package com.smartpack.busyboxinstaller;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -20,7 +21,10 @@ import android.widget.LinearLayout;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageButton;
+import androidx.appcompat.widget.AppCompatImageView;
+import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.PopupMenu;
+import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 
 import com.facebook.ads.AdSize;
@@ -36,7 +40,17 @@ import java.lang.ref.WeakReference;
 
 public class MainActivity extends AppCompatActivity {
 
+    private AppCompatImageButton mBack;
+    private AppCompatImageView mAppIcon;
+    private AppCompatTextView mCardTitle;
+    private AppCompatTextView mAppName;
+    private AppCompatTextView mAboutApp;
+    private AppCompatTextView mCreditsTitle;
+    private AppCompatTextView mForegroundText;
+    private AppCompatTextView mCancel;
     private boolean mExit;
+    private boolean mForegroundActive = false;
+    private CardView mForegroundCard;
     private Handler mHandler = new Handler();
     private LinearLayout mInstall;
 
@@ -53,7 +67,23 @@ public class MainActivity extends AppCompatActivity {
         mInstall = findViewById(R.id.install);
         mInstall.setVisibility(View.VISIBLE);
         AppCompatImageButton settings = findViewById(R.id.settings_menu);
+        mForegroundCard = findViewById(R.id.foreground_card);
+        mBack = findViewById(R.id.back);
+        mAppIcon = findViewById(R.id.app_image);
+        mCardTitle = findViewById(R.id.card_title);
+        mAppName = findViewById(R.id.app_title);
+        mAboutApp = findViewById(R.id.about_app);
+        mCreditsTitle = findViewById(R.id.credits_title);
+        mForegroundText = findViewById(R.id.foreground_text);
+        mCancel = findViewById(R.id.cancel_button);
+        mBack.setOnClickListener(v -> {
+            closeForeground();
+        });
+        mCancel.setOnClickListener(v -> {
+            closeForeground();
+        });
         settings.setOnClickListener(v -> {
+            if (mForegroundActive) return;
             PopupMenu popupMenu = new PopupMenu(this, settings);
             Menu menu = popupMenu.getMenu();
             if (Utils.existFile("/system/xbin/bb_version")) {
@@ -227,15 +257,34 @@ public class MainActivity extends AppCompatActivity {
         startActivity(shareIntent);
     }
 
+    @SuppressLint("SetTextI18n")
     public void aboutDialog() {
-        new AlertDialog.Builder(this)
-        .setIcon(R.mipmap.ic_launcher_round)
-                .setCancelable(false)
-        .setTitle(getString(R.string.app_name) + "\nv" + BuildConfig.VERSION_NAME)
-                .setMessage(R.string.about_summary)
-                .setPositiveButton(R.string.cancel, (dialog, which) -> {
-                })
-                .show();
+        mCardTitle.setText(R.string.about);
+        mAppName.setText(getString(R.string.app_name) + " v" + BuildConfig.VERSION_NAME);
+        mForegroundText.setText(getString(R.string.credits_summary));
+        mCardTitle.setVisibility(View.VISIBLE);
+        mBack.setVisibility(View.VISIBLE);
+        mAppIcon.setVisibility(View.VISIBLE);
+        mAppName.setVisibility(View.VISIBLE);
+        mAboutApp.setVisibility(View.VISIBLE);
+        mCreditsTitle.setVisibility(View.VISIBLE);
+        mForegroundText.setVisibility(View.VISIBLE);
+        mCancel.setVisibility(View.VISIBLE);
+        mForegroundActive = true;
+        mForegroundCard.setVisibility(View.VISIBLE);
+    }
+
+    public void closeForeground() {
+        mCardTitle.setVisibility(View.GONE);
+        mBack.setVisibility(View.GONE);
+        mAppIcon.setVisibility(View.GONE);
+        mAppName.setVisibility(View.GONE);
+        mAboutApp.setVisibility(View.GONE);
+        mCreditsTitle.setVisibility(View.GONE);
+        mForegroundText.setVisibility(View.GONE);
+        mCancel.setVisibility(View.GONE);
+        mForegroundCard.setVisibility(View.GONE);
+        mForegroundActive = false;
     }
 
     @Override
@@ -275,7 +324,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (mExit) {
+        if (mForegroundActive) {
+            closeForeground();
+        } else if (mExit) {
             mExit = false;
             super.onBackPressed();
         } else {

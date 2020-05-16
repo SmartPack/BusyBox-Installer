@@ -2,8 +2,10 @@
     <!--Author: SmgKhOaRn <smgkhoarn@protonmail.com>-->
 
     <string name="about">정보</string>
-    <string name="about_summary">다양한 안드로이드 아키텍처 (ARM/ARM64/x86) 를 위한 원클릭 비지박스 설치기.\n\n&#169;<b>sunilpaulmathew</b>\n\n<b>도움을 주신 분들</b>\n<b><i>https://busybox.net/</i></b> - 비지박스 바이너리\n<b><i>Grarak</i></b> - 코드 기여\n<b><i>topjohnwu</i></b> - libsu 라이브러리\n<b><i>Lennoard</i></b> - 코드 기여/포르투갈어(브라질) 번역\n<b><i>SmgKhOaRn</i></b> - 한국어 번역\n<b><i>Mikesew1320</i></b> - 에티오피아어/러시아어 번역\n<b><i>tsiflimagas</i></b> - 그리스어 번역\n<b><i>sajid_islam</i></b> - 앱 아이콘</string>
+    <string name="about_summary">다양한 안드로이드 아키텍처 (ARM/ARM64/x86) 를 위한 원클릭 비지박스 설치기.\n\n&#169;<b>sunilpaulmathew</b></string>
     <string name="cancel">취소</string>
+    <string name="credits">도움을 주신 분들</string>
+    <string name="credits_summary"><b><i>https://busybox.net/</i></b> - 비지박스 바이너리\n<b><i>Grarak</i></b> - 코드 기여\n<b><i>topjohnwu</i></b> - libsu 라이브러리\n<b><i>Lennoard</i></b> - 코드 기여/포르투갈어(브라질) 번역\n<b><i>SmgKhOaRn</i></b> - 한국어 번역\n<b><i>Mikesew1320</i></b> - 에티오피아어/러시아어 번역\n<b><i>tsiflimagas</i></b> - 그리스어 번역\n<b><i>sajid_islam</i></b> - 앱 아이콘</string>
     <string name="dark">어두운</string>
     <string name="dark_theme">어두운 테마</string>
     <string name="donations">기부</string>
