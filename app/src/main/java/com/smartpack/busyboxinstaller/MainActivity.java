@@ -32,7 +32,11 @@ import com.facebook.ads.AdView;
 import com.smartpack.busyboxinstaller.utils.RootUtils;
 import com.smartpack.busyboxinstaller.utils.Utils;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.lang.ref.WeakReference;
+import java.util.Objects;
 
 /*
  * Created by sunilpaulmathew <sunil.kde@gmail.com> on April 11, 2020
@@ -46,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
     private AppCompatTextView mAppName;
     private AppCompatTextView mAboutApp;
     private AppCompatTextView mCreditsTitle;
+    private AppCompatTextView mCredits;
     private AppCompatTextView mForegroundText;
     private AppCompatTextView mCancel;
     private boolean mExit;
@@ -54,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
     private Handler mHandler = new Handler();
     private LinearLayout mInstall;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // Initialize App Theme & FaceBook Ads
@@ -74,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
         mAppName = findViewById(R.id.app_title);
         mAboutApp = findViewById(R.id.about_app);
         mCreditsTitle = findViewById(R.id.credits_title);
+        mCredits = findViewById(R.id.credits);
         mForegroundText = findViewById(R.id.foreground_text);
         mCancel = findViewById(R.id.cancel_button);
         mBack.setOnClickListener(v -> {
@@ -99,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
             about.add(Menu.NONE, 5, Menu.NONE, getString(R.string.share));
             about.add(Menu.NONE, 6, Menu.NONE, getString(R.string.source_code));
             about.add(Menu.NONE, 7, Menu.NONE, getString(R.string.support_group));
+            about.add(Menu.NONE, 10, Menu.NONE, getString(R.string.change_log));
             if (Utils.isNotDonated(this)) {
                 about.add(Menu.NONE, 8, Menu.NONE, getString(R.string.donations));
             }
@@ -145,6 +153,22 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 9:
                         aboutDialog();
+                        break;
+                    case 10:
+                        String change_log = null;
+                        try {
+                            change_log = new JSONObject(Objects.requireNonNull(Utils.readAssetFile(
+                                    this, "changelogs.json"))).getString("releaseNotes");
+                        } catch (JSONException ignored) {
+                        }
+                        mAppName.setText(getString(R.string.app_name) + " v" + BuildConfig.VERSION_NAME);
+                        mForegroundText.setText(change_log);
+                        mAppIcon.setVisibility(View.VISIBLE);
+                        mAppName.setVisibility(View.VISIBLE);
+                        mForegroundText.setVisibility(View.VISIBLE);
+                        mCancel.setVisibility(View.VISIBLE);
+                        mForegroundActive = true;
+                        mForegroundCard.setVisibility(View.VISIBLE);
                         break;
                 }
                 return false;
@@ -261,14 +285,14 @@ public class MainActivity extends AppCompatActivity {
     public void aboutDialog() {
         mCardTitle.setText(R.string.about);
         mAppName.setText(getString(R.string.app_name) + " v" + BuildConfig.VERSION_NAME);
-        mForegroundText.setText(getString(R.string.credits_summary));
+        mCredits.setText(getString(R.string.credits_summary));
         mCardTitle.setVisibility(View.VISIBLE);
         mBack.setVisibility(View.VISIBLE);
         mAppIcon.setVisibility(View.VISIBLE);
         mAppName.setVisibility(View.VISIBLE);
         mAboutApp.setVisibility(View.VISIBLE);
         mCreditsTitle.setVisibility(View.VISIBLE);
-        mForegroundText.setVisibility(View.VISIBLE);
+        mCredits.setVisibility(View.VISIBLE);
         mCancel.setVisibility(View.VISIBLE);
         mForegroundActive = true;
         mForegroundCard.setVisibility(View.VISIBLE);
@@ -281,6 +305,7 @@ public class MainActivity extends AppCompatActivity {
         mAppName.setVisibility(View.GONE);
         mAboutApp.setVisibility(View.GONE);
         mCreditsTitle.setVisibility(View.GONE);
+        mCredits.setVisibility(View.GONE);
         mForegroundText.setVisibility(View.GONE);
         mCancel.setVisibility(View.GONE);
         mForegroundCard.setVisibility(View.GONE);

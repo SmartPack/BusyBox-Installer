@@ -29,6 +29,7 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.lang.ref.WeakReference;
 
@@ -180,6 +181,31 @@ public class Utils {
 
     public static void saveBoolean(String name, boolean value, Context context) {
         PreferenceManager.getDefaultSharedPreferences(context).edit().putBoolean(name, value).apply();
+    }
+
+    public static String readAssetFile(Context context, String file) {
+        InputStream input = null;
+        BufferedReader buf = null;
+        try {
+            StringBuilder s = new StringBuilder();
+            input = context.getAssets().open(file);
+            buf = new BufferedReader(new InputStreamReader(input));
+
+            String str;
+            while ((str = buf.readLine()) != null) {
+                s.append(str).append("\n");
+            }
+            return s.toString().trim();
+        } catch (IOException ignored) {
+        } finally {
+            try {
+                if (input != null) input.close();
+                if (buf != null) buf.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
     }
 
     public static String getArch() {
