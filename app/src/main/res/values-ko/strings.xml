@@ -19,6 +19,14 @@
     <string name="install_busybox_failed">유감스럽게도, Busybox Installer가 이 기기의 \'/system/xbin\' 폴더에 비지박스를 설치하는데 실패했습니다!</string>
     <string name="install_busybox_success">비지박스 설치를 완료했습니다! 기기를 다시 시작하시겠어요?</string>
     <string name="installing">비지박스 (v%s) 를 설치하는 중</string>
+    <string name="language">언어 (%s)</string>
+    <string name="language_en">영어</string>
+    <string name="language_default">시스템 언어</string>
+    <string name="language_ko">한국어</string>
+    <string name="language_am">에티오피아어</string>
+    <string name="language_el">그리스어</string>
+    <string name="language_pt">브라질 포어</string>
+    <string name="language_ru">러시아어</string>
     <string name="light">밝은</string>
     <string name="list_applets">애플릿 종류</string>
     <string name="list_applets_summary">다음과 같은 애플릿들이 이 패키지에 포함되어 있습니다!\n\n - %s</string>

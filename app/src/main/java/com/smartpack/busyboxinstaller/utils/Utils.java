@@ -7,10 +7,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Environment;
 import android.preference.PreferenceManager;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Toast;
 
@@ -32,6 +35,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.lang.ref.WeakReference;
+import java.util.Locale;
 
 /*
  * Created by sunilpaulmathew <sunil.kde@gmail.com> on April 11, 2020
@@ -443,6 +447,55 @@ public class Utils {
         } else {
             mInstallText.setText(R.string.install_busybox);
         }
+    }
+
+    public static void setDefaultLanguage(Context context) {
+        Utils.saveBoolean("use_en", false, context);
+        Utils.saveBoolean("use_ko", false, context);
+        Utils.saveBoolean("use_am", false, context);
+        Utils.saveBoolean("use_el", false, context);
+        Utils.saveBoolean("use_pt", false, context);
+        Utils.saveBoolean("use_ru", false, context);
+    }
+
+    public static boolean languageDefault(Context context) {
+        return !Utils.getBoolean("use_en", false, context)
+                && !Utils.getBoolean("use_ko", false, context)
+                && !Utils.getBoolean("use_am", false, context)
+                && !Utils.getBoolean("use_el", false, context)
+                && !Utils.getBoolean("use_pt", false, context)
+                && !Utils.getBoolean("use_ru", false, context);
+    }
+
+    public static String getLanguage(Context context) {
+        if (getBoolean("use_en", false, context)) {
+            return  "en_US";
+        } else if (getBoolean("use_ko", false, context)) {
+            return  "ko";
+        } else if (getBoolean("use_am", false, context)) {
+            return  "am";
+        } else if (getBoolean("use_el", false, context)) {
+            return  "el";
+        } else if (getBoolean("use_ml", false, context)) {
+            return  "ml";
+        } else if (getBoolean("use_pt", false, context)) {
+            return  "pt";
+        } else if (getBoolean("use_ru", false, context)) {
+            return  "ru";
+        } else if (getBoolean("use_uk", false, context)) {
+            return  "uk";
+        } else {
+            return java.util.Locale.getDefault().getLanguage();
+        }
+    }
+
+    public static void setLanguage(Context context) {
+        Locale myLocale = new Locale(getLanguage(context));
+        Resources res = context.getResources();
+        DisplayMetrics dm = res.getDisplayMetrics();
+        Configuration conf = res.getConfiguration();
+        conf.locale = myLocale;
+        res.updateConfiguration(conf, dm);
     }
 
 }

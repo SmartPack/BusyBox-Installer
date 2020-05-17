@@ -18,6 +18,12 @@
     <string name="install_busybox_failed">Infelizmente, o instalador do BusyBox não conseguiu gravar os applets BusyBox na pasta \'/system/xbin\' do seu dispositivo!</string>
     <string name="install_busybox_success">Instalação do BusyBox foi concluída! Deseja reiniciar o seu dispositivo?</string>
     <string name="installing">Instalando o BusyBox v%s</string>
+    <string name="language">Idioma (%s)</string>
+    <string name="language_am">Amárico</string>
+    <string name="language_el">Grego</string>
+    <string name="language_en">Inglês</string>
+    <string name="language_default">Padrão</string>
+    <string name="language_ko">Coreano</string>
     <string name="light">Claro</string>
     <string name="no_permission_message">A instalação do BusyBox não funcionará sem o acesso à gravação no armazenamento! Abortando</string>
     <string name="no_root_message">A instalação do BusyBox não funcionará sem o Acesso Root! Abortando</string>

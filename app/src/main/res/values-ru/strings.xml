@@ -18,6 +18,14 @@
     <string name="install_busybox_failed">К сожалению, установщику BusyBox не удалось записать апплеты BusyBox в папку вашего устройства\'s \'/system/xbin\'!</string>
     <string name="install_busybox_success">Установка BusyBox завершена! Хотите перезагрузить устройство?</string>
     <string name="installing">Установка BusyBox v%s</string>
+    <string name="language">Язык (%s)</string>
+    <string name="language_am">Амхарский</string>
+    <string name="language_el">Греческий</string>
+    <string name="language_en">Английский</string>
+    <string name="language_default">По умолчанию</string>
+    <string name="language_ko">Корейский</string>
+    <string name="language_pt">Португальский</string>
+    <string name="language_ru">Русский</string>
     <string name="light">Светлый</string>
     <string name="list_applets">Список апплетов</string>
     <string name="remove_busybox_completed">BusyBox v%s успешно удален с вашего устройства. Вы хотите перезагрузить компьютер?</string>

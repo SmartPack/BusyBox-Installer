@@ -66,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
         Utils.initializeAppTheme(this);
         Utils.initializeFaceBookAds(this);
         super.onCreate(savedInstanceState);
+        // Set App Language
+        Utils.setLanguage(this);
         setContentView(R.layout.activity_main);
         Utils.mInstallText = findViewById(R.id.install_text);
         Utils.refreshTitles();
@@ -98,6 +100,21 @@ public class MainActivity extends AppCompatActivity {
             }
             menu.add(Menu.NONE, 2, Menu.NONE, getString(R.string.dark_theme)).setCheckable(true)
                     .setChecked(Utils.getBoolean("dark_theme", true, this));
+            SubMenu language = menu.addSubMenu(Menu.NONE, 0, Menu.NONE, getString(R.string.language, Utils.getLanguage(this)));
+            language.add(Menu.NONE, 11, Menu.NONE, getString(R.string.language_default)).setCheckable(true)
+                    .setChecked(Utils.languageDefault(this));
+            language.add(Menu.NONE, 12, Menu.NONE, getString(R.string.language_en)).setCheckable(true)
+                    .setChecked(Utils.getBoolean("use_en", false, this));
+            language.add(Menu.NONE, 13, Menu.NONE, getString(R.string.language_ko)).setCheckable(true)
+                    .setChecked(Utils.getBoolean("use_ko", false, this));
+            language.add(Menu.NONE, 14, Menu.NONE, getString(R.string.language_am)).setCheckable(true)
+                    .setChecked(Utils.getBoolean("use_am", false, this));
+            language.add(Menu.NONE, 15, Menu.NONE, getString(R.string.language_el)).setCheckable(true)
+                    .setChecked(Utils.getBoolean("use_el", false, this));
+            language.add(Menu.NONE, 16, Menu.NONE, getString(R.string.language_pt)).setCheckable(true)
+                    .setChecked(Utils.getBoolean("use_pt", false, this));
+            language.add(Menu.NONE, 17, Menu.NONE, getString(R.string.language_ru)).setCheckable(true)
+                    .setChecked(Utils.getBoolean("use_ru", false, this));
             if (Utils.existFile("/system/xbin/busybox_" + Utils.version)) {
                 menu.add(Menu.NONE, 3, Menu.NONE, getString(R.string.list_applets));
                 menu.add(Menu.NONE, 4, Menu.NONE, getString(R.string.version));
@@ -170,6 +187,54 @@ public class MainActivity extends AppCompatActivity {
                         mForegroundActive = true;
                         mForegroundCard.setVisibility(View.VISIBLE);
                         break;
+                    case 11:
+                        if (!Utils.languageDefault(this)) {
+                            Utils.setDefaultLanguage(this);
+                            restartApp();
+                        }
+                        break;
+                    case 12:
+                        if (!Utils.getBoolean("use_en", false, this)) {
+                            Utils.setDefaultLanguage(this);
+                            Utils.saveBoolean("use_en", true, this);
+                            restartApp();
+                        }
+                        break;
+                    case 13:
+                        if (!Utils.getBoolean("use_ko", false, this)) {
+                            Utils.setDefaultLanguage(this);
+                            Utils.saveBoolean("use_ko", true, this);
+                            restartApp();
+                        }
+                        break;
+                    case 14:
+                        if (!Utils.getBoolean("use_am", false, this)) {
+                            Utils.setDefaultLanguage(this);
+                            Utils.saveBoolean("use_am", true, this);
+                            restartApp();
+                        }
+                        break;
+                    case 15:
+                        if (!Utils.getBoolean("use_el", false, this)) {
+                            Utils.setDefaultLanguage(this);
+                            Utils.saveBoolean("use_el", true, this);
+                            restartApp();
+                        }
+                        break;
+                    case 16:
+                        if (!Utils.getBoolean("use_pt", false, this)) {
+                            Utils.setDefaultLanguage(this);
+                            Utils.saveBoolean("use_pt", true, this);
+                            restartApp();
+                        }
+                        break;
+                    case 17:
+                        if (!Utils.getBoolean("use_ru", false, this)) {
+                            Utils.setDefaultLanguage(this);
+                            Utils.saveBoolean("use_ru", true, this);
+                            restartApp();
+                        }
+                        break;
                 }
                 return false;
             });
@@ -185,7 +250,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void installDialog(View view) {
+    private void installDialog(View view) {
         if (!RootUtils.rootAccess()) {
             Utils.snackbar(mInstall, getString(R.string.no_root_message));
             return;
@@ -232,8 +297,7 @@ public class MainActivity extends AppCompatActivity {
         install.show();
     }
 
-    public void removeBusyBox() {
-
+    private void removeBusyBox() {
             new AlertDialog.Builder(this)
                     .setMessage(getString(R.string.remove_busybox_message, Utils.version))
                     .setNegativeButton(R.string.cancel, (dialog, which) -> {
@@ -244,7 +308,7 @@ public class MainActivity extends AppCompatActivity {
                     .show();
     }
 
-    public void donateToMe() {
+    private void donateToMe() {
         new AlertDialog.Builder(this)
                 .setIcon(R.mipmap.ic_launcher)
                 .setTitle(getString(R.string.support_developer))
@@ -257,7 +321,7 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 
-    public void switchTheme() {
+    private void switchTheme() {
         if (Utils.getBoolean("dark_theme", true, this)) {
             Utils.saveBoolean("dark_theme", false, this);
             Utils.snackbar(mInstall, getString(R.string.switch_theme, getString(R.string.light)));
@@ -266,12 +330,16 @@ public class MainActivity extends AppCompatActivity {
             Utils.saveBoolean("dark_theme", true, this);
         }
         Utils.sleep(1);
+        restartApp();
+    }
+
+    private void restartApp() {
         Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 
-    public void shareApp() {
+    private void shareApp() {
         Intent shareapp = new Intent();
         shareapp.setAction(Intent.ACTION_SEND);
         shareapp.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name));
@@ -282,7 +350,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @SuppressLint("SetTextI18n")
-    public void aboutDialog() {
+    private void aboutDialog() {
         mCardTitle.setText(R.string.about);
         mAppName.setText(getString(R.string.app_name) + " v" + BuildConfig.VERSION_NAME);
         mCredits.setText(getString(R.string.credits_summary));
@@ -298,7 +366,7 @@ public class MainActivity extends AppCompatActivity {
         mForegroundCard.setVisibility(View.VISIBLE);
     }
 
-    public void closeForeground() {
+    private void closeForeground() {
         mCardTitle.setVisibility(View.GONE);
         mBack.setVisibility(View.GONE);
         mAppIcon.setVisibility(View.GONE);

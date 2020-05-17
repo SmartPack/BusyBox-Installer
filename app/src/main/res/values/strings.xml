@@ -22,6 +22,14 @@
     <string name="install_busybox_failed">Unfortunately, BusyBox installer is failed to write BusyBox applets on your device\'s \'/system/xbin\' folder!</string>
     <string name="install_busybox_success">BusyBox installation Finished! Do you want to reboot your device?</string>
     <string name="installing">Installing BusyBox v%s</string>
+    <string name="language">Language (%s)</string>
+    <string name="language_am">Amharic</string>
+    <string name="language_el">Greek</string>
+    <string name="language_en">English</string>
+    <string name="language_default">Default</string>
+    <string name="language_ko">Korean</string>
+    <string name="language_pt">Portuguese</string>
+    <string name="language_ru">Russian</string>
     <string name="light">Light</string>
     <string name="list_applets">Applets List</string>
     <string name="list_applets_summary">The following applets are included in this package!\n\n - %s</string>

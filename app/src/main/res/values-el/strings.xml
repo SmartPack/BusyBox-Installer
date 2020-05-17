@@ -20,6 +20,13 @@
     <string name="install_busybox_failed">Δυστυχώς, το BusyBox installer απέτυχε να εγγράψει τα BusyBox applets στη συσκευή σας\'s \'/system/xbin\' φάκελος!</string>
     <string name="install_busybox_success">Η εγκατάσταση του BusyBox ολοκληρώθηκε! Επιθυμείτε να επανεκκίνησετε τη συσκευή σας;</string>
     <string name="installing">Εγκατάσταση BusyBox v%s</string>
+    <string name="language">Γλώσσα (%s)</string>
+    <string name="language_am">Amharic</string>
+    <string name="language_el">Ελληνικά</string>
+    <string name="language_en">Αγγλικά</string>
+    <string name="language_default">Προεπιλογή</string>
+    <string name="language_ko">Κορεατικά</string>
+    <string name="language_pt">Πορτογαλικά</string>
     <string name="light">Φωτεινό</string>
     <string name="list_applets">Λίστα Applets</string>
     <string name="list_applets_summary">Τα ακόλουθα applets συμπεριλαμβάνονται σε αυτό το πακέτο!\n\n - %s</string>

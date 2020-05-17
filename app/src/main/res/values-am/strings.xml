@@ -17,6 +17,11 @@
     <string name="install_busybox_failed">እንደ አለመታደል ሆኖ የ ቢዚቦክስ ጫኝ በመሣሪያዎ ‹s \'/system/xbin\' አቃፊ ላይ የ ቢዚቦክስ አፕልትን ለመፃፍ አልተሳካም!</string>
     <string name="install_busybox_success">ቢዚቦክስ ጭነት ተጠናቅቋል! መሣሪያዎን ድጋሚ ማስነሳት ይፈልጋሉ?</string>
     <string name="installing">ቢዚቦክስ v%s ን በመጫን ላይ</string>
+    <string name="language">ቋንቋ (%s)</string>
+    <string name="language_am">አማርኛ</string>
+    <string name="language_en">እንግሊዘኛ</string>
+    <string name="language_default">ነባር</string>
+    <string name="language_ko">ኮርያኛ</string>
     <string name="light">ብርሃን</string>
     <string name="list_applets">የአፕሌቶች ዝርዝር</string>
     <string name="list_applets_summary">የሚከተሉት አፕልቶች በዚህ ጥቅል ውስጥ ተካተዋል!\n\n - %s</string>
