@@ -17,8 +17,8 @@ android {
         applicationId "com.smartpack.busyboxinstaller"
         minSdkVersion 23
         targetSdkVersion 29
-        versionCode 6
-        versionName "1.5"
+        versionCode 7
+        versionName "1.6"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         archivesBaseName = "$applicationId-v$versionName"
         testFunctionalTest = false
