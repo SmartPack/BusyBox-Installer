@@ -74,6 +74,9 @@ public class MainActivity extends AppCompatActivity {
 
         mInstall = findViewById(R.id.install);
         mInstall.setVisibility(View.VISIBLE);
+        mInstall.setOnClickListener(v -> {
+            installDialog();
+        });
         AppCompatImageButton settings = findViewById(R.id.settings_menu);
         mForegroundCard = findViewById(R.id.foreground_card);
         mBack = findViewById(R.id.back);
@@ -178,12 +181,15 @@ public class MainActivity extends AppCompatActivity {
                                     this, "changelogs.json"))).getString("releaseNotes");
                         } catch (JSONException ignored) {
                         }
+                        mCardTitle.setText(R.string.change_log);
                         mAppName.setText(getString(R.string.app_name) + " v" + BuildConfig.VERSION_NAME);
                         mForegroundText.setText(change_log);
                         mAppIcon.setVisibility(View.VISIBLE);
                         mAppName.setVisibility(View.VISIBLE);
-                        mForegroundText.setVisibility(View.VISIBLE);
+                        mBack.setVisibility(View.VISIBLE);
                         mCancel.setVisibility(View.VISIBLE);
+                        mCardTitle.setVisibility(View.VISIBLE);
+                        mForegroundText.setVisibility(View.VISIBLE);
                         mForegroundActive = true;
                         mForegroundCard.setVisibility(View.VISIBLE);
                         break;
@@ -250,7 +256,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void installDialog(View view) {
+    private void installDialog() {
         if (!RootUtils.rootAccess()) {
             Utils.snackbar(mInstall, getString(R.string.no_root_message));
             return;
