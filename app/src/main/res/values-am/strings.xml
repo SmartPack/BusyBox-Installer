@@ -2,8 +2,9 @@
     <!--Author: Mikesew1320 <mikesew1320@gmail.com>-->
 
     <string name="about">ስለ እኛ</string>
-    <string name="about_summary">ቢዚቦክስ ጫኝ ለተለያዩ የ አንድሮይድ ሥነ ሕንፃዎች (አርምቪ7 / አርም64 እና x86) የ “ቢዚቦክስ” መጫኛ የአንድ ጊዜ ጠቅታ ነው።\n\n&#169;<b>sunilpaulmathew</b>\n\n<b><i> https://busybox.net/</i></b> - <i>ቢዚቦክስ ባይነሪዎች</i>\n<b><i>Grarak</i></b> - <i>መነሻ ኮድ</i>\n<b><i>SmgKhOaRn</i></b> - <i>የኮሪያኛ ትርጉም</i>\n<b><i>sajid_islam</i></b> - <i>የመተግበሪያ አዶ</i></string>
+    <string name="about_summary">ቢዚቦክስ ጫኝ ለተለያዩ የ አንድሮይድ ሥነ ሕንፃዎች (አርምቪ7 / አርም64 እና x86) የ “ቢዚቦክስ” መጫኛ የአንድ ጊዜ ጠቅታ ነው።</string>
     <string name="cancel">ይቅር</string>
+    <string name="credits_summary"><b><i> https://busybox.net/</i></b> - <i>ቢዚቦክስ ባይነሪዎች</i>\n<b><i>Grarak</i></b> - <i>መነሻ ኮድ</i>\n<b><i>SmgKhOaRn</i></b> - <i>የኮሪያኛ ትርጉም</i>\n<b><i>sajid_islam</i></b> - <i>የመተግበሪያ አዶ</i></string>
     <string name="dark">ጨለማ</string>
     <string name="dark_theme">ጠቆር ያለ ገፅታ</string>
     <string name="donations">ልገሳ</string>

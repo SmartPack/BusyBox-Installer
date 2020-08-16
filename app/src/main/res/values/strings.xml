@@ -2,7 +2,7 @@
     <string name="app_name" translatable="false">BusyBox Installer</string>
 
     <string name="about">About</string>
-    <string name="about_summary">BusyBox Installer is a one-click BusyBox installation utility for various android architectures (ARM/ARM64 and x86).\n\n&#169;<b>sunilpaulmathew</b></string>
+    <string name="about_summary">BusyBox Installer is a one-click BusyBox installation utility for various android architectures (ARM/ARM64 and x86).</string>
     <string name="busybox_version">BusyBox Version</string>
     <string name="cancel">Cancel</string>
     <string name="change_log">Change-logs</string>
@@ -10,6 +10,7 @@
     <string name="credits_summary"><b><i>https://busybox.net/</i></b> - <i>BusyBox Binaries</i>\n<b><i>Grarak</i></b> - <i>Code contributions</i>\n<b><i>topjohnwu</i></b> - <i>libsu</i>\n<b><i>Lennoard</i></b> - <i>Code contributions/pt-Br Translations</i>\n<b><i>SmgKhOaRn</i></b> - <i>Korean Translations</i>\n<b><i>Mikesew1320</i></b> - <i>Amharic &amp; Russian Translations</i>\n<b><i>tsiflimagas</i></b> - <i>Greek translations</i>\n<b><i>sajid_islam</i></b> - <i>App Icon</i></string>
     <string name="dark">Dark</string>
     <string name="dark_theme">Dark Theme</string>
+    <string name="developed_by">Developed By</string>
     <string name="donations">Donations</string>
     <string name="donation_app">Buy Donation App</string>
     <string name="hide">Hide</string>

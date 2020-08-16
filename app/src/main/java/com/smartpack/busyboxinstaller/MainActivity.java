@@ -49,10 +49,12 @@ public class MainActivity extends AppCompatActivity {
     private AppCompatTextView mCardTitle;
     private AppCompatTextView mAppName;
     private AppCompatTextView mAboutApp;
+    private AppCompatTextView mDevelopedBy;
     private AppCompatTextView mCreditsTitle;
     private AppCompatTextView mCredits;
     private AppCompatTextView mForegroundText;
     private AppCompatTextView mCancel;
+    private AppCompatImageView mDeveloper;
     private boolean mExit;
     private boolean mForegroundActive = false;
     private CardView mForegroundCard;
@@ -84,9 +86,14 @@ public class MainActivity extends AppCompatActivity {
         mCardTitle = findViewById(R.id.card_title);
         mAppName = findViewById(R.id.app_title);
         mAboutApp = findViewById(R.id.about_app);
+        mDevelopedBy = findViewById(R.id.developed_by);
+        mDeveloper = findViewById(R.id.developer);
         mCreditsTitle = findViewById(R.id.credits_title);
         mCredits = findViewById(R.id.credits);
         mForegroundText = findViewById(R.id.foreground_text);
+        mDeveloper.setOnClickListener(v -> {
+            Utils.launchUrl("https://github.com/sunilpaulmathew", this);
+        });
         mCancel = findViewById(R.id.cancel_button);
         mBack.setOnClickListener(v -> {
             closeForeground();
@@ -365,6 +372,8 @@ public class MainActivity extends AppCompatActivity {
         mAppIcon.setVisibility(View.VISIBLE);
         mAppName.setVisibility(View.VISIBLE);
         mAboutApp.setVisibility(View.VISIBLE);
+        mDevelopedBy.setVisibility(View.VISIBLE);
+        mDeveloper.setVisibility(View.VISIBLE);
         mCreditsTitle.setVisibility(View.VISIBLE);
         mCredits.setVisibility(View.VISIBLE);
         mCancel.setVisibility(View.VISIBLE);
@@ -378,6 +387,8 @@ public class MainActivity extends AppCompatActivity {
         mAppIcon.setVisibility(View.GONE);
         mAppName.setVisibility(View.GONE);
         mAboutApp.setVisibility(View.GONE);
+        mDevelopedBy.setVisibility(View.GONE);
+        mDeveloper.setVisibility(View.GONE);
         mCreditsTitle.setVisibility(View.GONE);
         mCredits.setVisibility(View.GONE);
         mForegroundText.setVisibility(View.GONE);
