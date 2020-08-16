@@ -1,33 +1,36 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <!--Author: SmgKhOaRn <smgkhoarn@protonmail.com>-->
+    <!--Author: FiestaLake <FiestaLake@protonmail.com>-->
 
     <string name="about">정보</string>
-    <string name="about_summary">다양한 안드로이드 아키텍처 (ARM/ARM64/x86) 를 위한 원클릭 비지박스 설치기.\n\n&#169;<b>sunilpaulmathew</b></string>
+    <string name="about_summary">다양한 안드로이드 아키텍처, ARM/ARM64/i386을(를) 위한 원클릭 BusyBox 설치기.</string>
+    <string name="busybox_version">BusyBox 버전</string>
     <string name="cancel">취소</string>
+    <string name="change_log">변경사항</string>
     <string name="credits">도움을 주신 분들</string>
-    <string name="credits_summary"><b><i>https://busybox.net/</i></b> - 비지박스 바이너리\n<b><i>Grarak</i></b> - 코드 기여\n<b><i>topjohnwu</i></b> - libsu 라이브러리\n<b><i>Lennoard</i></b> - 코드 기여/포르투갈어(브라질) 번역\n<b><i>SmgKhOaRn</i></b> - 한국어 번역\n<b><i>Mikesew1320</i></b> - 에티오피아어/러시아어 번역\n<b><i>tsiflimagas</i></b> - 그리스어 번역\n<b><i>sajid_islam</i></b> - 앱 아이콘</string>
-    <string name="dark">어두운</string>
-    <string name="dark_theme">어두운 테마</string>
-    <string name="donations">기부</string>
+    <string name="credits_summary"><b><i>https://busybox.net/</i></b> - BusyBox 바이너리\n<b><i>Grarak</i></b> - 코드 기여\n<b><i>topjohnwu</i></b> - libsu\n<b><i>Lennoard</i></b> - 코드 기여 &amp; 브라질 포르투갈어 번역\n<b><i>SmgKhOaRn</i></b> - 한국어 번역\n<b><i>Mikesew1320</i></b> - 에티오피아어 &amp; 러시아어 번역\n<b><i>tsiflimagas</i></b> - <i>그리스어 번역</i>\n<b><i>sajid_islam</i></b> - 앱 아이콘</string>
+    <string name="dark">어두운 테마</string>
+    <string name="dark_theme">테마</string>
+    <string name="donations">후원</string>
+    <string name="donation_app">후원 앱 구매</string>
     <string name="hide">숨기기</string>
     <string name="install">설치</string>
-    <string name="install_busybox">비지박스 설치</string>
-    <string name="install_busybox_latest">축하합니다! 이미 이 앱에서 설치 가능한 최신 버전의 비지박스 (v%s) 가 기기에 설치되었습니다!</string>
-    <string name="install_busybox_message">비지박스 (v%s) 를 설치합니다. 계속하시겠어요?</string>
-    <string name="install_busybox_unavailable">유감스럽게도, 이 앱은 이 기기의 아키텍처 (%s) 를 위한 비지박스 바이너리를 지원하지 않습니다!</string>
-    <string name="install_busybox_update">최신 버전의 비지박스 (v%s) 로 업데이트가 가능합니다! 지금 설치하시겠어요?</string>
-    <string name="install_busybox_failed">유감스럽게도, Busybox Installer가 이 기기의 \'/system/xbin\' 폴더에 비지박스를 설치하는데 실패했습니다!</string>
-    <string name="install_busybox_success">비지박스 설치를 완료했습니다! 기기를 다시 시작하시겠어요?</string>
-    <string name="installing">비지박스 (v%s) 를 설치하는 중</string>
+    <string name="install_busybox">BusyBox 설치!</string>
+    <string name="install_busybox_latest">축하합니다! 이 앱에서 설치 가능한 최신 버전의 BusyBox (v%s) 가 이미 기기에 설치되어 있습니다!</string>
+    <string name="install_busybox_message">BusyBox (v%s) 을(를) 설치하시겠어요?</string>
+    <string name="install_busybox_unavailable">유감스럽게도, 이 앱은 이 기기의 아키텍처, %s의 BusyBox 바이너리를 지원하지 않습니다!</string>
+    <string name="install_busybox_update">최신 버전의 BusyBox (v%s) 로 업데이트가 가능합니다! 지금 설치하시겠어요?</string>
+    <string name="install_busybox_failed">유감스럽게도, Busybox Installer가 이 기기의 \'/system/xbin\' 폴더에 BusyBox를 설치하는데 실패했습니다!</string>
+    <string name="install_busybox_success">BusyBox 설치를 완료했습니다! 기기를 다시 시작하시겠어요?</string>
+    <string name="installing">BusyBox (v%s) 을(를) 설치하는 중…</string>
     <string name="language">언어 (%s)</string>
+    <string name="language_am">에티오피아어</string>
+    <string name="language_el">그리스어</string>
     <string name="language_en">영어</string>
     <string name="language_default">시스템 언어</string>
     <string name="language_ko">한국어</string>
-    <string name="language_am">에티오피아어</string>
-    <string name="language_el">그리스어</string>
     <string name="language_pt">브라질 포어</string>
     <string name="language_ru">러시아어</string>
-    <string name="light">밝은</string>
+    <string name="light">밝은 테마</string>
     <string name="list_applets">애플릿 종류</string>
     <string name="list_applets_summary">다음과 같은 애플릿들이 이 패키지에 포함되어 있습니다!\n\n - %s</string>
     <string name="no_permission_message">이 기능은 저장공간 쓰기 권한 없이 작동하지 않습니다!</string>
@@ -35,18 +38,21 @@
     <string name="press_back">나가려면 뒤로가기 버튼을 다시 누르세요</string>
     <string name="reboot">다시 시작</string>
     <string name="remove">제거</string>
-    <string name="remove_busybox_completed">비지박스 (v%s) 제거를 완료했습니다! 기기를 다시 시작하시겠어요?</string>
-    <string name="remove_busybox_message">\'/system/xbin\'에서 비지박스 (v%s) 를 제거하시겠어요?\n\n알아두기: 기기에서 이 앱을 사용하여 설치한 비지박스 바이너리만 지울 것입니다!</string>
-    <string name="removing_busybox">비지박스 (v%s) 를 제거하는 중</string>
+    <string name="remove_busybox_completed">BusyBox (v%s) 제거를 완료했습니다! 기기를 다시 시작하시겠어요?</string>
+    <string name="remove_busybox_message">\'/system/xbin\'에서 BusyBox (v%s) 를 제거하시겠어요?\n\n알아두기: 기기에서 이 앱을 사용하여 설치한 BusyBox 바이너리만 지울 것입니다!</string>
+    <string name="removing_busybox">BusyBox (v%s) 를 제거하는 중…</string>
     <string name="save_log">로그 저장</string>
     <string name="save_log_summary">설치 로그 파일이 \'%s\'에 저장되었습니다!</string>
     <string name="share">공유</string>
-    <string name="share_app">Busybox Installer %s은(는) 아래에서 다운받을 수 있습니다.\n깃허브: https://github.com/SmartPack/BusyBox-Installer/releases</string>
+    <string name="share_app">Busybox Installer %s은(는) 아래에서 다운받을 수 있습니다.\n플레이 스토어 (Play Store):https://play.google.com/store/apps/details?id=com.smartpack.busyboxinstaller\n깃허브 (GitHub): https://github.com/SmartPack/BusyBox-Installer/releases</string>
     <string name="source_code">소스 코드</string>
+    <string name="support_developer">개발자 후원하기</string>
+    <string name="support_developer_message">제 프로젝트를 후원하고 싶다면, 플레이 스토어 (Play Store)에 있는 SmartPack Donation Package 앱을 구매하는 것을 고려해보세요. 제 프로젝트들을 더 활발히 이어나갈 때 매우 큰 도움이 됩니다. 물론 필수는 아닙니다.</string>
     <string name="support_group">지원 받기</string>
-    <string name="switch_theme">%s 테마를 적용하는 중!</string>
+    <string name="switch_theme">%s를 적용하는 중…</string>
     <string name="update">업데이트</string>
-    <string name="update_busybox">비지박스 업데이트 가능!</string>
-    <string name="updated_message">최신 버전의 비지박스 사용 중!</string>
+    <string name="update_busybox">BusyBox 업데이트 가능!</string>
+    <string name="updated_message">최신 버전의 BusyBox 사용 중!</string>
     <string name="upsupported">지원되지 않는 아키택처!</string>
+    <string name="version">버전</string>
 </resources>
