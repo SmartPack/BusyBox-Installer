@@ -7,7 +7,6 @@
     <string name="cancel">Ακύρωση</string>
     <string name="credits">Ευχαριστίες</string>
     <string name="credits_summary"><b><i>https://busybox.net/</i></b> - <i>BusyBox Binaries</i>\n<b><i>Grarak</i></b> - <i>Συνεισφορές Κώδικα</i>\n<b><i>Lennoard</i></b> - <i>Συνεργάτες Κώδικα/pt-Br Μετάφραση</i>\n<b><i>SmgKhOaRn</i></b> - <i>Κορεατική Μετάφραση</i>\n<b><i>Mikesew1320</i></b> - <i>Amharic &amp; Ρωσική Μετάφραση</i>\n<b><i>tsiflimagas</i></b> - <i>Ελληνική μετάφραση</i>\n<b><i>sajid_islam</i></b> - <i>Εικονίδιο Εφαρμογής</i></string>
-    <string name="dark">Σκούρο</string>
     <string name="dark_theme">Σκούρο Θέμα</string>
     <string name="donations">Δωρεές</string>
     <string name="hide">Απόκρυψη</string>
@@ -27,7 +26,6 @@
     <string name="language_default">Προεπιλογή</string>
     <string name="language_ko">Κορεατικά</string>
     <string name="language_pt">Πορτογαλικά</string>
-    <string name="light">Φωτεινό</string>
     <string name="list_applets">Λίστα Applets</string>
     <string name="list_applets_summary">Τα ακόλουθα applets συμπεριλαμβάνονται σε αυτό το πακέτο!\n\n - %s</string>
     <string name="no_permission_message">Η εγκατάσταση BusyBox δε θα λειτουργήσει χωρίς Πρόσβαση στον Αποθηκευτικό Χώρο! Διακοπή</string>
@@ -42,7 +40,6 @@
     <string name="share_app">Αποκτήστε το BusyBox Installer %s από https://play.google.com/store/apps/details?id=com.smartpack.busyboxinstaller</string>
     <string name="source_code">Πηγαίος Κώδικας</string>
     <string name="support_group">Ομάδα Υποστήριξης</string>
-    <string name="switch_theme">Μετάβαση σε %s Θέμα!</string>
     <string name="update">Ενημέρωση</string>
     <string name="update_busybox">Ενημέρωση για το BusyBox διαθέσιμη!</string>
     <string name="updated_message">Συγχαρητήρια! Είσαστε ενημερωμένος!</string>

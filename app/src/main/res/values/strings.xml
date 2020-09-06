@@ -8,8 +8,10 @@
     <string name="change_log">Change-logs</string>
     <string name="credits">Credits</string>
     <string name="credits_summary"><b><i>https://busybox.net/</i></b> - <i>BusyBox Binaries</i>\n<b><i>Grarak</i></b> - <i>Code contributions</i>\n<b><i>topjohnwu</i></b> - <i>libsu</i>\n<b><i>Lennoard</i></b> - <i>Code contributions/pt-Br Translations</i>\n<b><i>SmgKhOaRn</i></b> - <i>Korean Translations</i>\n<b><i>Mikesew1320</i></b> - <i>Amharic &amp; Russian Translations</i>\n<b><i>tsiflimagas</i></b> - <i>Greek translations</i>\n<b><i>sajid_islam</i></b> - <i>App Icon</i></string>
-    <string name="dark">Dark</string>
     <string name="dark_theme">Dark Theme</string>
+    <string name="dark_theme_auto">Auto</string>
+    <string name="dark_theme_disable">Disable</string>
+    <string name="dark_theme_enable">Enable</string>
     <string name="developed_by">Developed By</string>
     <string name="donations">Donations</string>
     <string name="donation_app">Buy Donation App</string>
@@ -31,7 +33,6 @@
     <string name="language_ko">Korean</string>
     <string name="language_pt">Portuguese</string>
     <string name="language_ru">Russian</string>
-    <string name="light">Light</string>
     <string name="list_applets">Applets List</string>
     <string name="list_applets_summary">The following applets are included in this package!\n\n - %s</string>
     <string name="no_permission_message">BusyBox installation won\'t work without Storage Write Access! Aborting</string>
@@ -50,7 +51,6 @@
     <string name="support_developer">Support Developer!</string>
     <string name="support_developer_message">If you like to appreciate my work, please consider buying SmartPack Donation Package from PlayStore as it is really helpful to continue my projects more active, although it is not at all necessary.</string>
     <string name="support_group">Support Group</string>
-    <string name="switch_theme">Switching to %s Theme!</string>
     <string name="update">Update</string>
     <string name="update_busybox">BusyBox Update Available!</string>
     <string name="updated_message">Congrats! You\'re Up-to-date!</string>

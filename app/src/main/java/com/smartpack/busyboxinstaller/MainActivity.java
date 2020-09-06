@@ -109,8 +109,13 @@ public class MainActivity extends AppCompatActivity {
             if (Utils.existFile("/system/xbin/bb_version")) {
                 menu.add(Menu.NONE, 1, Menu.NONE, getString(R.string.remove));
             }
-            menu.add(Menu.NONE, 2, Menu.NONE, getString(R.string.dark_theme)).setCheckable(true)
-                    .setChecked(Utils.getBoolean("dark_theme", true, this));
+            SubMenu appTheme = menu.addSubMenu(Menu.NONE, 0, Menu.NONE, getString(R.string.dark_theme));
+            appTheme.add(Menu.NONE, 18, Menu.NONE, getString(R.string.dark_theme_auto)).setCheckable(true)
+                    .setChecked(Utils.getBoolean("theme_auto", true, this));
+            appTheme.add(Menu.NONE, 2, Menu.NONE, getString(R.string.dark_theme_enable)).setCheckable(true)
+                    .setChecked(Utils.getBoolean("dark_theme", false, this));
+            appTheme.add(Menu.NONE, 19, Menu.NONE, getString(R.string.dark_theme_disable)).setCheckable(true)
+                    .setChecked(Utils.getBoolean("light_theme", false, this));
             SubMenu language = menu.addSubMenu(Menu.NONE, 0, Menu.NONE, getString(R.string.language, Utils.getLanguage(this)));
             language.add(Menu.NONE, 11, Menu.NONE, getString(R.string.language_default)).setCheckable(true)
                     .setChecked(Utils.languageDefault(this));
@@ -147,7 +152,12 @@ public class MainActivity extends AppCompatActivity {
                         removeBusyBox();
                         break;
                     case 2:
-                        switchTheme();
+                        if (!Utils.getBoolean("dark_theme", false, this)) {
+                            Utils.saveBoolean("dark_theme", true, this);
+                            Utils.saveBoolean("light_theme", false, this);
+                            Utils.saveBoolean("theme_auto", false, this);
+                            restartApp();
+                        }
                         break;
                     case 3:
                         new AlertDialog.Builder(this)
@@ -249,6 +259,22 @@ public class MainActivity extends AppCompatActivity {
                             restartApp();
                         }
                         break;
+                    case 18:
+                        if (!Utils.getBoolean("theme_auto", true, this)) {
+                            Utils.saveBoolean("dark_theme", false, this);
+                            Utils.saveBoolean("light_theme", false, this);
+                            Utils.saveBoolean("theme_auto", true, this);
+                            restartApp();
+                        }
+                        break;
+                    case 19:
+                        if (!Utils.getBoolean("light_theme", false, this)) {
+                            Utils.saveBoolean("dark_theme", false, this);
+                            Utils.saveBoolean("light_theme", true, this);
+                            Utils.saveBoolean("theme_auto", false, this);
+                            restartApp();
+                        }
+                        break;
                 }
                 return false;
             });
@@ -340,18 +366,6 @@ public class MainActivity extends AppCompatActivity {
                     Utils.launchUrl("https://play.google.com/store/apps/details?id=com.smartpack.donate", this);
                 })
                 .show();
-    }
-
-    private void switchTheme() {
-        if (Utils.getBoolean("dark_theme", true, this)) {
-            Utils.saveBoolean("dark_theme", false, this);
-            Utils.snackbar(mInstall, getString(R.string.switch_theme, getString(R.string.light)));
-        } else {
-            Utils.snackbar(mInstall, getString(R.string.switch_theme, getString(R.string.dark)));
-            Utils.saveBoolean("dark_theme", true, this);
-        }
-        Utils.sleep(1);
-        restartApp();
     }
 
     private void restartApp() {

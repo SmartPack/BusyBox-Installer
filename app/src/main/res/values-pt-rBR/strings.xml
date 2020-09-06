@@ -5,7 +5,6 @@
     <string name="cancel">Cancelar</string>
     <string name="credits">Créditos</string>
     <string name="credits_summary"><b><i>https://busybox.net/</i></b> - <i>Binários BusyBox</i>\n<b><i>Grarak</i></b> - Um monte de código\n<b><i>SmgKhOaRn</i></b> - <i>Tradução para Coreano</i>\n<b><i>sajid_islam</i></b> - <i>Ícone do App</i></string>
-    <string name="dark">Escuro</string>
     <string name="dark_theme">Tema escuro</string>
     <string name="donations">Doações</string>
     <string name="hide">Esconder</string>
@@ -24,7 +23,6 @@
     <string name="language_en">Inglês</string>
     <string name="language_default">Padrão</string>
     <string name="language_ko">Coreano</string>
-    <string name="light">Claro</string>
     <string name="no_permission_message">A instalação do BusyBox não funcionará sem o acesso à gravação no armazenamento! Abortando</string>
     <string name="no_root_message">A instalação do BusyBox não funcionará sem o Acesso Root! Abortando</string>
     <string name="press_back">Pressione voltar novamente para sair!</string>
@@ -34,7 +32,6 @@
     <string name="share_app">Obtenha o Instalador do BusyBox %s no https://play.google.com/store/apps/details?id=com.smartpack.busyboxinstaller</string>
     <string name="source_code">Código-fonte</string>
     <string name="support_group">Grupo de suporte</string>
-    <string name="switch_theme">Mudando para o Tema %s!</string>
     <string name="update">Atualizar</string>
     <string name="update_busybox">Atualização do BusyBox disponível!</string>
     <string name="updated_message">Parabéns! Você está atualizado!</string>

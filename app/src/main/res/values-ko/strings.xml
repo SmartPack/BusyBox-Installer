@@ -8,7 +8,6 @@
     <string name="change_log">변경사항</string>
     <string name="credits">도움을 주신 분들</string>
     <string name="credits_summary"><b><i>https://busybox.net/</i></b> - BusyBox 바이너리\n<b><i>Grarak</i></b> - 코드 기여\n<b><i>topjohnwu</i></b> - libsu\n<b><i>Lennoard</i></b> - 코드 기여 &amp; 브라질 포르투갈어 번역\n<b><i>SmgKhOaRn</i></b> - 한국어 번역\n<b><i>Mikesew1320</i></b> - 에티오피아어 &amp; 러시아어 번역\n<b><i>tsiflimagas</i></b> - <i>그리스어 번역</i>\n<b><i>sajid_islam</i></b> - 앱 아이콘</string>
-    <string name="dark">어두운 테마</string>
     <string name="dark_theme">테마</string>
     <string name="donations">후원</string>
     <string name="donation_app">후원 앱 구매</string>
@@ -30,7 +29,6 @@
     <string name="language_ko">한국어</string>
     <string name="language_pt">브라질 포어</string>
     <string name="language_ru">러시아어</string>
-    <string name="light">밝은 테마</string>
     <string name="list_applets">애플릿 종류</string>
     <string name="list_applets_summary">다음과 같은 애플릿들이 이 패키지에 포함되어 있습니다!\n\n - %s</string>
     <string name="no_permission_message">이 기능은 저장공간 쓰기 권한 없이 작동하지 않습니다!</string>
@@ -49,7 +47,6 @@
     <string name="support_developer">개발자 후원하기</string>
     <string name="support_developer_message">제 프로젝트를 후원하고 싶다면, 플레이 스토어 (Play Store)에 있는 SmartPack Donation Package 앱을 구매하는 것을 고려해보세요. 제 프로젝트들을 더 활발히 이어나갈 때 매우 큰 도움이 됩니다. 물론 필수는 아닙니다.</string>
     <string name="support_group">지원 받기</string>
-    <string name="switch_theme">%s를 적용하는 중…</string>
     <string name="update">업데이트</string>
     <string name="update_busybox">BusyBox 업데이트 가능!</string>
     <string name="updated_message">최신 버전의 BusyBox 사용 중!</string>

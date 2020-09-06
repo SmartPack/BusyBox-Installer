@@ -5,7 +5,6 @@
     <string name="about_summary">ቢዚቦክስ ጫኝ ለተለያዩ የ አንድሮይድ ሥነ ሕንፃዎች (አርምቪ7 / አርም64 እና x86) የ “ቢዚቦክስ” መጫኛ የአንድ ጊዜ ጠቅታ ነው።</string>
     <string name="cancel">ይቅር</string>
     <string name="credits_summary"><b><i> https://busybox.net/</i></b> - <i>ቢዚቦክስ ባይነሪዎች</i>\n<b><i>Grarak</i></b> - <i>መነሻ ኮድ</i>\n<b><i>SmgKhOaRn</i></b> - <i>የኮሪያኛ ትርጉም</i>\n<b><i>sajid_islam</i></b> - <i>የመተግበሪያ አዶ</i></string>
-    <string name="dark">ጨለማ</string>
     <string name="dark_theme">ጠቆር ያለ ገፅታ</string>
     <string name="donations">ልገሳ</string>
     <string name="hide">ደብቅ</string>
@@ -23,7 +22,6 @@
     <string name="language_en">እንግሊዘኛ</string>
     <string name="language_default">ነባር</string>
     <string name="language_ko">ኮርያኛ</string>
-    <string name="light">ብርሃን</string>
     <string name="list_applets">የአፕሌቶች ዝርዝር</string>
     <string name="list_applets_summary">የሚከተሉት አፕልቶች በዚህ ጥቅል ውስጥ ተካተዋል!\n\n - %s</string>
     <string name="no_permission_message">ቢዚቦክስ ጭነት ያለ ማከማቻ ይፃፋል ተደራሽነት የለውም! ውርጃ</string>
@@ -38,7 +36,6 @@
     <string name="share_app">ቢዚቦክስ ጫኝ%s ን ከ ያግኙ https://play.google.com/store/apps/details?id=com.smartpack.busyboxinstaller</string>
     <string name="source_code">ምንጭ ኮድ</string>
     <string name="support_group">የድጋፍ ቡድን</string>
-    <string name="switch_theme">ወደ%s ጭብጥ በመቀየር ላይ!</string>
     <string name="update">አዘምን</string>
     <string name="update_busybox">ቢዚቦክስ ማዘመኛ አለ!</string>
     <string name="updated_message">እንኳን ደስ አለዎት! እርስዎ ወቅታዊ ናቸው!</string>
