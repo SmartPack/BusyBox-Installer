@@ -27,8 +27,9 @@ import androidx.appcompat.widget.PopupMenu;
 import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 
-import com.facebook.ads.AdSize;
-import com.facebook.ads.AdView;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.smartpack.busyboxinstaller.utils.RootUtils;
 import com.smartpack.busyboxinstaller.utils.Utils;
 
@@ -64,9 +65,9 @@ public class MainActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // Initialize App Theme & FaceBook Ads
+        // Initialize App Theme & Google Ads
         Utils.initializeAppTheme(this);
-        Utils.initializeFaceBookAds(this);
+        Utils.initializeGoogleAds(this);
         super.onCreate(savedInstanceState);
         // Set App Language
         Utils.setLanguage(this);
@@ -256,10 +257,17 @@ public class MainActivity extends AppCompatActivity {
 
         // Initialize Banner Ads
         if (Utils.isNotDonated(this)) {
-            AdView mAdView = new AdView(this, "660748211413849_660748534747150", AdSize.BANNER_HEIGHT_50);
-            LinearLayout adContainer = findViewById(R.id.banner_container);
-            adContainer.addView(mAdView);
-            mAdView.loadAd();
+            LinearLayout mAdLayout = findViewById(R.id.adLayout);
+            AdView mAdView = findViewById(R.id.adView);
+            mAdView.setAdListener(new AdListener() {
+                @Override
+                public void onAdLoaded() {
+                    mAdLayout.setVisibility(View.VISIBLE);
+                }
+            });
+            AdRequest adRequest = new AdRequest.Builder()
+                    .build();
+            mAdView.loadAd(adRequest);
         }
     }
 

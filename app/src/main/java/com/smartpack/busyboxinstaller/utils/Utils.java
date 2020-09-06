@@ -21,7 +21,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.AppCompatTextView;
 
-import com.facebook.ads.AudienceNetworkAds;
+import com.google.android.gms.ads.MobileAds;
 import com.google.android.material.snackbar.Snackbar;
 import com.smartpack.busyboxinstaller.BuildConfig;
 import com.smartpack.busyboxinstaller.R;
@@ -72,8 +72,8 @@ public class Utils {
         }
     }
 
-    public static void initializeFaceBookAds(Context context) {
-        AudienceNetworkAds.initialize(context);
+    public static void initializeGoogleAds(Context context) {
+        MobileAds.initialize(context, "ca-app-pub-7791710838910455~4694650299");
     }
 
     private static void create(String text, String path) {
