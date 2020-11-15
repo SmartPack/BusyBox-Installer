@@ -1,0 +1,60 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <!--Author: HafitzSetya <hafitz67@gmail.com>-->
+
+    <string name="about">Tentang</string>
+    <string name="about_summary">BusyBox Installer adalah utilitas instalasi BusyBox sekali klik untuk berbagai arsitektur android (ARM/ARM64 and x86).</string>
+    <string name="busybox_version">Versi BusyBox</string>
+    <string name="cancel">Membatalkan</string>
+    <string name="change_log">Log-perubahan</string>
+    <string name="credits">Kredit</string>
+    <string name="credits_summary"><b><i>https://busybox.net/</i></b> - <i>BusyBox Binari</i>\n<b><i>Grarak</i></b> - <i>Kontribusi kode</i>\n<b><i>topjohnwu</i></b> - <i>libsu</i>\n<b><i>Lennoard</i></b> - <i>Kontribusi kode/terjemahan pt-Br</i>\n<b><i>SmgKhOaRn</i></b> - <i>terjemahan Korean</i>\n<b><i>Mikesew1320</i></b> - <i>Amharic &amp; terjemahan Russian</i>\n<b><i>tsiflimagas</i></b> - <i>terjemahan Greek</i>\n<b><i>HafitzSetya<b><i> - terjemahan Indonesia</i>\n<b><i>sajid_islam</i></b> - <i>Icon Aplikasi</i></string>
+    <string name="dark_theme">Tema gelap</string>
+    <string name="dark_theme_auto">Auto</string>
+    <string name="dark_theme_disable">Nonaktifkan</string>
+    <string name="dark_theme_enable">Menghidupkan</string>
+    <string name="developed_by">Dikembangkan oleh</string>
+    <string name="donations">Donasi</string>
+    <string name="donation_app">Beli Aplikasi Donasi</string>
+    <string name="hide">Menyembunyikan</string>
+    <string name="install">Pasang</string>
+    <string name="install_busybox">Pasabg BusyBox!</string>
+    <string name="install_busybox_latest">Selamat! BusyBox versi terbaru (v%s) yang tersedia di aplikasi ini telah terinstal di perangkat Anda!</string>
+    <string name="install_busybox_message">Apakah Anda yakin untuk menginstal BusyBox %s?</string>
+    <string name="install_busybox_unavailable">Sayangnya, penginstalan BuyBox dari aplikasi ini belum tersedia untuk arsitektur Anda (%s)!</string>
+    <string name="install_busybox_update">Pembaruan baru tersedia! Apakah Anda ingin memperbarui BusyBox ke v%s?</string>
+    <string name="install_busybox_failed">Sayangnya, penginstal BusyBox gagal menulis applet BusyBox di perangkat Anda \'/system/xbin\' folder!</string>
+    <string name="install_busybox_success">Instalasi BusyBox Selesai! Apakah Anda ingin me-reboot perangkat Anda?</string>
+    <string name="installing">Installing BusyBox v%s</string>
+    <string name="language">Bahasa (%s)</string>
+    <string name="language_am">Amharic</string>
+    <string name="language_el">Greek</string>
+    <string name="language_en">English</string>
+    <string name="language_default">Default</string>
+    <string name="language_ko">Korean</string>
+    <string name="language_pt">Portuguese</string>
+    <string name="language_ru">Russian</string>
+    <string name="language_in">Indonesia</string>
+    <string name="list_applets">Daftar Applet</string>
+    <string name="list_applets_summary">Applet berikut termasuk dalam paket ini!\n\n - %s</string>
+    <string name="no_permission_message">Penginstalan BusyBox tidak akan berfungsi tanpa Akses Tulis Penyimpanan! Membatalkan</string>
+    <string name="no_root_message">Instalasi BusyBox tidak akan berfungsi tanpa Akses Root! Membatalkan</string>
+    <string name="press_back">Tekan kembali untuk keluar!</string>
+    <string name="reboot">Mulai ulang</string>
+    <string name="remove">Menghapus</string>
+    <string name="remove_busybox_completed">BusyBox v%s berhasil dihapus dari perangkat Anda. Apakah Anda tidak ingin melakukan boot ulang?</string>
+    <string name="remove_busybox_message">Apakah Anda yakin untuk menghapus applet BusyBox (v%s) dari \'/system/xbin\'?\n\nHarap Dicatat: Ini hanya akan menghapus applet yang dipasang oleh aplikasi ini di perangkat Anda!</string>
+    <string name="removing_busybox">Menghapus BusyBox v%s</string>
+    <string name="save_log">Simpan Log</string>
+    <string name="save_log_summary">File log instalasi diekspor sebagai \'%s\'!</string>
+    <string name="share">Bagikan</string>
+    <string name="share_app">Dapatkan BusyBox Installer %s dari https://play.google.com/store/apps/details?id=com.smartpack.busyboxinstaller</string>
+    <string name="source_code">Kode sumber</string>
+    <string name="support_developer">Dukung Pengembang!</string>
+    <string name="support_developer_message">Jika Anda ingin menghargai pekerjaan saya, mohon pertimbangkan untuk membeli Paket Donasi SmartPack dari PlayStore karena sangat membantu untuk melanjutkan proyek saya lebih aktif, meskipun itu sama sekali tidak diperlukan.</string>
+    <string name="support_group">Grup dukungan</string>
+    <string name="update">Perbarui</string>
+    <string name="update_busybox">Pembaruan BusyBox Tersedia!</string>
+    <string name="updated_message">Selamat! Anda sudah up-to-date!</string>
+    <string name="upsupported">Arsitektur Tidak Didukung!</string>
+    <string name="version">Versi</string>
+</resources>
