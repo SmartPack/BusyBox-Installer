@@ -4,7 +4,7 @@
 ![](https://img.shields.io/github/languages/top/SmartPack/BusyBox-Installer)
 ![](https://img.shields.io/github/contributors/smartpack/BusyBox-Installer)
 
-## Introduction
+# Introduction
 ### BusyBox Installer is a one-click BusyBox installation utility for Android.
 
 ## Download
@@ -51,6 +51,7 @@ Please Note: Purchasing [SmartPack Donation Package](https://play.google.com/sto
 * [SmgKhOaRn](https://github.com/SmgKhOaRn), Korean Translations
 * [Mikesew1320](https://github.com/Mikesew1320), Amharic & Russian Translations
 * [tsiflimagas](https://github.com/tsiflimagas), Greek Translations
+* [Hafitz21](https://github.com/HafitzSetya), Indonesian Translations
 * [sajid_islam](https://t.me/sajid_islam), App Icon
 
 ## License

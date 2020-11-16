@@ -7,7 +7,7 @@
     <string name="cancel">Membatalkan</string>
     <string name="change_log">Log-perubahan</string>
     <string name="credits">Kredit</string>
-    <string name="credits_summary"><b><i>https://busybox.net/</i></b> - <i>BusyBox Binari</i>\n<b><i>Grarak</i></b> - <i>Kontribusi kode</i>\n<b><i>topjohnwu</i></b> - <i>libsu</i>\n<b><i>Lennoard</i></b> - <i>Kontribusi kode/terjemahan pt-Br</i>\n<b><i>SmgKhOaRn</i></b> - <i>terjemahan Korean</i>\n<b><i>Mikesew1320</i></b> - <i>Amharic &amp; terjemahan Russian</i>\n<b><i>tsiflimagas</i></b> - <i>terjemahan Greek</i>\n<b><i>HafitzSetya<b><i> - terjemahan Indonesia</i>\n<b><i>sajid_islam</i></b> - <i>Icon Aplikasi</i></string>
+    <string name="credits_summary"><b><i>https://busybox.net/</i></b> - <i>BusyBox Binari</i>\n<b><i>Grarak</i></b> - <i>Kontribusi kode</i>\n<b><i>topjohnwu</i></b> - <i>libsu</i>\n<b><i>Lennoard</i></b> - <i>Kontribusi kode/terjemahan pt-Br</i>\n<b><i>SmgKhOaRn</i></b> - <i>terjemahan Korean</i>\n<b><i>Mikesew1320</i></b> - <i>Amharic &amp; terjemahan Russian</i>\n<b><i>tsiflimagas</i></b> - <i>terjemahan Greek</i>\n<b><i>HafitzSetya</i></b> - <i>terjemahan Indonesia</i>\n<b><i>sajid_islam</i></b> - <i>Icon Aplikasi</i></string>
     <string name="dark_theme">Tema gelap</string>
     <string name="dark_theme_auto">Auto</string>
     <string name="dark_theme_disable">Nonaktifkan</string>

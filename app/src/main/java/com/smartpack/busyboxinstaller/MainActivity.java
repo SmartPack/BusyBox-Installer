@@ -131,6 +131,8 @@ public class MainActivity extends AppCompatActivity {
                     .setChecked(Utils.getBoolean("use_pt", false, this));
             language.add(Menu.NONE, 17, Menu.NONE, getString(R.string.language_ru)).setCheckable(true)
                     .setChecked(Utils.getBoolean("use_ru", false, this));
+            language.add(Menu.NONE, 20, Menu.NONE, getString(R.string.language_in)).setCheckable(true)
+                    .setChecked(Utils.getBoolean("use_in", false, this));
             if (Utils.existFile("/system/xbin/busybox_" + Utils.version)) {
                 menu.add(Menu.NONE, 3, Menu.NONE, getString(R.string.list_applets));
                 menu.add(Menu.NONE, 4, Menu.NONE, getString(R.string.version));
@@ -272,6 +274,13 @@ public class MainActivity extends AppCompatActivity {
                             Utils.saveBoolean("dark_theme", false, this);
                             Utils.saveBoolean("light_theme", true, this);
                             Utils.saveBoolean("theme_auto", false, this);
+                            restartApp();
+                        }
+                        break;
+                    case 20:
+                        if (!Utils.getBoolean("use_in", false, this)) {
+                            Utils.setDefaultLanguage(this);
+                            Utils.saveBoolean("use_in", true, this);
                             restartApp();
                         }
                         break;
