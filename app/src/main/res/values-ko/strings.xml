@@ -8,7 +8,6 @@
     <string name="change_log">변경사항</string>
     <string name="credits">도움을 주신 분들</string>
     <string name="credits_summary"><b><i>https://busybox.net/</i></b> - BusyBox 바이너리\n<b><i>Grarak</i></b> - 코드 기여\n<b><i>topjohnwu</i></b> - libsu\n<b><i>Lennoard</i></b> - 코드 기여 &amp; 브라질 포르투갈어 번역\n<b><i>SmgKhOaRn</i></b> - 한국어 번역\n<b><i>Mikesew1320</i></b> - 에티오피아어 &amp; 러시아어 번역\n<b><i>tsiflimagas</i></b> - <i>그리스어 번역</i>\n<b><i>sajid_islam</i></b> - 앱 아이콘</string>
-    <string name="dark_theme">테마</string>
     <string name="donations">후원</string>
     <string name="donation_app">후원 앱 구매</string>
     <string name="hide">숨기기</string>

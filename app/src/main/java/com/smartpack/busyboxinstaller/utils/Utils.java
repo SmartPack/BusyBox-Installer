@@ -62,13 +62,16 @@ public class Utils {
     }
 
     public static void initializeAppTheme(Context context) {
-        if (getBoolean("dark_theme", false, context)) {
-            AppCompatDelegate.setDefaultNightMode(
-                    AppCompatDelegate.MODE_NIGHT_YES);
+        if (isDarkTheme(context)) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         } else {
-            AppCompatDelegate.setDefaultNightMode(
-                    AppCompatDelegate.MODE_NIGHT_NO);
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }
+    }
+    
+    public static boolean isDarkTheme(Context context) {
+        int currentNightMode = context.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+        return currentNightMode == Configuration.UI_MODE_NIGHT_YES;
     }
 
     private static void create(String text, String path) {

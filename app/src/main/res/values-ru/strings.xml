@@ -6,7 +6,6 @@
     <string name="cancel">Отмена</string>
     <string name="credits">Благодарности</string>
     <string name="credits_summary"><b><i>https://busybox.net/</i></b> - <i>двоичные файлы BusyBox</i>\n<b><i>Grarak</i></b> - <i>A связка кода</i>>\n<b><i>SmgKhOaRn</i></b> - <i>корейские переводы</i>\n<b><i>sajid_islam </i></b> - <i>Значок приложения</i></string>
-    <string name="dark_theme">Тёмная тема</string>
     <string name="hide">Спрятать</string>
     <string name="install">устанавливать</string>
     <string name="install_busybox">Установите BusyBox!</string>

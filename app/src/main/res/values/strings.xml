@@ -8,10 +8,6 @@
     <string name="change_log">Change-logs</string>
     <string name="credits">Credits</string>
     <string name="credits_summary"><b><i>https://busybox.net/</i></b> - <i>BusyBox Binaries</i>\n<b><i>Grarak</i></b> - <i>Code contributions</i>\n<b><i>topjohnwu</i></b> - <i>libsu</i>\n<b><i>Lennoard</i></b> - <i>Code contributions/pt-Br Translations</i>\n<b><i>SmgKhOaRn</i></b> - <i>Korean Translations</i>\n<b><i>Mikesew1320</i></b> - <i>Amharic &amp; Russian Translations</i>\n<b><i>tsiflimagas</i></b> - <i>Greek translations</i>\n<b><i>HafitzSetya</i></b> - <i>Indonesian translations</i>\n<b><i>sajid_islam</i></b> - <i>App Icon</i></string>
-    <string name="dark_theme">Dark Theme</string>
-    <string name="dark_theme_auto">Auto</string>
-    <string name="dark_theme_disable">Disable</string>
-    <string name="dark_theme_enable">Enable</string>
     <string name="developed_by">Developed By</string>
     <string name="donations">Donations</string>
     <string name="donation_app">Buy Donation App</string>
