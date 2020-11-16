@@ -27,9 +27,6 @@ import androidx.appcompat.widget.PopupMenu;
 import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
 import com.smartpack.busyboxinstaller.utils.RootUtils;
 import com.smartpack.busyboxinstaller.utils.Utils;
 
@@ -65,9 +62,8 @@ public class MainActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // Initialize App Theme & Google Ads
+        // Initialize App Theme
         Utils.initializeAppTheme(this);
-        Utils.initializeGoogleAds(this);
         super.onCreate(savedInstanceState);
         // Set App Language
         Utils.setLanguage(this);
@@ -289,21 +285,6 @@ public class MainActivity extends AppCompatActivity {
             });
             popupMenu.show();
         });
-
-        // Initialize Banner Ads
-        if (Utils.isNotDonated(this)) {
-            LinearLayout mAdLayout = findViewById(R.id.adLayout);
-            AdView mAdView = findViewById(R.id.adView);
-            mAdView.setAdListener(new AdListener() {
-                @Override
-                public void onAdLoaded() {
-                    mAdLayout.setVisibility(View.VISIBLE);
-                }
-            });
-            AdRequest adRequest = new AdRequest.Builder()
-                    .build();
-            mAdView.loadAd(adRequest);
-        }
     }
 
     private void installDialog() {
