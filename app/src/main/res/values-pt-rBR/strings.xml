@@ -41,9 +41,8 @@
     <string name="remove">Remover</string>
     <string name="list_applets_summary">Os seguintes applets estão incluídos neste pacote! - %s</string>
     <string name="list_applets">Lista de Applets</string>
-    <string name="support_developer">Apoie o Desenvolvedor!</string>
+    <string name="support_development">Apoie o Desenvolvedor!</string>
     <string name="donation_app">Comprar o App de Doação</string>
     <string name="busybox_version">Versão do BusyBox</string>
-    <string name="support_developer_message">Se você aprecia o meu trabalho, considere comprar o Pacote de Doação SmartPack da PlayStore, pois é realmente útil para continuar meus projetos mais ativos, embora não seja necessário.</string>
     <string name="save_log_summary">O arquivo de log de instalação foi exportado como \'%s\'!</string>
 </resources>

@@ -31,7 +31,6 @@ You can report a bug or request a feature by [opening an issue](https://github.c
 
 ## Donations
 If you like to appreciate my work, please consider donating to me (either via [PayPal](https://www.paypal.me/menacherry/), or [Ko-fi](https://ko-fi.com/sunilpaulmathew/), or by purchasing the [SmartPack Donation Package](https://play.google.com/store/apps/details?id=com.smartpack.donate) from playstore) as it is helpful to continue my projects more active, although it is not at all necessary.
-Please Note: Purchasing [SmartPack Donation Package](https://play.google.com/store/apps/details?id=com.smartpack.donate) will remove Ads on this app.
 
 [<img src="https://raw.githubusercontent.com/SmartPack/SmartPack.github.io/master/asset/pic005.png"
      alt=""

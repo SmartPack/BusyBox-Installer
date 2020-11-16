@@ -45,8 +45,7 @@
     <string name="share">Bagikan</string>
     <string name="share_app">Dapatkan BusyBox Installer %s dari https://play.google.com/store/apps/details?id=com.smartpack.busyboxinstaller</string>
     <string name="source_code">Kode sumber</string>
-    <string name="support_developer">Dukung Pengembang!</string>
-    <string name="support_developer_message">Jika Anda ingin menghargai pekerjaan saya, mohon pertimbangkan untuk membeli Paket Donasi SmartPack dari PlayStore karena sangat membantu untuk melanjutkan proyek saya lebih aktif, meskipun itu sama sekali tidak diperlukan.</string>
+    <string name="support_development">Dukung Pengembang!</string>
     <string name="support_group">Grup dukungan</string>
     <string name="update">Perbarui</string>
     <string name="update_busybox">Pembaruan BusyBox Tersedia!</string>

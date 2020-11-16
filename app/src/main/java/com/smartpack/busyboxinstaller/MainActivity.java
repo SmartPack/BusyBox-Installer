@@ -27,6 +27,7 @@ import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.checkbox.MaterialCheckBox;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textview.MaterialTextView;
+import com.smartpack.busyboxinstaller.utils.BillingActivity;
 import com.smartpack.busyboxinstaller.utils.RootUtils;
 import com.smartpack.busyboxinstaller.utils.Utils;
 
@@ -131,9 +132,7 @@ public class MainActivity extends AppCompatActivity {
             about.add(Menu.NONE, 5, Menu.NONE, getString(R.string.source_code));
             about.add(Menu.NONE, 6, Menu.NONE, getString(R.string.support_group));
             about.add(Menu.NONE, 9, Menu.NONE, getString(R.string.change_log));
-            if (Utils.isNotDonated(this)) {
-                about.add(Menu.NONE, 7, Menu.NONE, getString(R.string.donations));
-            }
+            about.add(Menu.NONE, 7, Menu.NONE, getString(R.string.donations));
             about.add(Menu.NONE, 8, Menu.NONE, getString(R.string.about));
             popupMenu.setOnMenuItemClickListener(item -> {
                 switch (item.getItemId()) {
@@ -170,7 +169,9 @@ public class MainActivity extends AppCompatActivity {
                         Utils.launchUrl("https://t.me/smartpack_kmanager", this);
                         break;
                     case 7:
-                        donateToMe();
+                        Intent donations = new Intent(this, BillingActivity.class);
+                        startActivity(donations);
+                        finish();
                         break;
                     case 8:
                         aboutDialog();
@@ -313,19 +314,6 @@ public class MainActivity extends AppCompatActivity {
                         Utils.removeBusyBox(new WeakReference<>(this));
                     })
                     .show();
-    }
-
-    private void donateToMe() {
-        new MaterialAlertDialogBuilder(this)
-                .setIcon(R.mipmap.ic_launcher)
-                .setTitle(getString(R.string.support_developer))
-                .setMessage(getString(R.string.support_developer_message))
-                .setNeutralButton(getString(R.string.cancel), (dialog1, id1) -> {
-                })
-                .setPositiveButton(getString(R.string.donation_app), (dialogInterface, i) -> {
-                    Utils.launchUrl("https://playdark.google.com/store/apps/details?id=com.smartpack.donate", this);
-                })
-                .show();
     }
 
     private void restartApp() {
