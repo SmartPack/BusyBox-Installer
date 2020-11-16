@@ -15,18 +15,18 @@ import android.os.Handler;
 import android.view.Menu;
 import android.view.SubMenu;
 import android.view.View;
-import android.widget.CheckBox;
 import android.widget.LinearLayout;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.appcompat.widget.AppCompatImageView;
-import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.PopupMenu;
-import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 
+import com.google.android.material.card.MaterialCardView;
+import com.google.android.material.checkbox.MaterialCheckBox;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.textview.MaterialTextView;
 import com.smartpack.busyboxinstaller.utils.RootUtils;
 import com.smartpack.busyboxinstaller.utils.Utils;
 
@@ -44,18 +44,18 @@ public class MainActivity extends AppCompatActivity {
 
     private AppCompatImageButton mBack;
     private AppCompatImageView mAppIcon;
-    private AppCompatTextView mCardTitle;
-    private AppCompatTextView mAppName;
-    private AppCompatTextView mAboutApp;
-    private AppCompatTextView mDevelopedBy;
-    private AppCompatTextView mCreditsTitle;
-    private AppCompatTextView mCredits;
-    private AppCompatTextView mForegroundText;
-    private AppCompatTextView mCancel;
+    private MaterialTextView mCardTitle;
+    private MaterialTextView mAppName;
+    private MaterialTextView mAboutApp;
+    private MaterialTextView mDevelopedBy;
+    private MaterialTextView mCreditsTitle;
+    private MaterialTextView mCredits;
+    private MaterialTextView mForegroundText;
+    private MaterialTextView mCancel;
     private AppCompatImageView mDeveloper;
     private boolean mExit;
     private boolean mForegroundActive = false;
-    private CardView mForegroundCard;
+    private MaterialCardView mForegroundCard;
     private Handler mHandler = new Handler();
     private LinearLayout mInstall;
 
@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
                         removeBusyBox();
                         break;
                     case 2:
-                        new AlertDialog.Builder(this)
+                        new MaterialAlertDialogBuilder(this)
                                 .setIcon(R.mipmap.ic_launcher)
                                 .setTitle(R.string.list_applets)
                                 .setMessage(getString(R.string.list_applets_summary, Utils.getAppletsList().replace("\n", "\n - ")))
@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
                                 .show();
                         break;
                     case 3:
-                        new AlertDialog.Builder(this)
+                        new MaterialAlertDialogBuilder(this)
                                 .setIcon(R.mipmap.ic_launcher)
                                 .setTitle(R.string.busybox_version)
                                 .setMessage(Utils.getBusyBoxVersion())
@@ -267,7 +267,7 @@ public class MainActivity extends AppCompatActivity {
             Utils.snackbar(mInstall, getString(R.string.no_permission_message));
             return;
         }
-        AlertDialog.Builder install = new AlertDialog.Builder(this);
+        MaterialAlertDialogBuilder install = new MaterialAlertDialogBuilder(this);
         install.setIcon(R.mipmap.ic_launcher);
         if (Utils.getArch().equals("aarch64") || Utils.getArch().equals("armv7l") || Utils.getArch().equals("armv8l")
                 || Utils.getArch().equals("i686")) {
@@ -305,7 +305,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void removeBusyBox() {
-            new AlertDialog.Builder(this)
+            new MaterialAlertDialogBuilder(this)
                     .setMessage(getString(R.string.remove_busybox_message, Utils.version))
                     .setNegativeButton(R.string.cancel, (dialog, which) -> {
                     })
@@ -316,7 +316,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void donateToMe() {
-        new AlertDialog.Builder(this)
+        new MaterialAlertDialogBuilder(this)
                 .setIcon(R.mipmap.ic_launcher)
                 .setTitle(getString(R.string.support_developer))
                 .setMessage(getString(R.string.support_developer_message))
@@ -391,7 +391,7 @@ public class MainActivity extends AppCompatActivity {
         if (Utils.getArch().equals("aarch64") || Utils.getArch().equals("armv7l") || Utils.getArch().equals("i686")) {
             if (Utils.existFile("/system/xbin/bb_version") && !Utils.readFile("/system/xbin/bb_version").equals(Utils.version)) {
                 View checkBoxView = View.inflate(this, R.layout.rv_checkbox, null);
-                CheckBox checkBox = checkBoxView.findViewById(R.id.checkbox);
+                MaterialCheckBox checkBox = checkBoxView.findViewById(R.id.checkbox);
                 checkBox.setText(getString(R.string.hide));
                 checkBox.setChecked(false);
                 checkBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
@@ -400,7 +400,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
-                AlertDialog.Builder update = new AlertDialog.Builder(this);
+                MaterialAlertDialogBuilder update = new MaterialAlertDialogBuilder(this);
                 update.setIcon(R.mipmap.ic_launcher);
                 update.setTitle(getString(R.string.update_busybox));
                 update.setMessage(getString(R.string.install_busybox_update, Utils.version));

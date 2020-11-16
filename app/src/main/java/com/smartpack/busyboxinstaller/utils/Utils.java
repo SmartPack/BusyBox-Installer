@@ -16,11 +16,11 @@ import android.preference.PreferenceManager;
 import android.util.DisplayMetrics;
 import android.view.View;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDelegate;
-import androidx.appcompat.widget.AppCompatTextView;
 
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.textview.MaterialTextView;
 import com.smartpack.busyboxinstaller.BuildConfig;
 import com.smartpack.busyboxinstaller.R;
 
@@ -43,7 +43,7 @@ import java.util.Locale;
 
 public class Utils {
 
-    public static AppCompatTextView mInstallText = null;
+    public static MaterialTextView mInstallText = null;
     public static final String version = "1.31.0";
     private static StringBuilder mOutput = null;
     private static boolean superUser = false;
@@ -315,7 +315,7 @@ public class Utils {
                 } catch (IllegalArgumentException ignored) {
                 }
                 refreshTitles();
-                AlertDialog.Builder status = new AlertDialog.Builder(activity);
+                MaterialAlertDialogBuilder status = new MaterialAlertDialogBuilder(activity);
                 status.setIcon(R.mipmap.ic_launcher_round);
                 status.setTitle(R.string.app_name);
                 status.setMessage(mOutput.toString());
@@ -396,7 +396,7 @@ public class Utils {
                 } catch (IllegalArgumentException ignored) {
                 }
                 refreshTitles();
-                AlertDialog.Builder status = new AlertDialog.Builder(activity);
+                MaterialAlertDialogBuilder status = new MaterialAlertDialogBuilder(activity);
                 status.setIcon(R.mipmap.ic_launcher_round);
                 status.setTitle(R.string.app_name);
                 status.setMessage(mOutput.toString());
