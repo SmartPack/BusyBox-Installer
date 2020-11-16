@@ -15,7 +15,6 @@ import android.os.Environment;
 import android.preference.PreferenceManager;
 import android.util.DisplayMetrics;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -68,7 +67,7 @@ public class Utils {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }
     }
-    
+
     public static boolean isDarkTheme(Context context) {
         int currentNightMode = context.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
         return currentNightMode == Configuration.UI_MODE_NIGHT_YES;
@@ -90,14 +89,6 @@ public class Utils {
 
     static String chmod(String permission, String path) {
         return RootUtils.runAndGetOutput("chmod " + permission + " " + path);
-    }
-
-    private static void toast(String message, Context context) {
-        toast(message, context, Toast.LENGTH_SHORT);
-    }
-
-    private static void toast(String message, Context context, int duration) {
-        Toast.makeText(context, message, duration).show();
     }
 
     public static void snackbar(View view, String message) {
@@ -241,7 +232,7 @@ public class Utils {
 
     //TODO: Don't delegate this to the Utils class as it will hold a reference to the activity
     // here workarounded using a WeakReference
-    public static void installBusyBox(WeakReference<Activity> activityRef) {
+    public static void installBusyBox(View view, WeakReference<Activity> activityRef) {
         new AsyncTask<Void, Void, Void>() {
             private ProgressDialog mProgressDialog;
             @Override
@@ -332,7 +323,7 @@ public class Utils {
                     status.setNeutralButton(R.string.save_log, (dialog, which) -> {
                         create("## BusyBox Installation log created by BusyBox Installer v" + BuildConfig.VERSION_NAME + "\n\n" +
                                         mOutput.toString(),Environment.getExternalStorageDirectory().getPath() + "/bb_log");
-                        toast(activityRef.get().getString(R.string.save_log_summary, Environment.getExternalStorageDirectory().getPath() + "/bb_log"), activity);
+                        snackbar(view, activityRef.get().getString(R.string.save_log_summary, Environment.getExternalStorageDirectory().getPath() + "/bb_log"));
                     });
                     status.setNegativeButton(R.string.cancel, (dialog, which) -> {
                     });

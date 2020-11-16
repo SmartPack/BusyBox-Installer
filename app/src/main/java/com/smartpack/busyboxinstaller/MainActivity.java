@@ -283,7 +283,7 @@ public class MainActivity extends AppCompatActivity {
                     install.setNegativeButton(R.string.cancel, (dialog, which) -> {
                     });
                     install.setPositiveButton(R.string.update, (dialog, which) -> {
-                        Utils.installBusyBox(new WeakReference<>(this));
+                        Utils.installBusyBox(mInstall, new WeakReference<>(this));
                     });
                 }
             } else {
@@ -292,7 +292,7 @@ public class MainActivity extends AppCompatActivity {
                 install.setNegativeButton(R.string.cancel, (dialog, which) -> {
                 });
                 install.setPositiveButton(R.string.install, (dialog, which) -> {
-                    Utils.installBusyBox(new WeakReference<>(this));
+                    Utils.installBusyBox(mInstall, new WeakReference<>(this));
                 });
             }
         } else {
@@ -408,7 +408,7 @@ public class MainActivity extends AppCompatActivity {
                 update.setView(checkBoxView);
                 update.setNegativeButton(R.string.cancel, (dialog, which) -> {
                 });
-                update.setPositiveButton(R.string.update, (dialog, which) -> Utils.installBusyBox(new WeakReference<>(this)));
+                update.setPositiveButton(R.string.update, (dialog, which) -> Utils.installBusyBox(mInstall, new WeakReference<>(this)));
                 update.show();
             }
         }
