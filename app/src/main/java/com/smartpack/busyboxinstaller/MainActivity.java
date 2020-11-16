@@ -310,7 +310,8 @@ public class MainActivity extends AppCompatActivity {
         }
         AlertDialog.Builder install = new AlertDialog.Builder(this);
         install.setIcon(R.mipmap.ic_launcher);
-        if (Utils.getArch().equals("aarch64") || Utils.getArch().equals("armv7l") || Utils.getArch().equals("i686")) {
+        if (Utils.getArch().equals("aarch64") || Utils.getArch().equals("armv7l") || Utils.getArch().equals("armv8l")
+                || Utils.getArch().equals("i686")) {
             if (Utils.existFile("/system/xbin/bb_version")) {
                 if (Utils.readFile("/system/xbin/bb_version").equals(Utils.version)) {
                     install.setTitle(R.string.updated_message);
