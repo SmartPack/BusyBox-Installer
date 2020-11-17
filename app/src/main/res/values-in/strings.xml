@@ -3,6 +3,7 @@
 
     <string name="about">Tentang</string>
     <string name="about_summary">BusyBox Installer adalah utilitas instalasi BusyBox sekali klik untuk berbagai arsitektur android (ARM/ARM64 and x86).</string>
+    <string name="billing_client_disconnected">Gagal terhubung dengan klien Layanan Penagihan Google Play!</string>
     <string name="busybox_version">Versi BusyBox</string>
     <string name="cancel">Membatalkan</string>
     <string name="change_log">Log-perubahan</string>
@@ -45,7 +46,15 @@
     <string name="share">Bagikan</string>
     <string name="share_app">Dapatkan BusyBox Installer %s dari https://play.google.com/store/apps/details?id=com.smartpack.busyboxinstaller</string>
     <string name="source_code">Kode sumber</string>
+    <string name="support_acknowledged">Donasi Diakui \u2665</string>
     <string name="support_development">Dukung Pengembang!</string>
+    <string name="support_development_summary">Jika Anda ingin menghargai upaya pengembang yang menyediakan alat ini sepenuhnya gratis, harap pertimbangkan untuk mengirimkan sedikit sumbangan dengan mengeklik salah satu opsi yang disediakan di bawah ini!</string>
+    <string name="support_dinner">Belikan aku makan malam</string>
+    <string name="support_meal">Belikan aku Meal</string>
+    <string name="support_coffee">Belikan aku Kopi</string>
+    <string name="support_already_received_message">Anda sudah mendukung pengembangan dengan item ini sebelumnya!</string>
+    <string name="support_received_message">Terimakasih atas dukunganmu \u2665\nIni akan memotivasi saya untuk melanjutkan proyek saya dengan lebih aktif!</string>
+    <string name="support_retry_message">Silakan coba membeli lagi!</string>
     <string name="support_group">Grup dukungan</string>
     <string name="update">Perbarui</string>
     <string name="update_busybox">Pembaruan BusyBox Tersedia!</string>
