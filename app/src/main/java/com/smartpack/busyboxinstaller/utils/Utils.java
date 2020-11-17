@@ -1,7 +1,5 @@
 package com.smartpack.busyboxinstaller.utils;
 
-import android.app.Activity;
-import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
@@ -10,7 +8,6 @@ import android.content.res.AssetManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Environment;
 import android.preference.PreferenceManager;
 import android.util.DisplayMetrics;
@@ -18,11 +15,8 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatDelegate;
 
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.snackbar.Snackbar;
-import com.google.android.material.textview.MaterialTextView;
 import com.smartpack.busyboxinstaller.BuildConfig;
-import com.smartpack.busyboxinstaller.R;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -32,7 +26,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
-import java.lang.ref.WeakReference;
 import java.util.Locale;
 
 /*
@@ -43,12 +36,11 @@ import java.util.Locale;
 
 public class Utils {
 
-    public static MaterialTextView mInstallText = null;
     public static final String version = "1.31.0";
-    private static StringBuilder mOutput = null;
-    private static boolean superUser = false;
-    private static boolean SAR = false;
-    private static boolean mountable = true;
+    public static StringBuilder mOutput = null;
+    public static boolean superUser = false;
+    public static boolean SAR = false;
+    public static boolean mountable = true;
 
     public static boolean isNotDonated(Context context) {
         if (BuildConfig.DEBUG) return false;
@@ -73,21 +65,21 @@ public class Utils {
         return currentNightMode == Configuration.UI_MODE_NIGHT_YES;
     }
 
-    private static void create(String text, String path) {
+    public static void create(String text, String path) {
         RootUtils.runCommand("echo '" + text + "' > " + path);
     }
 
-    private static void delete(String path) {
+    public static void delete(String path) {
         if (Utils.existFile(path)) {
             RootUtils.runCommand("rm -r " + path);
         }
     }
 
-    private static void move(String source, String dest) {
+    public static void move(String source, String dest) {
         RootUtils.runCommand("mv " + source + " " + dest);
     }
 
-    static String chmod(String permission, String path) {
+    public static String chmod(String permission, String path) {
         return RootUtils.runAndGetOutput("chmod " + permission + " " + path);
     }
 
@@ -106,11 +98,11 @@ public class Utils {
         }
     }
 
-    private static String mountSystem(String command) {
+    public static String mountSystem(String command) {
         return RootUtils.runAndGetError("mount -o remount," + command + " /system");
     }
 
-    private static String mountRootFS(String command) {
+    public static String mountRootFS(String command) {
         return RootUtils.runAndGetError("mount -o remount," + command + " /");
     }
 
@@ -205,15 +197,15 @@ public class Utils {
         return RootUtils.runAndGetOutput("uname -m");
     }
 
-    private static boolean isWritableSystem() {
+    public static boolean isWritableSystem() {
         return !mountSystem("rw").equals("mount: '/system' not in /proc/mounts");
     }
 
-    private static boolean isWritableRoot() {
+    public static boolean isWritableRoot() {
         return !mountRootFS("rw").contains("' is read-only");
     }
 
-    private static void copyBinary(Context context) {
+    public static void copyBinary(Context context) {
         AssetManager assetManager = context.getAssets();
         InputStream in;
         OutputStream out;
@@ -230,186 +222,6 @@ public class Utils {
         }
     }
 
-    //TODO: Don't delegate this to the Utils class as it will hold a reference to the activity
-    // here workarounded using a WeakReference
-    public static void installBusyBox(View view, WeakReference<Activity> activityRef) {
-        new AsyncTask<Void, Void, Void>() {
-            private ProgressDialog mProgressDialog;
-            @Override
-            protected void onPreExecute() {
-                super.onPreExecute();
-                mProgressDialog = new ProgressDialog(activityRef.get());
-                mProgressDialog.setMessage(activityRef.get().getString(R.string.installing, version) + " ...");
-                mProgressDialog.setCancelable(false);
-                mProgressDialog.show();
-                if (mOutput == null) {
-                    mOutput = new StringBuilder();
-                } else {
-                    mOutput.setLength(0);
-                }
-            }
-            @Override
-            protected Void doInBackground(Void... voids) {
-                mOutput.append("** Preparing to install BusyBox v" + version + "...\n\n");
-                mOutput.append("** Checking device partitions...\n");
-                if (isWritableSystem()) {
-                    mOutput.append("** Mounting '/system' partition: Done *\n\n");
-                } else if (isWritableRoot()) {
-                    SAR = true;
-                    mOutput.append("** Mounting 'root' partition: Done *\n\n");
-                } else {
-                    mountable = false;
-                    mOutput.append("** Both 'root' & '/system' partitions on your device are not writable! *\n\n");
-                    mOutput.append(activityRef.get().getString(R.string.install_busybox_failed));
-                }
-                if (mountable) {
-                    sleep(1);
-                    mOutput.append("** Copying BusyBox v" + version + " binary into '").append(Environment.getExternalStorageDirectory().getPath()).append("': Done *\n\n");
-                    copyBinary(activityRef.get());
-                    if (!existFile("/system/xbin/")) {
-                        RootUtils.runCommand("mkdir /system/xbin/");
-                        mOutput.append("** Creating '/system/xbin/': Done*\n\n");
-                    }
-                    mOutput.append("** Moving BusyBox binary into '/system/xbin/': ");
-                    move(Environment.getExternalStorageDirectory().getPath() + "/busybox_" + version, "/system/xbin/\n");
-                    mOutput.append(existFile("/system/xbin/busybox_" + version) ? "Done *\n\n" : "Failed *\n\n");
-                    if (existFile("/system/xbin/busybox_" + version)) {
-                        mOutput.append("** Detecting 'su' binary: ");
-                        if (existFile("/system/xbin/su")) superUser = true;
-                        mOutput.append(superUser ? "Detected *\n\n" : "Not Detected *\n\n");
-                        mOutput.append("** Setting permissions: Done *\n");
-                        mOutput.append(chmod("755", "/system/xbin/busybox_" + version)).append("\n");
-                        mOutput.append("** Installing applets: ");
-                        RootUtils.runCommand("cd /system/xbin/");
-                        mOutput.append(RootUtils.runAndGetError("busybox_" + version + " --install ."));
-                        mOutput.append("Done *\n\n");
-                        if (!superUser) {
-                            mOutput.append("** Removing 'su' binary to avoid SafetyNet failure: ");
-                            delete("/system/xbin/su");
-                            mOutput.append("Done *\n\n");
-                        }
-                        create(version, "/system/xbin/bb_version");
-                        mOutput.append("** Syncing file systems: ");
-                        RootUtils.runCommand("sync");
-                        mOutput.append("Done *\n\n");
-                        sleep(1);
-                    }
-                    if (SAR) {
-                        mOutput.append(mountRootFS("ro"));
-                        mOutput.append("** Making 'root' file system read-only: Done*\n\n");
-                    } else {
-                        mOutput.append(mountSystem("ro"));
-                        mOutput.append("** Making 'system' partition read-only: Done*\n\n");
-                    }
-                    mOutput.append(activityRef.get().getString(R.string.install_busybox_success));
-                }
-                return null;
-            }
-            @Override
-            protected void onPostExecute(Void aVoid) {
-                super.onPostExecute(aVoid);
-                Activity activity = activityRef.get();
-                if (activity.isFinishing() || activity.isDestroyed()) return;
-                try {
-                    mProgressDialog.dismiss();
-                } catch (IllegalArgumentException ignored) {
-                }
-                refreshTitles();
-                MaterialAlertDialogBuilder status = new MaterialAlertDialogBuilder(activity);
-                status.setIcon(R.mipmap.ic_launcher_round);
-                status.setTitle(R.string.app_name);
-                status.setMessage(mOutput.toString());
-                if (existFile("/system/xbin/bb_version") && readFile("/system/xbin/bb_version").equals(version)) {
-                    status.setNeutralButton(R.string.save_log, (dialog, which) -> {
-                        create("## BusyBox Installation log created by BusyBox Installer v" + BuildConfig.VERSION_NAME + "\n\n" +
-                                        mOutput.toString(),Environment.getExternalStorageDirectory().getPath() + "/bb_log");
-                        snackbar(view, activityRef.get().getString(R.string.save_log_summary, Environment.getExternalStorageDirectory().getPath() + "/bb_log"));
-                    });
-                    status.setNegativeButton(R.string.cancel, (dialog, which) -> {
-                    });
-                    status.setPositiveButton(R.string.reboot, (dialog, which) -> {
-                        RootUtils.runCommand("svc power reboot");
-                    });
-                } else {
-                    status.setPositiveButton(R.string.cancel, (dialog, which) -> {
-                    });
-                }
-                status.show();
-            }
-        }.execute();
-    }
-
-    public static void removeBusyBox(WeakReference<Activity> activityRef) {
-        new AsyncTask<Void, Void, Void>() {
-            private ProgressDialog mProgressDialog;
-            @Override
-            protected void onPreExecute() {
-                super.onPreExecute();
-                mProgressDialog = new ProgressDialog(activityRef.get());
-                mProgressDialog.setMessage(activityRef.get().getString(R.string.removing_busybox, version) + " ...");
-                mProgressDialog.setCancelable(false);
-                mProgressDialog.show();
-                if (mOutput == null) {
-                    mOutput = new StringBuilder();
-                } else {
-                    mOutput.setLength(0);
-                }
-                mOutput.append("** Preparing to remove BusyBox v" + version + "...\n\n");
-            }
-            @Override
-            protected Void doInBackground(Void... voids) {
-                if (isWritableSystem()) {
-                    mOutput.append("** Mounting '/system' partition: Done *\n\n");
-                } else if (isWritableRoot()) {
-                    SAR = true;
-                    mOutput.append("** System-As-Root device detected\n");
-                    mOutput.append("** Mounting 'root' partition: Done *\n\n");
-                }
-                sleep(1);
-                mOutput.append("** Removing BusyBox v" + version + "  applets: ");
-                RootUtils.runCommand("cd /system/xbin/");
-                RootUtils.runCommand("rm -r " + getAppletsList().replace("\n", " "));
-                delete("/system/xbin/bb_version");
-                delete("/system/xbin/busybox_" + version);
-                mOutput.append("Done *\n\n");
-                mOutput.append("** Syncing file systems: ");
-                RootUtils.runCommand("sync");
-                mOutput.append("Done *\n\n");
-                sleep(1);
-                if (SAR) {
-                    mOutput.append(mountRootFS("ro"));
-                    mOutput.append("** Making 'root' file system read-only: Done*\n\n");
-                } else {
-                    mOutput.append(mountSystem("ro"));
-                    mOutput.append("** Making 'system' partition read-only: Done*\n\n");
-                }
-                mOutput.append(activityRef.get().getString(R.string.remove_busybox_completed, version));
-                return null;
-            }
-            @Override
-            protected void onPostExecute(Void aVoid) {
-                super.onPostExecute(aVoid);
-                Activity activity = activityRef.get();
-                if (activity.isFinishing() || activity.isDestroyed()) return;
-                try {
-                    mProgressDialog.dismiss();
-                } catch (IllegalArgumentException ignored) {
-                }
-                refreshTitles();
-                MaterialAlertDialogBuilder status = new MaterialAlertDialogBuilder(activity);
-                status.setIcon(R.mipmap.ic_launcher_round);
-                status.setTitle(R.string.app_name);
-                status.setMessage(mOutput.toString());
-                status.setNeutralButton(R.string.cancel, (dialog, which) -> {
-                });
-                status.setPositiveButton(R.string.reboot, (dialog, which) -> {
-                    RootUtils.runCommand("svc power reboot");
-                });
-                status.show();
-            }
-        }.execute();
-    }
-
     public static String getBusyBoxVersion() {
         try {
             for (String line : RootUtils.runAndGetOutput("/system/xbin/busybox_" + version).split("\\r?\\n")) {
@@ -424,18 +236,6 @@ public class Utils {
 
     public static String getAppletsList() {
         return RootUtils.runAndGetOutput("/system/xbin/busybox_" + version + " --list").replace("su\n", "");
-    }
-
-    public static void refreshTitles() {
-        if (Utils.existFile("/system/xbin/bb_version")) {
-            if (Utils.readFile("/system/xbin/bb_version").equals(Utils.version)) {
-                mInstallText.setText(R.string.updated_message);
-            } else {
-                mInstallText.setText(R.string.update_busybox);
-            }
-        } else {
-            mInstallText.setText(R.string.install_busybox);
-        }
     }
 
     public static void setDefaultLanguage(Context context) {

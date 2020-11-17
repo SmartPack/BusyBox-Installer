@@ -39,7 +39,7 @@ public class RootUtils {
         return s;
     }
 
-    static void runCommand(String command) {
+    public static void runCommand(String command) {
         Shell.su(command).exec();
     }
 
@@ -60,7 +60,7 @@ public class RootUtils {
     }
 
     @NonNull
-    static String runAndGetError(String command) {
+    public static String runAndGetError(String command) {
         StringBuilder sb = new StringBuilder();
         List<String> outputs = new ArrayList<>();
         List<String> stderr = new ArrayList<>();
