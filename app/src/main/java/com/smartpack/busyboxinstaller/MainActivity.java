@@ -33,8 +33,6 @@ import com.smartpack.busyboxinstaller.utils.BillingActivity;
 import com.smartpack.busyboxinstaller.utils.RootUtils;
 import com.smartpack.busyboxinstaller.utils.Utils;
 
-import java.lang.ref.WeakReference;
-
 /*
  * Created by sunilpaulmathew <sunil.kde@gmail.com> on April 11, 2020
  */
@@ -234,7 +232,7 @@ public class MainActivity extends AppCompatActivity {
                     install.setNegativeButton(R.string.cancel, (dialog, which) -> {
                     });
                     install.setPositiveButton(R.string.update, (dialog, which) -> {
-                        installBusyBox(mInstall, new WeakReference<>(this));
+                        installBusyBox(mInstall, this);
                     });
                 }
             } else {
@@ -243,7 +241,7 @@ public class MainActivity extends AppCompatActivity {
                 install.setNegativeButton(R.string.cancel, (dialog, which) -> {
                 });
                 install.setPositiveButton(R.string.install, (dialog, which) -> {
-                    installBusyBox(mInstall, new WeakReference<>(this));
+                    installBusyBox(mInstall, this);
                 });
             }
         } else {
@@ -261,7 +259,7 @@ public class MainActivity extends AppCompatActivity {
                     .setNegativeButton(R.string.cancel, (dialog, which) -> {
                     })
                     .setPositiveButton(R.string.remove, (dialog, which) -> {
-                        removeBusyBox(new WeakReference<>(this));
+                        removeBusyBox(this);
                     })
                     .show();
     }
@@ -283,13 +281,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @SuppressLint("StaticFieldLeak")
-    public void installBusyBox(View view, WeakReference<Activity> activityRef) {
+    public void installBusyBox(View view, Activity activity) {
         new AsyncTask<Void, Void, Void>() {
             @SuppressLint("SetTextI18n")
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                mProgressText.setText(activityRef.get().getString(R.string.installing, Utils.version) + " ...");
+                mProgressText.setText(activity.getString(R.string.installing, Utils.version) + " ...");
                 mProgress.setVisibility(View.VISIBLE);
                 mInstall.setVisibility(View.GONE);
                 if (Utils.mOutput == null) {
@@ -310,12 +308,12 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     Utils.mountable = false;
                     Utils.mOutput.append("** Both 'root' & '/system' partitions on your device are not writable! *\n\n");
-                    Utils.mOutput.append(activityRef.get().getString(R.string.install_busybox_failed));
+                    Utils.mOutput.append(activity.getString(R.string.install_busybox_failed));
                 }
                 if (Utils.mountable) {
                     Utils.sleep(1);
                     Utils.mOutput.append("** Copying BusyBox v" + Utils.version + " binary into '").append(Environment.getExternalStorageDirectory().getPath()).append("': Done *\n\n");
-                    Utils.copyBinary(activityRef.get());
+                    Utils.copyBinary(activity);
                     if (!Utils.existFile("/system/xbin/")) {
                         RootUtils.runCommand("mkdir /system/xbin/");
                         Utils.mOutput.append("** Creating '/system/xbin/': Done*\n\n");
@@ -351,14 +349,13 @@ public class MainActivity extends AppCompatActivity {
                         Utils.mOutput.append(Utils.mountSystem("ro"));
                         Utils.mOutput.append("** Making 'system' partition read-only: Done*\n\n");
                     }
-                    Utils.mOutput.append(activityRef.get().getString(R.string.install_busybox_success));
+                    Utils.mOutput.append(activity.getString(R.string.install_busybox_success));
                 }
                 return null;
             }
             @Override
             protected void onPostExecute(Void aVoid) {
                 super.onPostExecute(aVoid);
-                Activity activity = activityRef.get();
                 if (activity.isFinishing() || activity.isDestroyed()) return;
                 mProgress.setVisibility(View.GONE);
                 mInstall.setVisibility(View.VISIBLE);
@@ -371,7 +368,7 @@ public class MainActivity extends AppCompatActivity {
                     status.setNeutralButton(R.string.save_log, (dialog, which) -> {
                         Utils.create("## BusyBox Installation log created by BusyBox Installer v" + BuildConfig.VERSION_NAME + "\n\n" +
                                 Utils.mOutput.toString(),Environment.getExternalStorageDirectory().getPath() + "/bb_log");
-                        Utils.snackbar(view, activityRef.get().getString(R.string.save_log_summary, Environment.getExternalStorageDirectory().getPath() + "/bb_log"));
+                        Utils.snackbar(view, activity.getString(R.string.save_log_summary, Environment.getExternalStorageDirectory().getPath() + "/bb_log"));
                     });
                     status.setNegativeButton(R.string.cancel, (dialog, which) -> {
                     });
@@ -388,13 +385,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @SuppressLint("StaticFieldLeak")
-    public void removeBusyBox(WeakReference<Activity> activityRef) {
+    public void removeBusyBox(Activity activity) {
         new AsyncTask<Void, Void, Void>() {
             @SuppressLint("SetTextI18n")
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                mProgressText.setText(activityRef.get().getString(R.string.removing_busybox, Utils.version) + " ...");
+                mProgressText.setText(activity.getString(R.string.removing_busybox, Utils.version) + " ...");
                 mProgress.setVisibility(View.VISIBLE);
                 mInstall.setVisibility(View.GONE);
                 if (Utils.mOutput == null) {
@@ -431,13 +428,12 @@ public class MainActivity extends AppCompatActivity {
                     Utils.mOutput.append(Utils.mountSystem("ro"));
                     Utils.mOutput.append("** Making 'system' partition read-only: Done*\n\n");
                 }
-                Utils.mOutput.append(activityRef.get().getString(R.string.remove_busybox_completed, Utils.version));
+                Utils.mOutput.append(activity.getString(R.string.remove_busybox_completed, Utils.version));
                 return null;
             }
             @Override
             protected void onPostExecute(Void aVoid) {
                 super.onPostExecute(aVoid);
-                Activity activity = activityRef.get();
                 if (activity.isFinishing() || activity.isDestroyed()) return;
                 mProgress.setVisibility(View.VISIBLE);
                 mInstall.setVisibility(View.VISIBLE);
@@ -497,7 +493,7 @@ public class MainActivity extends AppCompatActivity {
                 update.setView(checkBoxView);
                 update.setNegativeButton(R.string.cancel, (dialog, which) -> {
                 });
-                update.setPositiveButton(R.string.update, (dialog, which) -> installBusyBox(mInstall, new WeakReference<>(this)));
+                update.setPositiveButton(R.string.update, (dialog, which) -> installBusyBox(mInstall, this));
                 update.show();
             }
         }
