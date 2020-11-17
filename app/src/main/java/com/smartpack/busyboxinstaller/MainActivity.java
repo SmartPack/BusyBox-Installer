@@ -22,23 +22,18 @@ import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageButton;
-import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.core.app.ActivityCompat;
 
-import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.checkbox.MaterialCheckBox;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textview.MaterialTextView;
+import com.smartpack.busyboxinstaller.utils.AboutActivity;
 import com.smartpack.busyboxinstaller.utils.BillingActivity;
 import com.smartpack.busyboxinstaller.utils.RootUtils;
 import com.smartpack.busyboxinstaller.utils.Utils;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.lang.ref.WeakReference;
-import java.util.Objects;
 
 /*
  * Created by sunilpaulmathew <sunil.kde@gmail.com> on April 11, 2020
@@ -46,23 +41,10 @@ import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
-    private AppCompatImageButton mBack;
-    private AppCompatImageView mAppIcon;
-    private AppCompatImageView mDeveloper;
     private boolean mExit;
-    private boolean mForegroundActive = false;
     private Handler mHandler = new Handler();
     private LinearLayout mInstall;
     private LinearLayout mProgress;
-    private MaterialCardView mForegroundCard;
-    private MaterialTextView mCardTitle;
-    private MaterialTextView mAppName;
-    private MaterialTextView mAboutApp;
-    private MaterialTextView mDevelopedBy;
-    private MaterialTextView mCreditsTitle;
-    private MaterialTextView mCredits;
-    private MaterialTextView mForegroundText;
-    private MaterialTextView mCancel;
     private MaterialTextView mInstallText;
     private MaterialTextView mProgressText;
 
@@ -79,58 +61,37 @@ public class MainActivity extends AppCompatActivity {
         mProgress = findViewById(R.id.progress_layout);
         mProgressText = findViewById(R.id.progress_text);
         mInstallText = findViewById(R.id.install_text);
+        mInstall = findViewById(R.id.install);
+        AppCompatImageButton settings = findViewById(R.id.settings_menu);
+
         refreshTitles();
 
-        mInstall = findViewById(R.id.install);
         mInstall.setVisibility(View.VISIBLE);
         mInstall.setOnClickListener(v -> {
             installDialog();
         });
-        AppCompatImageButton settings = findViewById(R.id.settings_menu);
-        mForegroundCard = findViewById(R.id.foreground_card);
-        mBack = findViewById(R.id.back);
-        mAppIcon = findViewById(R.id.app_image);
-        mCardTitle = findViewById(R.id.card_title);
-        mAppName = findViewById(R.id.app_title);
-        mAboutApp = findViewById(R.id.about_app);
-        mDevelopedBy = findViewById(R.id.developed_by);
-        mDeveloper = findViewById(R.id.developer);
-        mCreditsTitle = findViewById(R.id.credits_title);
-        mCredits = findViewById(R.id.credits);
-        mForegroundText = findViewById(R.id.foreground_text);
-        mDeveloper.setOnClickListener(v -> {
-            Utils.launchUrl("https://github.com/sunilpaulmathew", this);
-        });
-        mCancel = findViewById(R.id.cancel_button);
-        mBack.setOnClickListener(v -> {
-            closeForeground();
-        });
-        mCancel.setOnClickListener(v -> {
-            closeForeground();
-        });
         settings.setOnClickListener(v -> {
-            if (mForegroundActive) return;
             PopupMenu popupMenu = new PopupMenu(this, settings);
             Menu menu = popupMenu.getMenu();
             if (Utils.existFile("/system/xbin/bb_version")) {
                 menu.add(Menu.NONE, 1, Menu.NONE, getString(R.string.remove));
             }
             SubMenu language = menu.addSubMenu(Menu.NONE, 0, Menu.NONE, getString(R.string.language, Utils.getLanguage(this)));
-            language.add(Menu.NONE, 10, Menu.NONE, getString(R.string.language_default)).setCheckable(true)
+            language.add(Menu.NONE, 9, Menu.NONE, getString(R.string.language_default)).setCheckable(true)
                     .setChecked(Utils.languageDefault(this));
-            language.add(Menu.NONE, 11, Menu.NONE, getString(R.string.language_en)).setCheckable(true)
+            language.add(Menu.NONE, 10, Menu.NONE, getString(R.string.language_en)).setCheckable(true)
                     .setChecked(Utils.getBoolean("use_en", false, this));
-            language.add(Menu.NONE, 12, Menu.NONE, getString(R.string.language_ko)).setCheckable(true)
+            language.add(Menu.NONE, 11, Menu.NONE, getString(R.string.language_ko)).setCheckable(true)
                     .setChecked(Utils.getBoolean("use_ko", false, this));
-            language.add(Menu.NONE, 13, Menu.NONE, getString(R.string.language_am)).setCheckable(true)
+            language.add(Menu.NONE, 12, Menu.NONE, getString(R.string.language_am)).setCheckable(true)
                     .setChecked(Utils.getBoolean("use_am", false, this));
-            language.add(Menu.NONE, 14, Menu.NONE, getString(R.string.language_el)).setCheckable(true)
+            language.add(Menu.NONE, 13, Menu.NONE, getString(R.string.language_el)).setCheckable(true)
                     .setChecked(Utils.getBoolean("use_el", false, this));
-            language.add(Menu.NONE, 15, Menu.NONE, getString(R.string.language_pt)).setCheckable(true)
+            language.add(Menu.NONE, 14, Menu.NONE, getString(R.string.language_pt)).setCheckable(true)
                     .setChecked(Utils.getBoolean("use_pt", false, this));
-            language.add(Menu.NONE, 16, Menu.NONE, getString(R.string.language_ru)).setCheckable(true)
+            language.add(Menu.NONE, 15, Menu.NONE, getString(R.string.language_ru)).setCheckable(true)
                     .setChecked(Utils.getBoolean("use_ru", false, this));
-            language.add(Menu.NONE, 17, Menu.NONE, getString(R.string.language_in)).setCheckable(true)
+            language.add(Menu.NONE, 16, Menu.NONE, getString(R.string.language_in)).setCheckable(true)
                     .setChecked(Utils.getBoolean("use_in", false, this));
             if (Utils.existFile("/system/xbin/busybox_" + Utils.version)) {
                 menu.add(Menu.NONE, 2, Menu.NONE, getString(R.string.list_applets));
@@ -140,7 +101,6 @@ public class MainActivity extends AppCompatActivity {
             about.add(Menu.NONE, 4, Menu.NONE, getString(R.string.share));
             about.add(Menu.NONE, 5, Menu.NONE, getString(R.string.source_code));
             about.add(Menu.NONE, 6, Menu.NONE, getString(R.string.support_group));
-            about.add(Menu.NONE, 9, Menu.NONE, getString(R.string.change_log));
             about.add(Menu.NONE, 7, Menu.NONE, getString(R.string.donations));
             about.add(Menu.NONE, 8, Menu.NONE, getString(R.string.about));
             popupMenu.setOnMenuItemClickListener(item -> {
@@ -180,79 +140,60 @@ public class MainActivity extends AppCompatActivity {
                     case 7:
                         Intent donations = new Intent(this, BillingActivity.class);
                         startActivity(donations);
-                        finish();
                         break;
                     case 8:
-                        aboutDialog();
+                        Intent aboutDialog = new Intent(this, AboutActivity.class);
+                        startActivity(aboutDialog);
                         break;
                     case 9:
-                        String change_log = null;
-                        try {
-                            change_log = new JSONObject(Objects.requireNonNull(Utils.readAssetFile(
-                                    this, "changelogs.json"))).getString("releaseNotes");
-                        } catch (JSONException ignored) {
-                        }
-                        mCardTitle.setText(R.string.change_log);
-                        mAppName.setText(getString(R.string.app_name) + " v" + BuildConfig.VERSION_NAME);
-                        mForegroundText.setText(change_log);
-                        mAppIcon.setVisibility(View.VISIBLE);
-                        mAppName.setVisibility(View.VISIBLE);
-                        mBack.setVisibility(View.VISIBLE);
-                        mCancel.setVisibility(View.VISIBLE);
-                        mCardTitle.setVisibility(View.VISIBLE);
-                        mForegroundText.setVisibility(View.VISIBLE);
-                        mForegroundActive = true;
-                        mForegroundCard.setVisibility(View.VISIBLE);
-                        break;
-                    case 10:
                         if (!Utils.languageDefault(this)) {
                             Utils.setDefaultLanguage(this);
                             restartApp();
                         }
                         break;
-                    case 11:
+                    case 10:
                         if (!Utils.getBoolean("use_en", false, this)) {
                             Utils.setDefaultLanguage(this);
                             Utils.saveBoolean("use_en", true, this);
                             restartApp();
                         }
                         break;
-                    case 12:
+                    case 11:
                         if (!Utils.getBoolean("use_ko", false, this)) {
                             Utils.setDefaultLanguage(this);
                             Utils.saveBoolean("use_ko", true, this);
                             restartApp();
                         }
                         break;
-                    case 13:
+                    case 12:
                         if (!Utils.getBoolean("use_am", false, this)) {
                             Utils.setDefaultLanguage(this);
                             Utils.saveBoolean("use_am", true, this);
                             restartApp();
                         }
                         break;
-                    case 14:
+                    case 13:
                         if (!Utils.getBoolean("use_el", false, this)) {
                             Utils.setDefaultLanguage(this);
                             Utils.saveBoolean("use_el", true, this);
                             restartApp();
                         }
                         break;
-                    case 15:
+                    case 14:
                         if (!Utils.getBoolean("use_pt", false, this)) {
                             Utils.setDefaultLanguage(this);
                             Utils.saveBoolean("use_pt", true, this);
                             restartApp();
                         }
                         break;
-                    case 16:
+                    case 15:
                         if (!Utils.getBoolean("use_ru", false, this)) {
                             Utils.setDefaultLanguage(this);
                             Utils.saveBoolean("use_ru", true, this);
                             restartApp();
                         }
                         break;
-                    case 17:
+                    case 16:
                         if (!Utils.getBoolean("use_in", false, this)) {
                             Utils.setDefaultLanguage(this);
                             Utils.saveBoolean("use_in", true, this);
@@ -339,41 +280,6 @@ public class MainActivity extends AppCompatActivity {
         shareapp.setType("text/plain");
         Intent shareIntent = Intent.createChooser(shareapp, null);
         startActivity(shareIntent);
-    }
-
-    @SuppressLint("SetTextI18n")
-    private void aboutDialog() {
-        mCardTitle.setText(R.string.about);
-        mAppName.setText(getString(R.string.app_name) + " v" + BuildConfig.VERSION_NAME);
-        mCredits.setText(getString(R.string.credits_summary));
-        mCardTitle.setVisibility(View.VISIBLE);
-        mBack.setVisibility(View.VISIBLE);
-        mAppIcon.setVisibility(View.VISIBLE);
-        mAppName.setVisibility(View.VISIBLE);
-        mAboutApp.setVisibility(View.VISIBLE);
-        mDevelopedBy.setVisibility(View.VISIBLE);
-        mDeveloper.setVisibility(View.VISIBLE);
-        mCreditsTitle.setVisibility(View.VISIBLE);
-        mCredits.setVisibility(View.VISIBLE);
-        mCancel.setVisibility(View.VISIBLE);
-        mForegroundActive = true;
-        mForegroundCard.setVisibility(View.VISIBLE);
-    }
-
-    private void closeForeground() {
-        mCardTitle.setVisibility(View.GONE);
-        mBack.setVisibility(View.GONE);
-        mAppIcon.setVisibility(View.GONE);
-        mAppName.setVisibility(View.GONE);
-        mAboutApp.setVisibility(View.GONE);
-        mDevelopedBy.setVisibility(View.GONE);
-        mDeveloper.setVisibility(View.GONE);
-        mCreditsTitle.setVisibility(View.GONE);
-        mCredits.setVisibility(View.GONE);
-        mForegroundText.setVisibility(View.GONE);
-        mCancel.setVisibility(View.GONE);
-        mForegroundCard.setVisibility(View.GONE);
-        mForegroundActive = false;
     }
 
     @SuppressLint("StaticFieldLeak")
@@ -599,9 +505,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (mForegroundActive) {
-            closeForeground();
-        } else if (mExit) {
+        if (mExit) {
             mExit = false;
             super.onBackPressed();
         } else {
