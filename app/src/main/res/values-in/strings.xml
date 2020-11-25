@@ -14,7 +14,7 @@
     <string name="donation_app">Beli Aplikasi Donasi</string>
     <string name="hide">Menyembunyikan</string>
     <string name="install">Pasang</string>
-    <string name="install_busybox">Pasabg BusyBox!</string>
+    <string name="install_busybox">Pasang BusyBox!</string>
     <string name="install_busybox_latest">Selamat! BusyBox versi terbaru (v%s) yang tersedia di aplikasi ini telah terinstal di perangkat Anda!</string>
     <string name="install_busybox_message">Apakah Anda yakin untuk menginstal BusyBox %s?</string>
     <string name="install_busybox_unavailable">Sayangnya, penginstalan BuyBox dari aplikasi ini belum tersedia untuk arsitektur Anda (%s)!</string>
