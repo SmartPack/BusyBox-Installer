@@ -15,7 +15,6 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import com.google.android.material.snackbar.Snackbar;
-import com.smartpack.busyboxinstaller.BuildConfig;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -42,13 +41,16 @@ public class Utils {
     public static boolean mountable = true;
 
     public static boolean isNotDonated(Context context) {
-        if (BuildConfig.DEBUG) return false;
         try {
             context.getPackageManager().getApplicationInfo("com.smartpack.donate", 0);
             return false;
         } catch (PackageManager.NameNotFoundException ignored) {
             return true;
         }
+    }
+
+    public static boolean isSupporter(Context context) {
+        return !isNotDonated(context) || getBoolean("support_received", false, context);
     }
 
     public static void initializeAppTheme(Context context) {

@@ -50,7 +50,14 @@ public class BillingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_billing);
 
         AppCompatImageButton mBack = findViewById(R.id.back_button);
+        AppCompatImageButton mSupporterIcon = findViewById(R.id.supporter_button);
+        MaterialTextView mSupporterMessage = findViewById(R.id.supporter_message);
         MaterialTextView mCancel = findViewById(R.id.cancel_button);
+
+        if (Utils.isSupporter(this)) {
+            mSupporterIcon.setVisibility(View.VISIBLE);
+            mSupporterMessage.setText(getString(R.string.support_status_message));
+        }
 
         mData.add(new RecycleViewItem(getString(R.string.donation_app), getResources().getDrawable(R.drawable.ic_donation_app)));
         mData.add(new RecycleViewItem(getString(R.string.support_coffee), getResources().getDrawable(R.drawable.ic_coffee)));
@@ -202,8 +209,8 @@ public class BillingActivity extends AppCompatActivity {
                     new MaterialAlertDialogBuilder(this)
                             .setMessage(getString(R.string.support_received_message))
                             .setPositiveButton(getString(R.string.cancel), (dialogInterface, i) -> {
-                            })
-                            .show();
+                            }).show();
+                    Utils.saveBoolean("support_received", true, this);
                 }
             }
         } catch (Exception ignored) {}
