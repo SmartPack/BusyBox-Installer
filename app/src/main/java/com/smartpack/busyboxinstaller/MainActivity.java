@@ -434,7 +434,7 @@ public class MainActivity extends AppCompatActivity {
             protected void onPostExecute(Void aVoid) {
                 super.onPostExecute(aVoid);
                 if (activity.isFinishing() || activity.isDestroyed()) return;
-                mProgress.setVisibility(View.VISIBLE);
+                mProgress.setVisibility(View.GONE);
                 mInstall.setVisibility(View.VISIBLE);
                 refreshTitles();
                 MaterialAlertDialogBuilder status = new MaterialAlertDialogBuilder(activity);
