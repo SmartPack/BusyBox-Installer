@@ -64,7 +64,7 @@
                 android:padding="15dp"
                 android:gravity="center"
                 android:textSize="20sp"
-                android:textColor="?android:attr/colorAccent" />
+                android:textColor="?attr/colorAccent" />
         </LinearLayout>
     </FrameLayout>
 
@@ -72,7 +72,6 @@
         android:id="@+id/progress_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="?android:attr/colorBackground"
         android:orientation="vertical"
         android:visibility="gone"
         android:gravity="center"
@@ -91,7 +90,7 @@
             android:gravity="center_horizontal"
             android:textStyle="bold|italic"
             android:layout_marginTop="10dp"
-            android:textColor="?android:attr/colorAccent"
+            android:textColor="?attr/colorAccent"
             android:textSize="15sp"
             android:padding="10dp"/>
     </LinearLayout>

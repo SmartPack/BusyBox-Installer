@@ -11,7 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="?android:attr/colorBackground"
         android:orientation="vertical">
 
         <LinearLayout
@@ -73,7 +72,7 @@
                 android:gravity="center"
                 android:textSize="23sp"
                 android:textStyle="bold"
-                android:textColor="?android:attr/colorAccent"/>
+                android:textColor="?attr/colorAccent"/>
 
             <androidx.core.widget.NestedScrollView
                 android:layout_width="match_parent"
@@ -95,7 +94,6 @@
                         android:paddingTop="16dp"
                         android:gravity="center_horizontal"
                         android:text="@string/about_summary"
-                        android:textColor="?android:attr/textColorPrimary"
                         android:textIsSelectable="true"
                         android:textSize="15sp" />
 
@@ -106,7 +104,7 @@
                         android:textStyle="bold"
                         android:gravity="center_horizontal"
                         android:text="@string/developed_by"
-                        android:textColor="?android:attr/colorAccent"
+                        android:textColor="?attr/colorAccent"
                         android:textIsSelectable="true"
                         android:textSize="18sp" />
 
@@ -125,7 +123,7 @@
                         android:textStyle="bold"
                         android:gravity="center_horizontal"
                         android:text="@string/credits"
-                        android:textColor="?android:attr/colorAccent"
+                        android:textColor="?attr/colorAccent"
                         android:textIsSelectable="true"
                         android:textSize="18sp" />
 
@@ -138,7 +136,6 @@
                         android:gravity="center_horizontal"
                         android:text="@string/credits_summary"
                         android:lineSpacingExtra="5dp"
-                        android:textColor="?android:attr/textColorPrimary"
                         android:textIsSelectable="true"
                         android:textSize="15sp" />
 
@@ -153,7 +150,7 @@
                             android:textStyle="bold"
                             android:gravity="center_horizontal"
                             android:text="@string/change_log"
-                            android:textColor="?android:attr/colorAccent"
+                            android:textColor="?attr/colorAccent"
                             android:textIsSelectable="true"
                             android:textSize="18sp" />
 
@@ -164,7 +161,6 @@
                             android:layout_marginTop="15dp"
                             android:padding="16dp"
                             android:gravity="start"
-                            android:textColor="?android:attr/textColorPrimary"
                             android:textIsSelectable="true"
                             android:textSize="15sp" />
                     </androidx.cardview.widget.CardView>
