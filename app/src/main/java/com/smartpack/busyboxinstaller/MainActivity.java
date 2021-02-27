@@ -13,7 +13,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 import android.view.Menu;
 import android.view.SubMenu;
@@ -312,14 +311,14 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (Utils.mountable) {
                     Utils.sleep(1);
-                    Utils.mOutput.append("** Copying BusyBox v" + Utils.version + " binary into '").append(Environment.getExternalStorageDirectory().getPath()).append("': Done *\n\n");
+                    Utils.mOutput.append("** Copying BusyBox v" + Utils.version + " binary into '").append(getExternalFilesDir("")).append("': Done *\n\n");
                     Utils.copyBinary(activity);
                     if (!Utils.existFile("/system/xbin/")) {
                         RootUtils.runCommand("mkdir /system/xbin/");
                         Utils.mOutput.append("** Creating '/system/xbin/': Done*\n\n");
                     }
                     Utils.mOutput.append("** Moving BusyBox binary into '/system/xbin/': ");
-                    Utils.move(Environment.getExternalStorageDirectory().getPath() + "/busybox_" + Utils.version, "/system/xbin/\n");
+                    Utils.move(getExternalFilesDir("") + "/busybox_" + Utils.version, "/system/xbin/\n");
                     Utils.mOutput.append(Utils.existFile("/system/xbin/busybox_" + Utils.version) ? "Done *\n\n" : "Failed *\n\n");
                     if (Utils.existFile("/system/xbin/busybox_" + Utils.version)) {
                         Utils.mOutput.append("** Detecting 'su' binary: ");
@@ -367,8 +366,8 @@ public class MainActivity extends AppCompatActivity {
                 if (Utils.existFile("/system/xbin/bb_version") && Utils.readFile("/system/xbin/bb_version").equals(Utils.version)) {
                     status.setNeutralButton(R.string.save_log, (dialog, which) -> {
                         Utils.create("## BusyBox Installation log created by BusyBox Installer v" + BuildConfig.VERSION_NAME + "\n\n" +
-                                Utils.mOutput.toString(),Environment.getExternalStorageDirectory().getPath() + "/bb_log");
-                        Utils.snackbar(view, activity.getString(R.string.save_log_summary, Environment.getExternalStorageDirectory().getPath() + "/bb_log"));
+                                Utils.mOutput.toString(),getExternalFilesDir("") + "/bb_log");
+                        Utils.snackbar(view, activity.getString(R.string.save_log_summary, getExternalFilesDir("") + "/bb_log"));
                     });
                     status.setNegativeButton(R.string.cancel, (dialog, which) -> {
                     });

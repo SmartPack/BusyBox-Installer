@@ -8,7 +8,6 @@ import android.content.res.AssetManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.net.Uri;
-import android.os.Environment;
 import android.preference.PreferenceManager;
 import android.util.DisplayMetrics;
 import android.view.View;
@@ -211,7 +210,7 @@ public class Utils {
         OutputStream out;
         try {
             in = assetManager.open(getArch());
-            File outFile = new File(Environment.getExternalStorageDirectory().getPath() + "/busybox_" + version);
+            File outFile = new File(context.getExternalFilesDir("") + "/busybox_" + version);
             out = new FileOutputStream(outFile);
             byte[] buffer = new byte[1024];
             int read;
