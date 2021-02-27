@@ -57,6 +57,7 @@
     <string name="support_received_message">Thank you very much for your support \u2665\nIt will motivate me a lot to continue my projects more active! Moreover, you\'ll receive a supporter badge on the top of this page.</string>
     <string name="support_retry_message">Please try purchasing again!</string>
     <string name="support_group">Support Group</string>
+    <string name="translations">Translations</string>
     <string name="update">Update</string>
     <string name="update_busybox">BusyBox Update Available!</string>
     <string name="updated_message">Congrats! You\'re Up-to-date!</string>

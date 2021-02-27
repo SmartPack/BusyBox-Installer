@@ -98,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
             about.add(Menu.NONE, 4, Menu.NONE, getString(R.string.share));
             about.add(Menu.NONE, 5, Menu.NONE, getString(R.string.source_code));
             about.add(Menu.NONE, 6, Menu.NONE, getString(R.string.support_group));
+            about.add(Menu.NONE, 17, Menu.NONE, getString(R.string.translations));
             about.add(Menu.NONE, 7, Menu.NONE, getString(R.string.donations));
             about.add(Menu.NONE, 8, Menu.NONE, getString(R.string.about));
             popupMenu.setOnMenuItemClickListener(item -> {
@@ -197,6 +198,8 @@ public class MainActivity extends AppCompatActivity {
                             restartApp();
                         }
                         break;
+                    case 17:
+                        Utils.launchUrl("https://poeditor.com/join/project?hash=JsnaHsMpUk", this);
                 }
                 return false;
             });

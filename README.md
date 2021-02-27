@@ -29,6 +29,9 @@
 ## Report a bug or request a feature
 You can report a bug or request a feature by [opening an issue](https://github.com/SmartPack/BusyBox-Installer/issues/new).
 
+## Translations
+Please help me to translate this application via [POEditor](https://poeditor.com/join/project?hash=JsnaHsMpUk). You may also translate after downloading the original language string available [here](app/src/main/res/values/strings.xml).
+
 ## Donations
 If you like to appreciate my work, please consider donating to me (either via [PayPal](https://www.paypal.me/menacherry/), or [Ko-fi](https://ko-fi.com/sunilpaulmathew/), or by purchasing the [SmartPack Donation Package](https://play.google.com/store/apps/details?id=com.smartpack.donate) from playstore) as it is helpful to continue my projects more active, although it is not at all necessary.
 
@@ -47,10 +50,10 @@ If you like to appreciate my work, please consider donating to me (either via [P
 * [topjohnwu](https://github.com/topjohnwu/), libsu
 * [https://busybox.net/](https://busybox.net/), BusyBox Binaries
 * [Lennoard Silva](https://github.com/Lennoard), Code contributions/Portuguese (Brazilian) Translations
-* [SmgKhOaRn](https://github.com/SmgKhOaRn), Korean Translations
+* [FiestaLake](https://github.com/FiestaLake), Korean Translations
 * [Mikesew1320](https://github.com/Mikesew1320), Amharic & Russian Translations
 * [tsiflimagas](https://github.com/tsiflimagas), Greek Translations
-* [Hafitz21](https://github.com/HafitzSetya), Indonesian Translations
+* [Hafitz Setya](https://github.com/breakdowns), Indonesian Translations
 * [sajid_islam](https://t.me/sajid_islam), App Icon
 
 ## License
