@@ -6,7 +6,6 @@
     <string name="busybox_version">Έκδοση BusyBox</string>
     <string name="cancel">Ακύρωση</string>
     <string name="credits">Ευχαριστίες</string>
-    <string name="credits_summary"><b><i>https://busybox.net/</i></b> - <i>BusyBox Binaries</i>\n<b><i>Grarak</i></b> - <i>Συνεισφορές Κώδικα</i>\n<b><i>Lennoard</i></b> - <i>Συνεργάτες Κώδικα/pt-Br Μετάφραση</i>\n<b><i>SmgKhOaRn</i></b> - <i>Κορεατική Μετάφραση</i>\n<b><i>Mikesew1320</i></b> - <i>Amharic &amp; Ρωσική Μετάφραση</i>\n<b><i>tsiflimagas</i></b> - <i>Ελληνική μετάφραση</i>\n<b><i>sajid_islam</i></b> - <i>Εικονίδιο Εφαρμογής</i></string>
     <string name="donations">Δωρεές</string>
     <string name="hide">Απόκρυψη</string>
     <string name="install">Εγκατάσταση</string>
