@@ -169,6 +169,14 @@ public class Utils {
         PreferenceManager.getDefaultSharedPreferences(context).edit().putBoolean(name, value).apply();
     }
 
+    public static String getString(String name, String defaults, Context context) {
+        return PreferenceManager.getDefaultSharedPreferences(context).getString(name, defaults);
+    }
+
+    public static void saveString(String name, String value, Context context) {
+        PreferenceManager.getDefaultSharedPreferences(context).edit().putString(name, value).apply();
+    }
+
     public static String readAssetFile(Context context, String file) {
         InputStream input = null;
         BufferedReader buf = null;
@@ -239,52 +247,13 @@ public class Utils {
         return RootUtils.runAndGetOutput("/system/xbin/busybox_" + version + " --list").replace("su\n", "");
     }
 
-    public static void setDefaultLanguage(Context context) {
-        Utils.saveBoolean("use_en", false, context);
-        Utils.saveBoolean("use_ko", false, context);
-        Utils.saveBoolean("use_am", false, context);
-        Utils.saveBoolean("use_el", false, context);
-        Utils.saveBoolean("use_pt", false, context);
-        Utils.saveBoolean("use_ru", false, context);
-        Utils.saveBoolean("use_in", false, context);
-    }
-
-    public static boolean languageDefault(Context context) {
-        return !Utils.getBoolean("use_en", false, context)
-                && !Utils.getBoolean("use_ko", false, context)
-                && !Utils.getBoolean("use_am", false, context)
-                && !Utils.getBoolean("use_el", false, context)
-                && !Utils.getBoolean("use_pt", false, context)
-                && !Utils.getBoolean("use_ru", false, context)
-                && !Utils.getBoolean("use_in", false, context);
-    }
-
     public static String getLanguage(Context context) {
-        if (getBoolean("use_en", false, context)) {
-            return  "en_US";
-        } else if (getBoolean("use_ko", false, context)) {
-            return  "ko";
-        } else if (getBoolean("use_am", false, context)) {
-            return  "am";
-        } else if (getBoolean("use_el", false, context)) {
-            return  "el";
-        } else if (getBoolean("use_ml", false, context)) {
-            return  "ml";
-        } else if (getBoolean("use_pt", false, context)) {
-            return  "pt";
-        } else if (getBoolean("use_ru", false, context)) {
-            return  "ru";
-        } else if (getBoolean("use_uk", false, context)) {
-            return  "uk";
-        } else if (getBoolean("use_in", false, context)) {
-            return  "in";
-        } else {
-            return java.util.Locale.getDefault().getLanguage();
-        }
+        return getString("appLanguage", java.util.Locale.getDefault().getLanguage(), context);
     }
 
     public static void setLanguage(Context context) {
-        Locale myLocale = new Locale(getLanguage(context));
+        Locale myLocale = new Locale(getString("appLanguage", java.util.Locale.getDefault()
+                .getLanguage(), context));
         Resources res = context.getResources();
         DisplayMetrics dm = res.getDisplayMetrics();
         Configuration conf = res.getConfiguration();

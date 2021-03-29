@@ -22,14 +22,7 @@
     <string name="install_busybox_success">Instalasi BusyBox Selesai! Apakah Anda ingin me-reboot perangkat Anda?</string>
     <string name="installing">Installing BusyBox v%s</string>
     <string name="language">Bahasa (%s)</string>
-    <string name="language_am">Amharic</string>
-    <string name="language_el">Greek</string>
-    <string name="language_en">English</string>
     <string name="language_default">Default</string>
-    <string name="language_ko">Korean</string>
-    <string name="language_pt">Portuguese</string>
-    <string name="language_ru">Russian</string>
-    <string name="language_in">Indonesia</string>
     <string name="list_applets">Daftar Applet</string>
     <string name="list_applets_summary">Applet berikut termasuk dalam paket ini!\n\n - %s</string>
     <string name="no_permission_message">Penginstalan BusyBox tidak akan berfungsi tanpa Akses Tulis Penyimpanan! Membatalkan</string>

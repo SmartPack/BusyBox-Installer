@@ -75,21 +75,23 @@ public class MainActivity extends AppCompatActivity {
             }
             SubMenu language = menu.addSubMenu(Menu.NONE, 0, Menu.NONE, getString(R.string.language, Utils.getLanguage(this)));
             language.add(Menu.NONE, 9, Menu.NONE, getString(R.string.language_default)).setCheckable(true)
-                    .setChecked(Utils.languageDefault(this));
+                    .setChecked(Utils.getString("appLanguage", java.util.Locale.getDefault().getLanguage(), this).equals(java.util.Locale.getDefault().getLanguage()));
             language.add(Menu.NONE, 10, Menu.NONE, getString(R.string.language_en)).setCheckable(true)
-                    .setChecked(Utils.getBoolean("use_en", false, this));
+                    .setChecked(Utils.getString("appLanguage", java.util.Locale.getDefault().getLanguage(), this).equals("en_US"));
             language.add(Menu.NONE, 11, Menu.NONE, getString(R.string.language_ko)).setCheckable(true)
-                    .setChecked(Utils.getBoolean("use_ko", false, this));
+                    .setChecked(Utils.getString("appLanguage", java.util.Locale.getDefault().getLanguage(), this).equals("ko"));
             language.add(Menu.NONE, 12, Menu.NONE, getString(R.string.language_am)).setCheckable(true)
-                    .setChecked(Utils.getBoolean("use_am", false, this));
+                    .setChecked(Utils.getString("appLanguage", java.util.Locale.getDefault().getLanguage(), this).equals("am"));
             language.add(Menu.NONE, 13, Menu.NONE, getString(R.string.language_el)).setCheckable(true)
-                    .setChecked(Utils.getBoolean("use_el", false, this));
+                    .setChecked(Utils.getString("appLanguage", java.util.Locale.getDefault().getLanguage(), this).equals("el"));
             language.add(Menu.NONE, 14, Menu.NONE, getString(R.string.language_pt)).setCheckable(true)
-                    .setChecked(Utils.getBoolean("use_pt", false, this));
+                    .setChecked(Utils.getString("appLanguage", java.util.Locale.getDefault().getLanguage(), this).equals("pt"));
             language.add(Menu.NONE, 15, Menu.NONE, getString(R.string.language_ru)).setCheckable(true)
-                    .setChecked(Utils.getBoolean("use_ru", false, this));
+                    .setChecked(Utils.getString("appLanguage", java.util.Locale.getDefault().getLanguage(), this).equals("ru"));
             language.add(Menu.NONE, 16, Menu.NONE, getString(R.string.language_in)).setCheckable(true)
-                    .setChecked(Utils.getBoolean("use_in", false, this));
+                    .setChecked(Utils.getString("appLanguage", java.util.Locale.getDefault().getLanguage(), this).equals("in"));
+            language.add(Menu.NONE, 17, Menu.NONE, getString(R.string.language_cs)).setCheckable(true)
+                    .setChecked(Utils.getString("appLanguage", java.util.Locale.getDefault().getLanguage(), this).equals("cs"));
             if (Utils.existFile("/system/xbin/busybox_" + Utils.version)) {
                 menu.add(Menu.NONE, 2, Menu.NONE, getString(R.string.list_applets));
                 menu.add(Menu.NONE, 3, Menu.NONE, getString(R.string.version));
@@ -98,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
             about.add(Menu.NONE, 4, Menu.NONE, getString(R.string.share));
             about.add(Menu.NONE, 5, Menu.NONE, getString(R.string.source_code));
             about.add(Menu.NONE, 6, Menu.NONE, getString(R.string.support_group));
-            about.add(Menu.NONE, 17, Menu.NONE, getString(R.string.translations));
+            about.add(Menu.NONE, 18, Menu.NONE, getString(R.string.translations));
             about.add(Menu.NONE, 7, Menu.NONE, getString(R.string.donations));
             about.add(Menu.NONE, 8, Menu.NONE, getString(R.string.about));
             popupMenu.setOnMenuItemClickListener(item -> {
@@ -144,62 +146,62 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(aboutDialog);
                         break;
                     case 9:
-                        if (!Utils.languageDefault(this)) {
-                            Utils.setDefaultLanguage(this);
+                        if (!Utils.getLanguage(this).equals(java.util.Locale.getDefault().getLanguage())) {
+                            Utils.saveString("appLanguage", java.util.Locale.getDefault().getLanguage(), this);
                             restartApp();
                         }
                         break;
                     case 10:
-                        if (!Utils.getBoolean("use_en", false, this)) {
-                            Utils.setDefaultLanguage(this);
-                            Utils.saveBoolean("use_en", true, this);
+                        if (!Utils.getLanguage(this).equals("en_US")) {
+                            Utils.saveString("appLanguage", "en_US", this);
                             restartApp();
                         }
                         break;
                     case 11:
-                        if (!Utils.getBoolean("use_ko", false, this)) {
-                            Utils.setDefaultLanguage(this);
-                            Utils.saveBoolean("use_ko", true, this);
+                        if (!Utils.getLanguage(this).equals("ko")) {
+                            Utils.saveString("appLanguage", "ko", this);
                             restartApp();
                         }
                         break;
                     case 12:
-                        if (!Utils.getBoolean("use_am", false, this)) {
-                            Utils.setDefaultLanguage(this);
-                            Utils.saveBoolean("use_am", true, this);
+                        if (!Utils.getLanguage(this).equals("am")) {
+                            Utils.saveString("appLanguage", "am", this);
                             restartApp();
                         }
                         break;
                     case 13:
-                        if (!Utils.getBoolean("use_el", false, this)) {
-                            Utils.setDefaultLanguage(this);
-                            Utils.saveBoolean("use_el", true, this);
+                        if (!Utils.getLanguage(this).equals("el")) {
+                            Utils.saveString("appLanguage", "el", this);
                             restartApp();
                         }
                         break;
                     case 14:
-                        if (!Utils.getBoolean("use_pt", false, this)) {
-                            Utils.setDefaultLanguage(this);
-                            Utils.saveBoolean("use_pt", true, this);
+                        if (!Utils.getLanguage(this).equals("pt")) {
+                            Utils.saveString("appLanguage", "pt", this);
                             restartApp();
                         }
                         break;
                     case 15:
-                        if (!Utils.getBoolean("use_ru", false, this)) {
-                            Utils.setDefaultLanguage(this);
-                            Utils.saveBoolean("use_ru", true, this);
+                        if (!Utils.getLanguage(this).equals("ru")) {
+                            Utils.saveString("appLanguage", "ru", this);
                             restartApp();
                         }
                         break;
                     case 16:
-                        if (!Utils.getBoolean("use_in", false, this)) {
-                            Utils.setDefaultLanguage(this);
-                            Utils.saveBoolean("use_in", true, this);
+                        if (!Utils.getLanguage(this).equals("in")) {
+                            Utils.saveString("appLanguage", "in", this);
                             restartApp();
                         }
                         break;
                     case 17:
+                        if (!Utils.getLanguage(this).equals("cs")) {
+                            Utils.saveString("appLanguage", "cs", this);
+                            restartApp();
+                        }
+                        break;
+                    case 18:
                         Utils.launchUrl("https://poeditor.com/join/project?hash=JsnaHsMpUk", this);
+                        break;
                 }
                 return false;
             });

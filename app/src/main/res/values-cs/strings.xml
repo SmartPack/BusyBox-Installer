@@ -20,15 +20,8 @@
     <string name="install_busybox_failed">"Bohužel, BusyBox Installer nemůže zapisovat komponenty do složky '/system/xbin'!"</string>
     <string name="install_busybox_success">"Instalace BusyBoxu úspěšná! Chcete restartovat zařízení?"</string>
     <string name="installing">"Instalace BusyBoxu v%s"</string>
-    <string name="language">"Jazyk"</string>
-    <string name="language_am">"Amharština"</string>
-    <string name="language_el">"Řečtina"</string>
-    <string name="language_en">"Angličtina"</string>
+    <string name="language">"Jazyk (%s)"</string>
     <string name="language_default">"Výchozí"</string>
-    <string name="language_in">"Indonézština"</string>
-    <string name="language_ko">"Korejština"</string>
-    <string name="language_pt">"Portugalština"</string>
-    <string name="language_ru">"Ruština"</string>
     <string name="list_applets">"Seznam Komponent"</string>
     <string name="list_applets_summary">"V tomto balíčku jsou dostupné následující komponenty!\n\n- %s"</string>
     <string name="no_permission_message">"Instalace BusyBoxu nemůže pokračovat bez přístupu k úložišti! Ruším"</string>

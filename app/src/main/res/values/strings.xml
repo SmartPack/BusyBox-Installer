@@ -23,14 +23,15 @@
     <string name="install_busybox_success">BusyBox installation Finished! Do you want to reboot your device?</string>
     <string name="installing">Installing BusyBox v%s</string>
     <string name="language">Language (%s)</string>
-    <string name="language_am">Amharic</string>
-    <string name="language_el">Greek</string>
-    <string name="language_en">English</string>
+    <string name="language_am" translatable="false">አማርኛ</string>
+    <string name="language_cs" translatable="false">čeština</string>
     <string name="language_default">Default</string>
-    <string name="language_in">Indonesian</string>
-    <string name="language_ko">Korean</string>
-    <string name="language_pt">Portuguese</string>
-    <string name="language_ru">Russian</string>
+    <string name="language_el" translatable="false">Ελληνικά</string>
+    <string name="language_en" translatable="false">English</string>
+    <string name="language_in" translatable="false">bahasa Indonesia</string>
+    <string name="language_ko" translatable="false">한국어</string>
+    <string name="language_pt" translatable="false">Português</string>
+    <string name="language_ru" translatable="false">русский</string>
     <string name="list_applets">Applets List</string>
     <string name="list_applets_summary">The following applets are included in this package!\n\n - %s</string>
     <string name="no_permission_message">BusyBox installation won\'t work without Storage Write Access! Aborting</string>

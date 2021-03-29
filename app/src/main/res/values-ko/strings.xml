@@ -21,14 +21,7 @@
     <string name="install_busybox_success">BusyBox 설치를 완료했어요.. 기기를 다시 시작할까요?</string>
     <string name="installing">BusyBox %s을(를) 설치하는 중…</string>
     <string name="language">언어 (%s)</string>
-    <string name="language_am">에티오피아어</string>
-    <string name="language_el">그리스어</string>
-    <string name="language_en">영어</string>
     <string name="language_default">시스템 언어</string>
-    <string name="language_in">인도네시아어</string>
-    <string name="language_ko">한국어</string>
-    <string name="language_pt">브라질 포어</string>
-    <string name="language_ru">러시아어</string>
     <string name="list_applets">애플릿 종류</string>
     <string name="list_applets_summary">아래 애플릿들이 이 패키지에 포함되어 있어요.\n\n - %s</string>
     <string name="no_permission_message">이 기능은 저장공간 쓰기 권한 없이 작동하지 않아요!</string>
