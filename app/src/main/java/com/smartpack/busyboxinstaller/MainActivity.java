@@ -28,7 +28,7 @@ import com.google.android.material.checkbox.MaterialCheckBox;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textview.MaterialTextView;
 import com.smartpack.busyboxinstaller.utils.AboutActivity;
-import com.smartpack.busyboxinstaller.utils.BillingActivity;
+import com.smartpack.busyboxinstaller.utils.Billing;
 import com.smartpack.busyboxinstaller.utils.RootUtils;
 import com.smartpack.busyboxinstaller.utils.Utils;
 
@@ -138,8 +138,7 @@ public class MainActivity extends AppCompatActivity {
                         Utils.launchUrl("https://t.me/smartpack_kmanager", this);
                         break;
                     case 7:
-                        Intent donations = new Intent(this, BillingActivity.class);
-                        startActivity(donations);
+                        Billing.launchDonationMenu(this);
                         break;
                     case 8:
                         Intent aboutDialog = new Intent(this, AboutActivity.class);

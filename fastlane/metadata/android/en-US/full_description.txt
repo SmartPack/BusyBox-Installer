@@ -1,0 +1,16 @@
+<i>BusyBox Installer</i> is a one-click BusyBox installation utility for various android architectures (ARM/ARM64 and x86).
+
+<b>WARNING: I Am NOT Responsible for any Damages on Your Device!</b>
+
+BusyBox Installer requires <b>ROOT</b> Access.
+
+<b>Features</b>
+
+* An easy BusyBox installation for ARM/ARM64 and x86.
+* Removal of BusyBox applets (only) installed by this app.
+* Show applets list (only) installed by this app.
+* Dark and Light themes (depends on system theme).
+
+<b>Translations</b>
+
+Please help me to translate this application via <a href='https://poeditor.com/join/project?hash=JsnaHsMpUk'>POEditor</a>. You may also translate after downloading the original language string available <a href='https://github.com/SmartPack/BusyBox-Installer/blob/master/app/src/main/res/values/strings.xml'>GitHub</a>.

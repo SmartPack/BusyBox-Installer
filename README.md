@@ -1,4 +1,4 @@
-![](banner.png)
+![](fastlane/metadata/android/en-US/images/featureGraphic.png)
 
 [![](https://img.shields.io/badge/BusyBox--Installer-v2.1-green)](https://play.google.com/store/apps/details?id=com.smartpack.busyboxinstaller)
 ![](https://img.shields.io/github/languages/top/SmartPack/BusyBox-Installer)
@@ -46,15 +46,7 @@ If you like to appreciate my work, please consider donating to me (either via [P
      height="80">](https://ko-fi.com/sunilpaulmathew/)
 
 ## Credits
-* [Grarak](https://github.com/Grarak), Kernel Adiutor, from where I took [Utils](https://raw.githubusercontent.com/Grarak/KernelAdiutor/master/app/src/main/java/com/grarak/kerneladiutor/utils/Utils.java), [RootUtils](https://raw.githubusercontent.com/Grarak/KernelAdiutor/master/app/src/main/java/com/grarak/kerneladiutor/utils/root/RootUtils.java) & [RootFile](https://raw.githubusercontent.com/Grarak/KernelAdiutor/master/app/src/main/java/com/grarak/kerneladiutor/utils/root/RootFile.java)
-* [topjohnwu](https://github.com/topjohnwu/), libsu
-* [https://busybox.net/](https://busybox.net/), BusyBox Binaries
-* [Lennoard Silva](https://github.com/Lennoard), Code contributions/Portuguese (Brazilian) Translations
-* [FiestaLake](https://github.com/FiestaLake), Korean Translations
-* [Mikesew1320](https://github.com/Mikesew1320), Amharic & Russian Translations
-* [tsiflimagas](https://github.com/tsiflimagas), Greek Translations
-* [Hafitz Setya](https://github.com/breakdowns), Indonesian Translations
-* [sajid_islam](https://t.me/sajid_islam), App Icon
+A list of people who contributed to this project is available [here](Credits.md).
 
 ## License
 
