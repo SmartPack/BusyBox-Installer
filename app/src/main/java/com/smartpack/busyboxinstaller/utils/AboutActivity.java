@@ -35,7 +35,7 @@ public class AboutActivity extends AppCompatActivity {
         MaterialTextView mCredits = findViewById(R.id.credits);
         MaterialTextView mChangeLogs = findViewById(R.id.change_logs);
         MaterialTextView mCancel = findViewById(R.id.cancel_button);
-        mAppName.setText(getString(R.string.app_name) + (Utils.isSupporter(this) ? " Pro v" : " v") + BuildConfig.VERSION_NAME);
+        mAppName.setText(getString(R.string.app_name) + (Utils.isSupporter(this) ? " Pro " : " ") + BuildConfig.VERSION_NAME);
         mCredits.setText(getString(R.string.credits_summary));
         String change_log = null;
         try {
