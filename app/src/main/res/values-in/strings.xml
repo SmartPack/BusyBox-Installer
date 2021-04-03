@@ -2,13 +2,11 @@
     <!--Author: HafitzSetya <hafitz67@gmail.com>-->
 
     <string name="about">Tentang</string>
-    <string name="about_summary">BusyBox Installer adalah utilitas instalasi BusyBox sekali klik untuk berbagai arsitektur android (ARM/ARM64 and x86).</string>
     <string name="billing_client_disconnected">Gagal terhubung dengan klien Layanan Penagihan Google Play!</string>
     <string name="busybox_version">Versi BusyBox</string>
     <string name="cancel">Membatalkan</string>
     <string name="change_log">Log-perubahan</string>
     <string name="credits">Kredit</string>
-    <string name="developed_by">Dikembangkan oleh</string>
     <string name="donations">Donasi</string>
     <string name="donation_app">Beli Aplikasi Donasi</string>
     <string name="hide">Menyembunyikan</string>

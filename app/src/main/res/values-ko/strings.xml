@@ -2,12 +2,10 @@
     <!--Author: FiestaLake <FiestaLake@protonmail.com>-->
 
     <string name="about">정보</string>
-    <string name="about_summary">BusyBox Installer은(는) Android (ARM/ARM64/i386) BusyBox 설치 유틸리티입니다.</string>
     <string name="busybox_version">BusyBox 버전</string>
     <string name="cancel">취소</string>
     <string name="change_log">변경사항</string>
     <string name="credits">도움을 주신 분들</string>
-    <string name="developed_by">개발자</string>
     <string name="donations">기부</string>
     <string name="donation_app">기부 앱 구매</string>
     <string name="hide">숨기기</string>

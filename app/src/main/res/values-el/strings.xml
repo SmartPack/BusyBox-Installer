@@ -2,7 +2,6 @@
     <!--Author: kopsomanas <kgstradviolin@outlook.com>-->
 
     <string name="about">Σχετικά με</string>
-    <string name="about_summary">Το BusyBox Installer είναι μια εφαρμογή εγκατάστασης BusyBox με ένα κλικ για διάφορες αρχιτεκτονικές android (ARM/ARM64 και x86).</string>
     <string name="busybox_version">Έκδοση BusyBox</string>
     <string name="cancel">Ακύρωση</string>
     <string name="credits">Ευχαριστίες</string>

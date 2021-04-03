@@ -1,172 +1,156 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
-    android:padding="16dp"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="50dp"
         android:layout_gravity="start"
-        android:orientation="vertical">
+        android:orientation="vertical" >
 
-        <LinearLayout
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:gravity="center_vertical" >
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/back"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/colorPrimary"
+                android:tint="@color/colorWhite"
+                android:gravity="start|center_vertical"
+                android:src="@drawable/ic_back" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginStart="50dp"
+                android:padding="5dp"
+                android:textStyle="bold"
+                android:text="@string/about"
+                android:gravity="start|center_vertical"
+                android:textColor="@color/colorWhite"
+                android:textIsSelectable="true"
+                android:textSize="20sp" />
+        </FrameLayout>
+
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:background="@color/colorPrimary"
-            android:baselineAligned="false">
-
-            <FrameLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
-                tools:ignore="UselessParent">
-
-                <androidx.appcompat.widget.AppCompatImageButton
-                    android:id="@+id/back"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:background="@color/colorPrimary"
-                    android:tint="@color/colorWhite"
-                    android:gravity="start|center_vertical"
-                    android:src="@drawable/ic_back" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="50dp"
-                    android:padding="5dp"
-                    android:textStyle="bold"
-                    android:text="@string/about"
-                    android:gravity="start|center_vertical"
-                    android:textColor="@color/colorWhite"
-                    android:textIsSelectable="true"
-                    android:textSize="20sp" />
-            </FrameLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="start"
-            android:orientation="vertical">
+            android:layout_margin="5dp"
+            android:gravity="center" >
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginTop="15dp"
-                android:src="@mipmap/ic_launcher_round"
-                android:layout_gravity="center" />
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/app_title"
-                android:layout_width="match_parent"
+                android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:padding="10dp"
-                android:gravity="center"
-                android:textSize="23sp"
-                android:textStyle="bold"
-                android:textColor="?attr/colorAccent"/>
+                android:src="@mipmap/ic_launcher_round"
+                android:layout_gravity="start" />
 
-            <androidx.core.widget.NestedScrollView
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:gravity="start">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="?attr/colorAccent"
+                    android:text="@string/app_name"
+                    android:textStyle="bold"
+                    android:gravity="start"
+                    android:textSize="20sp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/version"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:textIsSelectable="true"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/copyright"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:textIsSelectable="true"
+            android:layout_margin="10dp"
+            android:textSize="13sp" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="50sp"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp">
+                android:orientation="vertical"
+                android:gravity="center_vertical" >
 
-                <LinearLayout
+                <com.google.android.material.textview.MaterialTextView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center_vertical" >
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textColor="?attr/colorAccent"
+                    android:textIsSelectable="true"
+                    android:text="@string/credits"
+                    android:textStyle="bold"
+                    android:textSize="18sp" />
 
-                    <com.google.android.material.textview.MaterialTextView
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    app:cardCornerRadius="10dp" >
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_view"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingBottom="16dp"
-                        android:paddingTop="16dp"
-                        android:gravity="center_horizontal"
-                        android:text="@string/about_summary"
+                        android:layout_margin="10dp" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textColor="?attr/colorAccent"
+                    android:text="@string/change_log"
+                    android:textIsSelectable="true"
+                    android:textStyle="bold"
+                    android:textSize="18sp" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    app:cardCornerRadius="10dp" >
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/change_logs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:gravity="start"
                         android:textIsSelectable="true"
                         android:textSize="15sp" />
-
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="25dp"
-                        android:textStyle="bold"
-                        android:gravity="center_horizontal"
-                        android:text="@string/developed_by"
-                        android:textColor="?attr/colorAccent"
-                        android:textIsSelectable="true"
-                        android:textSize="18sp" />
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/developer"
-                        android:layout_width="125dp"
-                        android:layout_height="125dp"
-                        android:layout_marginTop="15dp"
-                        android:src="@drawable/ic_developer"
-                        android:layout_gravity="center" />
-
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="25dp"
-                        android:textStyle="bold"
-                        android:gravity="center_horizontal"
-                        android:text="@string/credits"
-                        android:textColor="?attr/colorAccent"
-                        android:textIsSelectable="true"
-                        android:textSize="18sp" />
-
-                    <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/credits"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingBottom="16dp"
-                        android:paddingTop="16dp"
-                        android:gravity="center_horizontal"
-                        android:text="@string/credits_summary"
-                        android:lineSpacingExtra="5dp"
-                        android:textIsSelectable="true"
-                        android:textSize="15sp" />
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" >
-
-                        <com.google.android.material.textview.MaterialTextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:padding="5dp"
-                            android:textStyle="bold"
-                            android:gravity="center_horizontal"
-                            android:text="@string/change_log"
-                            android:textColor="?attr/colorAccent"
-                            android:textIsSelectable="true"
-                            android:textSize="18sp" />
-
-                        <com.google.android.material.textview.MaterialTextView
-                            android:id="@+id/change_logs"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="15dp"
-                            android:padding="16dp"
-                            android:gravity="start"
-                            android:textIsSelectable="true"
-                            android:textSize="15sp" />
-                    </androidx.cardview.widget.CardView>
-                </LinearLayout>
-            </androidx.core.widget.NestedScrollView>
-        </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
     </LinearLayout>
 
     <com.google.android.material.textview.MaterialTextView
@@ -174,11 +158,11 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:gravity="center_horizontal"
-        android:layout_gravity="bottom"
-        android:text="@string/cancel"
-        android:textStyle="bold"
+        android:layout_alignParentBottom="true"
         android:background="@color/colorPrimary"
         android:textColor="@color/colorWhite"
+        android:text="@string/cancel"
+        android:textStyle="bold"
         android:textSize="18sp"
         android:padding="10dp" />
-</com.google.android.material.card.MaterialCardView>
+</RelativeLayout>

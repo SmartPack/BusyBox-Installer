@@ -1,13 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
     <string name="about">"Info"</string>
-    <string name="about_summary">"BusyBox Installer je aplikace na instalaci BusyBoxu pro více typů androidu (ARM/ARM64 a x86)."</string>
     <string name="billing_client_disconnected">"Chyba spojení s Google Play Billing!"</string>
     <string name="busybox_version">"Verze BusyBoxu"</string>
     <string name="cancel">"Zrušit"</string>
     <string name="change_log">"Seznam změn"</string>
     <string name="credits">"Autoři"</string>
-    <string name="developed_by">"Autor"</string>
     <string name="donations">"Příspěvky"</string>
     <string name="donation_app">"Koupit darovací aplikaci"</string>
     <string name="hide">"Skrýt"</string>
