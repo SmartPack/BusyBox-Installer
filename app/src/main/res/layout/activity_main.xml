@@ -1,56 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_width="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:gravity="top|center_vertical"
-        android:orientation="horizontal"
-        android:background="@color/colorPrimary"
-        android:padding="10dp"
-        tools:ignore="MissingConstraints">
-
-        <com.google.android.material.textview.MaterialTextView
-            style="@style/SingleLineText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="start"
-            android:gravity="center_vertical"
-            android:text="@string/app_name"
-            android:textSize="20sp"
-            android:textColor="@color/colorWhite" />
-
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/settings_menu"
-            android:layout_width="40dp"
-            android:layout_height="50dp"
-            android:background="@null"
-            android:tint="@color/colorWhite"
-            android:layout_gravity="end|center"
-            android:src="@drawable/ic_settings" />
-    </LinearLayout>
-
-    <FrameLayout
-        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="50dp">
+        android:orientation="vertical" >
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="top|center_vertical"
+            android:background="@color/colorBlack"
+            android:padding="10dp" >
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="50dp"
+                android:layout_gravity="start"
+                android:gravity="center_vertical"
+                android:textColor="?attr/colorAccent"
+                android:text="@string/app_name"
+                android:textStyle="bold"
+                android:textSize="20sp" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/settings_menu"
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                android:background="@null"
+                android:tint="?attr/colorAccent"
+                android:layout_gravity="end|center"
+                android:src="@drawable/ic_settings" />
+        </FrameLayout>
 
         <LinearLayout
             android:id="@+id/install"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
             android:orientation="vertical"
             android:gravity="center"
-            android:visibility="gone"
-            tools:ignore="UselessParent">
+            android:visibility="gone" >
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="125dp"
@@ -61,12 +56,13 @@
                 android:id="@+id/install_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="15dp"
+                android:textColor="?attr/colorAccent"
+                android:textStyle="bold"
                 android:gravity="center"
                 android:textSize="20sp"
-                android:textColor="?attr/colorAccent" />
+                android:padding="15dp" />
         </LinearLayout>
-    </FrameLayout>
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/progress_layout"
@@ -94,4 +90,4 @@
             android:textSize="15sp"
             android:padding="10dp"/>
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

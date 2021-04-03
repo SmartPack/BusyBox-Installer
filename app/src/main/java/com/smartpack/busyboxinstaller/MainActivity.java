@@ -478,7 +478,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (Utils.getArch().equals("aarch64") || Utils.getArch().equals("armv7l") || Utils.getArch().equals("i686")) {
             if (Utils.existFile("/system/xbin/bb_version") && !Utils.readFile("/system/xbin/bb_version").equals(Utils.version)) {
-                View checkBoxView = View.inflate(this, R.layout.rv_checkbox, null);
+                View checkBoxView = View.inflate(this, R.layout.layout_checkbox, null);
                 MaterialCheckBox checkBox = checkBoxView.findViewById(R.id.checkbox);
                 checkBox.setText(getString(R.string.hide));
                 checkBox.setChecked(false);

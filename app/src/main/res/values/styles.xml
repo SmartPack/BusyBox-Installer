@@ -1,11 +1,7 @@
 <resources>
     <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-    </style>
-
-    <style name="SingleLineText">
-        <item name="android:maxLines">1</item>
-        <item name="android:ellipsize">end</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorSecondary">@color/colorAccent</item>
+        <item name="android:statusBarColor">@color/colorBlack</item>
     </style>
 </resources>

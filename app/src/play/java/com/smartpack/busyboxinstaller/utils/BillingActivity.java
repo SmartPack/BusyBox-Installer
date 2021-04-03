@@ -1,6 +1,7 @@
 package com.smartpack.busyboxinstaller.utils;
 
 import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -24,6 +25,7 @@ import com.android.billingclient.api.ConsumeResponseListener;
 import com.android.billingclient.api.Purchase;
 import com.android.billingclient.api.SkuDetails;
 import com.android.billingclient.api.SkuDetailsParams;
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textview.MaterialTextView;
 import com.smartpack.busyboxinstaller.R;
@@ -229,13 +231,16 @@ public class BillingActivity extends AppCompatActivity {
         @NonNull
         @Override
         public RecycleViewAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View rowItem = LayoutInflater.from(parent.getContext()).inflate(R.layout.rv_recycle_view_donate, parent, false);
+            View rowItem = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycle_view_donate, parent, false);
             return new ViewHolder(rowItem);
         }
 
         @Override
         public void onBindViewHolder(@NonNull RecycleViewAdapter.ViewHolder holder, int position) {
             try {
+                if (!Utils.isDarkTheme(holder.mCard.getContext())) {
+                    holder.mCard.setBackgroundColor(Color.LTGRAY);
+                }
                 holder.mTitle.setText(this.data.get(position).getTitle());
                 holder.mIcon.setImageDrawable(this.data.get(position).getIcon());
             } catch (NullPointerException ignored) {}
@@ -248,11 +253,13 @@ public class BillingActivity extends AppCompatActivity {
 
         public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
             private AppCompatImageView mIcon;
+            private MaterialCardView mCard;
             private MaterialTextView mTitle;
 
             public ViewHolder(View view) {
                 super(view);
                 view.setOnClickListener(this);
+                this.mCard = view.findViewById(R.id.card);
                 this.mIcon = view.findViewById(R.id.icon);
                 this.mTitle = view.findViewById(R.id.title);
             }

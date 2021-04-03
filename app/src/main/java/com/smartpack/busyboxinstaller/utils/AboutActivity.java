@@ -1,6 +1,7 @@
 package com.smartpack.busyboxinstaller.utils;
 
 import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,6 +15,7 @@ import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.textview.MaterialTextView;
 import com.smartpack.busyboxinstaller.BuildConfig;
 import com.smartpack.busyboxinstaller.R;
@@ -40,14 +42,21 @@ public class AboutActivity extends AppCompatActivity {
         setContentView(R.layout.activity_about);
 
         AppCompatImageButton mBack = findViewById(R.id.back);
+        MaterialCardView mCreditsCard = findViewById(R.id.credits_card);
+        MaterialCardView mChangeLogsCard = findViewById(R.id.change_log_card);
         MaterialTextView mChangeLogs = findViewById(R.id.change_logs);
         MaterialTextView mCancel = findViewById(R.id.cancel_button);
         MaterialTextView mVersion = findViewById(R.id.version);
         MaterialTextView mCopyright = findViewById(R.id.copyright);
         RecyclerView mRecyclerView = findViewById(R.id.recycler_view);
 
-        mVersion.setText(getString(R.string.version) + " " + BuildConfig.VERSION_NAME);
+        mVersion.setText(getString(R.string.version) + (Utils.isSupporter(this) ? ": Pro " : ": ") + BuildConfig.VERSION_NAME);
         mCopyright.setText(getString(R.string.copyright, "2021-2022, sunilpaulmathew"));
+
+        if (!Utils.isDarkTheme(this)) {
+            mCreditsCard.setBackgroundColor(Color.LTGRAY);
+            mChangeLogsCard.setBackgroundColor(Color.LTGRAY);
+        }
 
         mData.add(new RecycleViewItem("Willi Ye", "Code Contributions", "https://github.com/Grarak"));
         mData.add(new RecycleViewItem("topjohnwu", "libsu", "https://github.com/topjohnwu/libsu"));

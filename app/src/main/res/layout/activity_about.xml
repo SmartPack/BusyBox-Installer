@@ -16,15 +16,15 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorBlack"
             android:gravity="center_vertical" >
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/back"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:background="@color/colorPrimary"
-                android:tint="@color/colorWhite"
+                android:background="@color/colorBlack"
+                android:tint="?attr/colorAccent"
                 android:gravity="start|center_vertical"
                 android:src="@drawable/ic_back" />
 
@@ -36,8 +36,7 @@
                 android:textStyle="bold"
                 android:text="@string/about"
                 android:gravity="start|center_vertical"
-                android:textColor="@color/colorWhite"
-                android:textIsSelectable="true"
+                android:textColor="?attr/colorAccent"
                 android:textSize="20sp" />
         </FrameLayout>
 
@@ -112,6 +111,7 @@
                     android:textSize="18sp" />
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/credits_card"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
@@ -135,6 +135,7 @@
                     android:textSize="18sp" />
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/change_log_card"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
@@ -159,8 +160,8 @@
         android:layout_height="50dp"
         android:gravity="center_horizontal"
         android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimary"
-        android:textColor="@color/colorWhite"
+        android:background="@color/colorBlack"
+        android:textColor="@color/colorAccent"
         android:text="@string/cancel"
         android:textStyle="bold"
         android:textSize="18sp"
