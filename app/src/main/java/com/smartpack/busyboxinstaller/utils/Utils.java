@@ -34,7 +34,7 @@ import java.util.Locale;
 
 public class Utils {
 
-    public static final String version = "1.31.0";
+    public static final String version = "1.32.1";
     public static StringBuilder mOutput = null;
     public static boolean superUser = false;
     public static boolean SAR = false;
@@ -203,7 +203,12 @@ public class Utils {
     }
 
     public static String getArch() {
-        return RootUtils.runAndGetOutput("uname -m");
+        String arch = RootUtils.runAndGetOutput("uname -m");
+        if (arch.matches("aarch64|armv7l|armv8l")) {
+            return "aarch64";
+        } else {
+            return "i686";
+        }
     }
 
     public static boolean isWritableSystem() {
