@@ -63,12 +63,11 @@ public class AboutActivity extends AppCompatActivity {
         mData.add(new RecycleViewItem("topjohnwu", "BusyBox Binaries", "https://github.com/topjohnwu/ndk-box-kitchen"));
         mData.add(new RecycleViewItem("https://busybox.net/", "BusyBox Binaries (old versions)", "https://busybox.net/"));
         mData.add(new RecycleViewItem("linsui", "BusyBox Binaries (building)", "https://gitlab.com/linsui"));
-        mData.add(new RecycleViewItem("Lennoard Silva", "Code Contributions", "https://github.com/Lennoard"));
+        mData.add(new RecycleViewItem("Lennoard Silva", "Code Contributions & Portuguese (Brazilian) Translations", "https://github.com/Lennoard"));
         mData.add(new RecycleViewItem("sajid_islam", "App Icon", "https://t.me/sajid_islam"));
         mData.add(new RecycleViewItem("FiestaLake", "Korean Translations", "https://github.com/FiestaLake"));
         mData.add(new RecycleViewItem("Mikesew1320", "Amharic & Russian Translations", "https://github.com/Mikesew1320"));
         mData.add(new RecycleViewItem("tsiflimagas", "Greek Translations", "https://github.com/tsiflimagas"));
-        mData.add(new RecycleViewItem("Lennoard Silva", "Portuguese (Brazilian) Translations", "https://github.com/Lennoard"));
         mData.add(new RecycleViewItem("Hafitz Setya", "Indonesian Translations", "https://github.com/breakdowns"));
         mData.add(new RecycleViewItem("Jonas. Ned", "Czech Translations", null));
 

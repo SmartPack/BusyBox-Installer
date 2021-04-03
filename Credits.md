@@ -7,7 +7,9 @@ BusyBox Installer is, and as always, an open-source project which is ready to ac
 * [Lennoard Silva](https://github.com/Lennoard): contributed code to this project, especially in its early stage of development
 
 ## Binaries
-* [https://busybox.net/](https://busybox.net/), BusyBox Binaries
+* [topjohnwu](https://github.com/topjohnwu/ndk-box-kitchen), BusyBox Binaries
+* [https://busybox.net/](https://busybox.net/), BusyBox Binaries (old)
+* [linsui](https://gitlab.com/linsui), BusyBox Binaries (building)
 
 ## Icon
 * [sajid_islam](https://t.me/sajid_islam), App Icon
