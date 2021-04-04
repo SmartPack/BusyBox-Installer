@@ -204,8 +204,10 @@ public class Utils {
 
     public static String getArch() {
         String arch = RootUtils.runAndGetOutput("uname -m");
-        if (arch.matches("aarch64|armv7l|armv8l")) {
+        if (arch.matches("aarch64|armv8l")) {
             return "aarch64";
+        } else if (arch.equals("armv7l")) {
+            return "armv7l";
         } else {
             return "i686";
         }
