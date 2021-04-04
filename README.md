@@ -1,6 +1,6 @@
 ![](fastlane/metadata/android/en-US/images/featureGraphic.png)
 
-[![](https://img.shields.io/badge/BusyBox--Installer-v2.2-green)](https://play.google.com/store/apps/details?id=com.smartpack.busyboxinstaller)
+[![](https://img.shields.io/badge/BusyBox--Installer-v2.3-green)](https://play.google.com/store/apps/details?id=com.smartpack.busyboxinstaller)
 ![](https://img.shields.io/github/languages/top/SmartPack/BusyBox-Installer)
 ![](https://img.shields.io/github/contributors/smartpack/BusyBox-Installer)
 
