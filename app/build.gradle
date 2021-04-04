@@ -20,7 +20,7 @@ android {
         versionCode 14
         versionName "v2.3"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        archivesBaseName = "$applicationId-v$versionName"
+        archivesBaseName = "$applicationId-$versionName"
         testFunctionalTest = false
         testHandleProfiling = false
     }
