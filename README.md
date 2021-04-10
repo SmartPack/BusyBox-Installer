@@ -11,9 +11,9 @@
 [<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png"
      alt=""
      height="80">](https://play.google.com/store/apps/details?id=com.smartpack.busyboxinstaller)
-[<img src="https://i.ibb.co/q0mdc4Z/get-it-on-github.png"
+[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
      alt=""
-     height="80">](https://github.com/SmartPack/BusyBox-Installer/releases/latest)
+     height="80">](https://f-droid.org/packages/com.smartpack.busyboxinstaller)
 
 ## Requirements
 * ROOT Access
