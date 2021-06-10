@@ -1,0 +1,5 @@
+* App doesn't need storage access permission anymore.
+* Added Spanish, Turkish, Burmese and Arabic translations.
+* Updated Gradle plugin & build tools.
+* Internal updates.
+* Miscellaneous changes.
