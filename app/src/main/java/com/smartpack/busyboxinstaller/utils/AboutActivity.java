@@ -33,7 +33,7 @@ import java.util.Objects;
 
 public class AboutActivity extends AppCompatActivity {
 
-    private ArrayList <RecycleViewItem> mData = new ArrayList<>();
+    private final ArrayList <RecycleViewItem> mData = new ArrayList<>();
 
     @SuppressLint("SetTextI18n")
     @Override

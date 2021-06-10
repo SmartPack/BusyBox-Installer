@@ -22,7 +22,6 @@
     <string name="language_default">"Výchozí"</string>
     <string name="list_applets">"Seznam Komponent"</string>
     <string name="list_applets_summary">"V tomto balíčku jsou dostupné následující komponenty!\n\n- %s"</string>
-    <string name="no_permission_message">"Instalace BusyBoxu nemůže pokračovat bez přístupu k úložišti! Ruším"</string>
     <string name="no_root_message">"Instalace BusyBoxu nemůže pokračovat bez ROOT přístupu! Ruším"</string>
     <string name="press_back">"Stiskněte znovu zpět pro ukončení"</string>
     <string name="reboot">"Restart"</string>

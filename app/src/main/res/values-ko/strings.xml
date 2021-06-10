@@ -22,7 +22,6 @@
     <string name="language_default">시스템 언어</string>
     <string name="list_applets">애플릿 종류</string>
     <string name="list_applets_summary">아래 애플릿들이 이 패키지에 포함되어 있어요.\n\n - %s</string>
-    <string name="no_permission_message">이 기능은 저장공간 쓰기 권한 없이 작동하지 않아요!</string>
     <string name="no_root_message">이 기능은 루트 권한 없이 작동하지 않아요!</string>
     <string name="press_back">나가려면 한 번 더 뒤로 가기 하세요.</string>
     <string name="reboot">다시 시작</string>

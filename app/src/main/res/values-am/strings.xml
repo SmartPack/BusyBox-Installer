@@ -18,7 +18,6 @@
     <string name="language_default">ነባር</string>
     <string name="list_applets">የአፕሌቶች ዝርዝር</string>
     <string name="list_applets_summary">የሚከተሉት አፕልቶች በዚህ ጥቅል ውስጥ ተካተዋል!\n\n - %s</string>
-    <string name="no_permission_message">ቢዚቦክስ ጭነት ያለ ማከማቻ ይፃፋል ተደራሽነት የለውም! ውርጃ</string>
     <string name="no_root_message">ቢዚቦክስ ጭነት ያለ Root መዳረሻ አይሰራም! ውርጃ</string>
     <string name="press_back">ለመውጣት መልሰህ ተጫን!</string>
     <string name="reboot">ድጋሚ አስነሳ</string>

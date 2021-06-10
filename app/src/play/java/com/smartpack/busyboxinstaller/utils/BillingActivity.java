@@ -40,10 +40,10 @@ import java.util.List;
 
 public class BillingActivity extends AppCompatActivity {
 
-    private ArrayList <RecycleViewItem> mData = new ArrayList<>();
+    private final ArrayList <RecycleViewItem> mData = new ArrayList<>();
     private BillingClient mBillingClient;
     private boolean mClientInitialized = false;
-    private List<String> mSkuList = new ArrayList<>();
+    private final List<String> mSkuList = new ArrayList<>();
 
     @SuppressLint("UseCompatLoadingForDrawables")
     @Override
@@ -200,7 +200,7 @@ public class BillingActivity extends AppCompatActivity {
     private void handlePurchases(Purchase purchase) {
         try {
             if (purchase.getPurchaseState() == Purchase.PurchaseState.PURCHASED) {
-                if (purchase.getSku().equals("donation_coffee") || purchase.getSku().equals("donation_meal") || purchase.getSku().equals("donation_dinner")) {
+                if (purchase.getSkus().contains("donation_coffee") || purchase.getSkus().contains("donation_meal") || purchase.getSkus().contains("donation_dinner")) {
                     ConsumeParams consumeParams = ConsumeParams.newBuilder()
                             .setPurchaseToken(purchase.getPurchaseToken())
                             .build();

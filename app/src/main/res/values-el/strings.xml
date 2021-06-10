@@ -20,7 +20,6 @@
     <string name="language_default">Προεπιλογή</string>
     <string name="list_applets">Λίστα Applets</string>
     <string name="list_applets_summary">Τα ακόλουθα applets συμπεριλαμβάνονται σε αυτό το πακέτο!\n\n - %s</string>
-    <string name="no_permission_message">Η εγκατάσταση BusyBox δε θα λειτουργήσει χωρίς Πρόσβαση στον Αποθηκευτικό Χώρο! Διακοπή</string>
     <string name="no_root_message">Η εγκατάσταση BusyBox δε θα λειτουργήσει χωρίς Πρόσβαση Root! Διακοπή</string>
     <string name="press_back">Πατήστε ξανά πίσω για έξοδο!</string>
     <string name="reboot">Επανεκκίνηση</string>

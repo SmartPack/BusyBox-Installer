@@ -7,7 +7,6 @@
 
 package com.smartpack.busyboxinstaller;
 
-import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
@@ -22,7 +21,6 @@ import android.widget.LinearLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.appcompat.widget.PopupMenu;
-import androidx.core.app.ActivityCompat;
 
 import com.google.android.material.checkbox.MaterialCheckBox;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
@@ -39,7 +37,7 @@ import com.smartpack.busyboxinstaller.utils.Utils;
 public class MainActivity extends AppCompatActivity {
 
     private boolean mExit;
-    private Handler mHandler = new Handler();
+    private final Handler mHandler = new Handler();
     private LinearLayout mInstall;
     private LinearLayout mProgress;
     private MaterialTextView mInstallText;
@@ -211,12 +209,6 @@ public class MainActivity extends AppCompatActivity {
     private void installDialog() {
         if (!RootUtils.rootAccess()) {
             Utils.snackbar(mInstall, getString(R.string.no_root_message));
-            return;
-        }
-        if (!Utils.checkWriteStoragePermission(this)) {
-            ActivityCompat.requestPermissions(this, new String[]{
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
-            Utils.snackbar(mInstall, getString(R.string.no_permission_message));
             return;
         }
         MaterialAlertDialogBuilder install = new MaterialAlertDialogBuilder(this);
@@ -471,8 +463,7 @@ public class MainActivity extends AppCompatActivity {
     public void onStart() {
         super.onStart();
 
-        if (!RootUtils.rootAccess() || !Utils.checkWriteStoragePermission(this)
-                || !Utils.getBoolean("update_dialogue", true, this)) {
+        if (!RootUtils.rootAccess() || !Utils.getBoolean("update_dialogue", true, this)) {
             return;
         }
 

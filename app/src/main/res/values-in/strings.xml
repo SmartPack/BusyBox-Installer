@@ -23,7 +23,6 @@
     <string name="language_default">Default</string>
     <string name="list_applets">Daftar Applet</string>
     <string name="list_applets_summary">Applet berikut termasuk dalam paket ini!\n\n - %s</string>
-    <string name="no_permission_message">Penginstalan BusyBox tidak akan berfungsi tanpa Akses Tulis Penyimpanan! Membatalkan</string>
     <string name="no_root_message">Instalasi BusyBox tidak akan berfungsi tanpa Akses Root! Membatalkan</string>
     <string name="press_back">Tekan kembali untuk keluar!</string>
     <string name="reboot">Mulai ulang</string>
