@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
             if (Utils.existFile("/system/xbin/bb_version")) {
                 menu.add(Menu.NONE, 1, Menu.NONE, getString(R.string.remove));
             }
+            @SuppressLint({"StringFormatInvalid", "LocalSuppress"})
             SubMenu language = menu.addSubMenu(Menu.NONE, 0, Menu.NONE, getString(R.string.language, Utils.getLanguage(this)));
             language.add(Menu.NONE, 9, Menu.NONE, getString(R.string.language_default)).setCheckable(true)
                     .setChecked(Utils.getString("appLanguage", java.util.Locale.getDefault().getLanguage(), this).equals(java.util.Locale.getDefault().getLanguage()));
@@ -90,6 +91,14 @@ public class MainActivity extends AppCompatActivity {
                     .setChecked(Utils.getString("appLanguage", java.util.Locale.getDefault().getLanguage(), this).equals("in"));
             language.add(Menu.NONE, 17, Menu.NONE, getString(R.string.language_cs)).setCheckable(true)
                     .setChecked(Utils.getString("appLanguage", java.util.Locale.getDefault().getLanguage(), this).equals("cs"));
+            language.add(Menu.NONE, 19, Menu.NONE, getString(R.string.language_es)).setCheckable(true)
+                    .setChecked(Utils.getString("appLanguage", java.util.Locale.getDefault().getLanguage(), this).equals("es"));
+            language.add(Menu.NONE, 20, Menu.NONE, getString(R.string.language_tr)).setCheckable(true)
+                    .setChecked(Utils.getString("appLanguage", java.util.Locale.getDefault().getLanguage(), this).equals("tr"));
+            language.add(Menu.NONE, 21, Menu.NONE, getString(R.string.language_my)).setCheckable(true)
+                    .setChecked(Utils.getString("appLanguage", java.util.Locale.getDefault().getLanguage(), this).equals("my"));
+            language.add(Menu.NONE, 22, Menu.NONE, getString(R.string.language_ar)).setCheckable(true)
+                    .setChecked(Utils.getString("appLanguage", java.util.Locale.getDefault().getLanguage(), this).equals("ar"));
             if (Utils.existFile("/system/xbin/busybox_" + Utils.version)) {
                 menu.add(Menu.NONE, 2, Menu.NONE, getString(R.string.list_applets));
                 menu.add(Menu.NONE, 3, Menu.NONE, getString(R.string.version));
@@ -199,6 +208,31 @@ public class MainActivity extends AppCompatActivity {
                     case 18:
                         Utils.launchUrl("https://poeditor.com/join/project?hash=JsnaHsMpUk", this);
                         break;
+                    case 19:
+                        if (!Utils.getLanguage(this).equals("es")) {
+                            Utils.saveString("appLanguage", "es", this);
+                            restartApp();
+                        }
+                        break;
+                    case 20:
+                        if (!Utils.getLanguage(this).equals("tr")) {
+                            Utils.saveString("appLanguage", "tr", this);
+                            restartApp();
+                        }
+                        break;
+
+                    case 21:
+                        if (!Utils.getLanguage(this).equals("my")) {
+                            Utils.saveString("appLanguage", "my", this);
+                            restartApp();
+                        }
+                        break;
+                    case 22:
+                        if (!Utils.getLanguage(this).equals("ar")) {
+                            Utils.saveString("appLanguage", "ar", this);
+                            restartApp();
+                        }
+                        break;
                 }
                 return false;
             });
@@ -206,6 +240,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @SuppressLint("StringFormatInvalid")
     private void installDialog() {
         if (!RootUtils.rootAccess()) {
             Utils.snackbar(mInstall, getString(R.string.no_root_message));
@@ -248,6 +283,7 @@ public class MainActivity extends AppCompatActivity {
         install.show();
     }
 
+    @SuppressLint("StringFormatInvalid")
     private void removeBusyBox() {
             new MaterialAlertDialogBuilder(this)
                     .setMessage(getString(R.string.remove_busybox_message, Utils.version))
@@ -265,6 +301,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    @SuppressLint("StringFormatInvalid")
     private void shareApp() {
         Intent shareapp = new Intent();
         shareapp.setAction(Intent.ACTION_SEND);
@@ -278,7 +315,7 @@ public class MainActivity extends AppCompatActivity {
     @SuppressLint("StaticFieldLeak")
     public void installBusyBox(View view, Activity activity) {
         new AsyncTask<Void, Void, Void>() {
-            @SuppressLint("SetTextI18n")
+            @SuppressLint({"SetTextI18n", "StringFormatInvalid"})
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
@@ -348,6 +385,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 return null;
             }
+            @SuppressLint("StringFormatInvalid")
             @Override
             protected void onPostExecute(Void aVoid) {
                 super.onPostExecute(aVoid);
@@ -382,7 +420,7 @@ public class MainActivity extends AppCompatActivity {
     @SuppressLint("StaticFieldLeak")
     public void removeBusyBox(Activity activity) {
         new AsyncTask<Void, Void, Void>() {
-            @SuppressLint("SetTextI18n")
+            @SuppressLint({"SetTextI18n", "StringFormatInvalid"})
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
@@ -396,6 +434,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 Utils.mOutput.append("** Preparing to remove BusyBox v" + Utils.version + "...\n\n");
             }
+            @SuppressLint("StringFormatInvalid")
             @Override
             protected Void doInBackground(Void... voids) {
                 if (Utils.isWritableSystem()) {

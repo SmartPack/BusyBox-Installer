@@ -21,6 +21,10 @@ BusyBox Installer is, and as always, an open-source project which is ready to ac
 * [Lennoard Silva](https://github.com/Lennoard), Portuguese (Brazilian) Translations
 * [Hafitz Setya](https://github.com/breakdowns), Indonesian Translations
 * Jonas. Ned, Czech Translations
+* Cold, Spanish Translations
+* Waiyan, Burmese Translations
+* omerakgoz34, Turkish Translations
+* Khalid1717, Arabic Translations
 * Many other people contributed via [POEditor](https://poeditor.com/join/project?hash=JsnaHsMpUk)
 
 _If you think I missed your name, please let me know._

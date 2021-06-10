@@ -70,7 +70,10 @@ public class AboutActivity extends AppCompatActivity {
         mData.add(new RecycleViewItem("tsiflimagas", "Greek Translations", "https://github.com/tsiflimagas"));
         mData.add(new RecycleViewItem("Hafitz Setya", "Indonesian Translations", "https://github.com/breakdowns"));
         mData.add(new RecycleViewItem("Jonas. Ned", "Czech Translations", null));
-
+        mData.add(new RecycleViewItem("Cold", "Spanish Translations", null));
+        mData.add(new RecycleViewItem("omerakgoz34", "Turkish Translations", null));
+        mData.add(new RecycleViewItem("Waiyan", "Burmese Translations", null));
+        mData.add(new RecycleViewItem("Khalid1717", "Arabic Translations", null));
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, 1));
         RecycleViewAdapter mRecycleViewAdapter = new RecycleViewAdapter(mData);
         mRecyclerView.setAdapter(mRecycleViewAdapter);
