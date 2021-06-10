@@ -1,0 +1,65 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+    <string name="about">"حول"</string>
+    <string name="billing_client_disconnected">"فشل الاتصال بـ Google Play Billing!"</string>
+    <string name="busybox_version">"إصدار BusyBox"</string>
+    <string name="cancel">"إلغاء"</string>
+    <string name="change_log">"تغيير السجلات"</string>
+    <string name="credits">"الاعتمادات"</string>
+    <string name="donations">"التبرعات"</string>
+    <string name="donation_app">"شراء تطبيق التبرع"</string>
+    <string name="hide">"إخفاء"</string>
+    <string name="install">"تثبيت"</string>
+    <string name="install_busybox">"تثبيت BusyBox!"</string>
+    <string name="install_busybox_latest">"مبروك! أحدث إصدار من (BusyBox (v%s المتوفر على هذا التطبيق مثبت بالفعل على جهازك!"</string>
+    <string name="install_busybox_message">"هل أنت متأكد من تثبيت ?BusyBox %s"</string>
+    <string name="install_busybox_unavailable">"للأسف ، تثبيت BuyBox من هذا التطبيق غير متاح بعد للهندسة المعمارية الخاصة بك (v٪s)!"</string>
+    <string name="install_busybox_update">"تحديث جديد متاح! هل تريد تحديث BusyBox إلى v%s؟"</string>
+    <string name="install_busybox_failed">"لسوء الحظ ، فشل برنامج تثبيت BusyBox في كتابة تطبيقات BusyBox على مجلد '/ system / xbin' بجهازك!"</string>
+    <string name="install_busybox_success">"تم الانتهاء من تثبيت BusyBox! هل تريد إعادة تشغيل جهازك؟"</string>
+    <string name="installing">"تثبيت BusyBox v٪s"</string>
+    <string name="language">"اللغات (%s)"</string>
+    <string name="language_am">"الأمهرية"</string>
+    <string name="language_el">"اليونانية"</string>
+    <string name="language_en">"الإنجليزية"</string>
+    <string name="language_default">"إفتراضي"</string>
+    <string name="language_in">"الأندونيسية"</string>
+    <string name="language_ko">"الكورية"</string>
+    <string name="language_pt">"البرتغالية"</string>
+    <string name="language_ru">"الروسية"</string>
+    <string name="list_applets">"قائمة التطبيقات الصغيرة"</string>
+    <string name="list_applets_summary">"يتم تضمين التطبيقات الصغيرة التالية في هذه الحزمة!
+
+- %s"</string>
+    <string name="no_root_message">"لن يعمل تثبيت BusyBox بدون الوصول إلى الروت! إجهاض"</string>
+    <string name="press_back">"اضغط مرة أخرى للخروج!"</string>
+    <string name="reboot">"اعادة التشغيل"</string>
+    <string name="remove">"إزالة"</string>
+    <string name="remove_busybox_completed">"تمت إزالة BusyBox v٪s بنجاح من جهازك. هل تريد إعادة التشغيل؟"</string>
+    <string name="remove_busybox_message">"هل أنت متأكد من إزالة تطبيقات BusyBox (v٪s) الصغيرة من \"/ system / xbin\"؟
+
+يرجى ملاحظة: سيؤدي فقط إلى إزالة التطبيقات الصغيرة المثبتة بواسطة هذا التطبيق على جهازك!"</string>
+    <string name="removing_busybox">"إزالة BusyBox v٪s"</string>
+    <string name="save_log">"احفظ الدخول"</string>
+    <string name="save_log_summary">"تم تصدير ملف سجل التثبيت كـ 'v٪s'!"</string>
+    <string name="share">"مشاركة"</string>
+    <string name="share_app">"احصل على BusyBox Installer ٪s من
+https://play.google.com/store/apps/details?id=com.smartpack.busyboxinstaller"</string>
+    <string name="source_code">"مصدر الرمز"</string>
+    <string name="support_acknowledged">"تم الإقرار بالتبرع \ u2665"</string>
+    <string name="support_development">"مطور الدعم!"</string>
+    <string name="support_development_summary">"إذا كنت ترغب في تقدير جهود المطور لتوفير هذه الأداة مجانًا تمامًا ، فيرجى التفكير في إرسال تبرع صغير من خلال النقر فوق واحد من بين الخيارات المتوفرة أدناه!"</string>
+    <string name="support_dinner">"اشتري لي عشاء"</string>
+    <string name="support_meal">"اشتري لي وجبة"</string>
+    <string name="support_coffee">"اشتري لي قهوة"</string>
+    <string name="support_already_received_message">"لقد قمت بالفعل بدعم التطوير باستخدام هذا العنصر من قبل!"</string>
+    <string name="support_received_message">"شكرًا جزيلاً على دعمك \ u2665
+سيحفزني ذلك كثيرًا لمواصلة مشاريعي بشكل أكثر نشاطًا!"</string>
+    <string name="support_retry_message">"يرجى محاولة الشراء مرة أخرى!"</string>
+    <string name="support_group">"مجموعة الدعم"</string>
+    <string name="update">"تحديث"</string>
+    <string name="update_busybox">"تحديث BusyBox متاح!"</string>
+    <string name="updated_message">"مبروك! أنت محدث!"</string>
+    <string name="upsupported">"هندسة معمارية غير مدعومة!"</string>
+    <string name="version">"إصدار"</string>
+</resources>
