@@ -74,6 +74,8 @@ public class AboutActivity extends AppCompatActivity {
         mData.add(new RecycleViewItem("omerakgoz34", "Turkish Translations", null));
         mData.add(new RecycleViewItem("Waiyan", "Burmese Translations", null));
         mData.add(new RecycleViewItem("Khalid1717", "Arabic Translations", null));
+        mData.add(new RecycleViewItem("Yadi", "Chinese (Traditional) Translations", null));
+        mData.add(new RecycleViewItem("Dorian Ivancic", "Croatian Translations", null));
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, 1));
         RecycleViewAdapter mRecycleViewAdapter = new RecycleViewAdapter(mData);
         mRecyclerView.setAdapter(mRecycleViewAdapter);

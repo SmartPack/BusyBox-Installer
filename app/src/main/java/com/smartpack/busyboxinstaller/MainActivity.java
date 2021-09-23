@@ -99,6 +99,8 @@ public class MainActivity extends AppCompatActivity {
                     .setChecked(Utils.getString("appLanguage", java.util.Locale.getDefault().getLanguage(), this).equals("my"));
             language.add(Menu.NONE, 22, Menu.NONE, getString(R.string.language_ar)).setCheckable(true)
                     .setChecked(Utils.getString("appLanguage", java.util.Locale.getDefault().getLanguage(), this).equals("ar"));
+            language.add(Menu.NONE, 23, Menu.NONE, getString(R.string.language_hr)).setCheckable(true)
+                    .setChecked(Utils.getString("appLanguage", java.util.Locale.getDefault().getLanguage(), this).equals("hr"));
             if (Utils.existFile("/system/xbin/busybox_" + Utils.version)) {
                 menu.add(Menu.NONE, 2, Menu.NONE, getString(R.string.list_applets));
                 menu.add(Menu.NONE, 3, Menu.NONE, getString(R.string.version));
@@ -230,6 +232,12 @@ public class MainActivity extends AppCompatActivity {
                     case 22:
                         if (!Utils.getLanguage(this).equals("ar")) {
                             Utils.saveString("appLanguage", "ar", this);
+                            restartApp();
+                        }
+                        break;
+                    case 23:
+                        if (!Utils.getLanguage(this).equals("hr")) {
+                            Utils.saveString("appLanguage", "hr", this);
                             restartApp();
                         }
                         break;
