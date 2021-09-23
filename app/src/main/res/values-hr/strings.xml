@@ -1,0 +1,40 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+    <string name="about">"O programu"</string>
+    <string name="billing_client_disconnected">"Neuspjelo povezivanje s Google Play Billing klijentom!"</string>
+    <string name="busybox_version">"BusyBox verzija"</string>
+    <string name="cancel">"Poništi"</string>
+    <string name="change_log">"Promjene"</string>
+    <string name="donations">"Donacije"</string>
+    <string name="donation_app">"Kupi donacijsku applikaciju"</string>
+    <string name="hide">"Sakrij"</string>
+    <string name="install">"Instaliraj"</string>
+    <string name="install_busybox">"Instaliraj BusyBox!"</string>
+    <string name="install_busybox_latest">"Čestitke! Najnovija verzija BusyBox (v%s) dostupna u ovoj aplikaciji je već instalirana na vašem uređaju!"</string>
+    <string name="install_busybox_message">"Jeste li sigurni da želite instalirati BusyBox %s?"</string>
+    <string name="install_busybox_unavailable">"Nažalost BusyBox instalacija još nije dostupna za vašu arhitekturu (%s)!"</string>
+    <string name="install_busybox_update">"Novo ažuriranje je dostupno! Želite li ažurirati BusyBox na verziju v%s?"</string>
+    <string name="install_busybox_failed">"Nažalost BusyBox installer nije uspio instalirati BusyBox \"applete\" u folder '/system/xbin'!"</string>
+    <string name="install_busybox_success">"Instalacija BusyBox paket je dovršena! Želite li ponovno pokrenuti Vaš uređaj?"</string>
+    <string name="installing">"Instalira se BusyBox v%s"</string>
+    <string name="language">"Jezik (%s)"</string>
+    <string name="language_am">"Amharic"</string>
+    <string name="language_el">"Greek"</string>
+    <string name="language_en">"English"</string>
+    <string name="language_in">"Indonesian"</string>
+    <string name="language_ko">"Korean"</string>
+    <string name="language_pt">"Portuguese"</string>
+    <string name="language_ru">"Russian"</string>
+    <string name="list_applets">"Popis appleta"</string>
+    <string name="list_applets_summary">"Sljedeći apleti uključeni su u paket!
+
+- %s"</string>
+    <string name="no_root_message">"Instalacija BusyBox paketa neće raditi bez root pristupa! Prekid"</string>
+    <string name="press_back">"Još jednom natrag za izlaz!"</string>
+    <string name="reboot">"Ponovno pokretanje"</string>
+    <string name="remove">"Ukloni"</string>
+    <string name="remove_busybox_completed">"BusyBox v%s je uspješno uklonjen s Vašeg uređaja. Želite li ponovno pokrenuti uređaj?"</string>
+    <string name="remove_busybox_message">"Želite li sigurno ukloniti BusyBox (v%s) applete iz '/system/xbin'?
+
+Pažnja: Samo appleti instalirani pomoću ove aplikacije bit će uklonjeni."</string>
+</resources>

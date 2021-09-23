@@ -1,0 +1,60 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+    <string name="about">"關於"</string>
+    <string name="billing_client_disconnected">"計費_客戶_端斷開連接"</string>
+    <string name="busybox_version">"BusyBox 版本"</string>
+    <string name="cancel">"取消"</string>
+    <string name="change_log">"變更日誌"</string>
+    <string name="credits">"學分"</string>
+    <string name="donations">"捐款"</string>
+    <string name="donation_app">"購買捐贈應用程序"</string>
+    <string name="hide">"隱藏"</string>
+    <string name="install">"安裝"</string>
+    <string name="install_busybox">"安裝 BusyBox!"</string>
+    <string name="install_busybox_latest">"恭喜！ 此應用程序上可用的最新版本的 BusyBox (v%s) 已安裝在您的設備上！"</string>
+    <string name="install_busybox_message">"您確定要安裝 BusyBox %s 嗎？"</string>
+    <string name="install_busybox_unavailable">"不幸的是，您的架構 (%s) 尚無法從該應用程序安裝 BuyBox！"</string>
+    <string name="install_busybox_update">"有新的更新可用！ 是否要將 BusyBox 更新為 v%s？"</string>
+    <string name="install_busybox_failed">"不幸的是，BusyBox 安裝程序無法在您設備的“/system/xbin”文件夾中編寫 BusyBox 小程序！"</string>
+    <string name="install_busybox_success">"BusyBox 安裝完成！ 您要重新啟動設備嗎？"</string>
+    <string name="installing">"安裝 BusyBox v%s"</string>
+    <string name="language">"語言 (%s)"</string>
+    <string name="language_am">"語言上午"</string>
+    <string name="language_el">"語言"</string>
+    <string name="language_en">"語言英語"</string>
+    <string name="language_default">"默認語言"</string>
+    <string name="language_in">"語言輸入"</string>
+    <string name="language_ko">"語言 ko"</string>
+    <string name="language_pt">"語言點"</string>
+    <string name="language_ru">"語言如"</string>
+    <string name="list_applets">"列表_程序"</string>
+    <string name="list_applets_summary">"列出小程序摘要"</string>
+    <string name="no_root_message">"沒有根消息"</string>
+    <string name="press_back">"按_背部"</string>
+    <string name="reboot">"重啟"</string>
+    <string name="remove">"消除"</string>
+    <string name="remove_busybox_completed">"刪除busybox完成"</string>
+    <string name="remove_busybox_message">"刪除busybox消息"</string>
+    <string name="removing_busybox">"刪除busybox"</string>
+    <string name="save_log">"保存日誌"</string>
+    <string name="save_log_summary">"安裝日誌文件導出為“%s”！"</string>
+    <string name="share">"分享"</string>
+    <string name="share_app">"從 https://play.google.com/store/apps/details?id=com.smartpack.busyboxinstaller 獲取 BusyBox 安裝程序 %s"</string>
+    <string name="source_code">"源代碼"</string>
+    <string name="support_acknowledged">"捐贈確認\u2665"</string>
+    <string name="support_development">"支持開發商！"</string>
+    <string name="support_development_summary">"如果您想感謝開發人員為完全免費提供此工具所做的努力，請考慮通過單擊以下提供的選項中的一個來發送小額捐款！"</string>
+    <string name="support_dinner">"給我買晚飯"</string>
+    <string name="support_meal">"給我買飯"</string>
+    <string name="support_coffee">"給我買杯咖啡"</string>
+    <string name="support_already_received_message">"您之前已經支持此項目的開發！"</string>
+    <string name="support_received_message">"非常感謝您的支持\u2665
+ 這將極大地激勵我繼續我的項目更積極！"</string>
+    <string name="support_retry_message">"請再次嘗試購買！"</string>
+    <string name="support_group">"支援團隊"</string>
+    <string name="update">"更新"</string>
+    <string name="update_busybox">"BusyBox 更新可用！"</string>
+    <string name="updated_message">"恭喜！ 你是最新的！"</string>
+    <string name="upsupported">"不支持的架構！"</string>
+    <string name="version">"版本"</string>
+</resources>
