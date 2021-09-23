@@ -1,6 +1,6 @@
 ![](fastlane/metadata/android/en-US/images/featureGraphic.png)
 
-[![](https://img.shields.io/badge/BusyBox--Installer-v2.5-green)](https://play.google.com/store/apps/details?id=com.smartpack.busyboxinstaller)
+[![](https://img.shields.io/badge/BusyBox--Installer-v2.6-green)](https://play.google.com/store/apps/details?id=com.smartpack.busyboxinstaller)
 ![](https://img.shields.io/github/languages/top/SmartPack/BusyBox-Installer)
 ![](https://img.shields.io/github/contributors/smartpack/BusyBox-Installer)
 
@@ -14,6 +14,9 @@
 [<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
      alt=""
      height="80">](https://f-droid.org/packages/com.smartpack.busyboxinstaller)
+[<img src="https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroid.png"
+alt=""
+height="80">](https://apt.izzysoft.de/fdroid/index/apk/com.smartpack.busyboxinstaller)
 
 ## Requirements
 * ROOT Access

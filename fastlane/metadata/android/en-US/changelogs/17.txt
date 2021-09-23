@@ -1,0 +1,3 @@
+* Added Chinese (TW) and Croatian (incomplete) translations.
+* Updated build tools and dependencies.
+* Miscellaneous changes.
