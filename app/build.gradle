@@ -11,12 +11,12 @@ android {
         }
     }
 
-    compileSdkVersion 30
+    compileSdkVersion 31
     buildToolsVersion = '30.0.3'
     defaultConfig {
         applicationId "com.smartpack.busyboxinstaller"
         minSdkVersion 23
-        targetSdkVersion 30
+        targetSdkVersion 31
         versionCode 17
         versionName "v2.6"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -43,10 +43,6 @@ android {
         }
     }
 
-    compileOptions {
-        sourceCompatibility = 1.8
-        targetCompatibility = 1.8
-    }
 }
 
 repositories {
@@ -54,8 +50,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
     playImplementation 'com.android.billingclient:billing:4.0.0'
-    implementation "com.github.topjohnwu.libsu:core:3.1.2"
+    implementation "com.github.topjohnwu.libsu:core:3.2.1"
     implementation 'com.google.android.material:material:1.4.0'
 }
