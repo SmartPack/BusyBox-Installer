@@ -1,0 +1,64 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+    <string name="about">"À propos"</string>
+    <string name="billing_client_disconnected">"Échec de connexion avec le client de facturation Google Play !"</string>
+    <string name="busybox_version">"Version de BusyBox"</string>
+    <string name="cancel">"Annuler"</string>
+    <string name="change_log">"Journal des modifications"</string>
+    <string name="credits">"Crédits"</string>
+    <string name="donations">"Dons"</string>
+    <string name="donation_app">"Achetez l'application de don"</string>
+    <string name="hide">"Masquer"</string>
+    <string name="install">"Installer"</string>
+    <string name="install_busybox">"Installer BusyBox !"</string>
+    <string name="install_busybox_latest">"Félicitations ! La dernière version de BusyBox (v%s) disponible sur cette application est déjà installée sur ton appareil !"</string>
+    <string name="install_busybox_message">"Êtes-vous sûr d'installer BusyBox %s ?"</string>
+    <string name="install_busybox_unavailable">"Malheureusement, l'installation de BusyBox à partir de cette application n'est pas encore disponible pour votre architecture (%s) !"</string>
+    <string name="install_busybox_update">"Une nouvelle mise à jour est disponible ! Voulez-vous mettre à jour BusyBox vers v%s ?"</string>
+    <string name="install_busybox_failed">"Malheureusement, le programme d'installation de BusyBox n'a pas réussi à écrire les applets BusyBox dans le dossier '/system/xbin' de votre appareil !"</string>
+    <string name="install_busybox_success">"L'installation de BusyBox est terminée ! Voulez-vous redémarrer votre appareil ?"</string>
+    <string name="installing">"Installation de BusyBox v%s"</string>
+    <string name="language">"Langue (%s)"</string>
+    <string name="language_am">"Amharique"</string>
+    <string name="language_el">"Grec"</string>
+    <string name="language_en">"Anglais"</string>
+    <string name="language_default">"Par défaut"</string>
+    <string name="language_in">"Indonésien"</string>
+    <string name="language_ko">"Coréen"</string>
+    <string name="language_pt">"Portugais"</string>
+    <string name="language_ru">"Russe"</string>
+    <string name="list_applets">"Liste des applets"</string>
+    <string name="list_applets_summary">"Les applets suivants sont inclus dans ce paquet !
+
+        - %s"</string>
+    <string name="no_root_message">"L'installation de BusyBox ne fonctionnera pas sans accès Root ! Annulation"</string>
+    <string name="press_back">"Appuyez encore sur retour pour quitter !"</string>
+    <string name="reboot">"Redémarrer"</string>
+    <string name="remove">"Désinstaller"</string>
+    <string name="remove_busybox_completed">"BusyBox v%s a été supprimé de votre appareil avec succès. Voulez-vous redémarrer ?"</string>
+    <string name="remove_busybox_message">"Êtes-vous sûr de vouloir supprimer les applets BusyBox (v%s) de '/system/xbin' ?
+
+        Remarque : Seulement les applets installés par cette application seront désinstallés de votre appareil !"</string>
+    <string name="removing_busybox">"Désinstallation de BusyBox v%s"</string>
+    <string name="save_log">"Enregistrer le journal"</string>
+    <string name="save_log_summary">"Le journal de l'installation est exporté sous '%s' !"</string>
+    <string name="share">"Partager"</string>
+    <string name="share_app">"Obtenez BusyBox Installer %s sur : https://play.google.com/store/apps/details?id=com.smartpack.busyboxinstaller"</string>
+    <string name="source_code">"Code source"</string>
+    <string name="support_acknowledged">"Donation enregistrée \u2665"</string>
+    <string name="support_development">"Supportez le développeur !"</string>
+    <string name="support_development_summary">"Si vous désirez saluer les efforts du développeur à fournir cet outil entièrement gratuitement, considérez l'envoi d'un petit don en cliquant sur l'une des options ci-dessous !"</string>
+    <string name="support_dinner">"Achetez-moi un Dîner"</string>
+    <string name="support_meal">"Achetez-moi un Repas"</string>
+    <string name="support_coffee">"Achetez-moi un Café"</string>
+    <string name="support_already_received_message">"Vous avez déjà soutenu le développement de cet article auparavant !"</string>
+    <string name="support_received_message">"Merci beaucoup pour votre soutien \u2665
+        Cela me motive à poursuivre mes projets avec encore plus d'énergie !"</string>
+    <string name="support_retry_message">"Veuillez recommencer l'achat !"</string>
+    <string name="support_group">"Groupe de Support"</string>
+    <string name="update">"Mettre à jour"</string>
+    <string name="update_busybox">"Une mise à jour de BusyBox est disponible !"</string>
+    <string name="updated_message">"Bravo ! Vous êtes à jour !"</string>
+    <string name="upsupported">"Architecture non supportée !"</string>
+    <string name="version">"Version"</string>
+</resources>

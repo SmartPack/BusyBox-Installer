@@ -1,0 +1,57 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+    <string name="about">"Về chúng tôi"</string>
+    <string name="billing_client_disconnected">"Không kết nối được với Google Play Billing !"</string>
+    <string name="busybox_version">"Phiên bản BusyBox"</string>
+    <string name="cancel">"Hủy"</string>
+    <string name="change_log">"Nhật ký các thay đổi"</string>
+    <string name="credits">"Danh sách đóng góp"</string>
+    <string name="donations">"Đóng góp"</string>
+    <string name="donation_app">"Ủng hộ bằng cách mua ứng dụng"</string>
+    <string name="hide">"Ẩn"</string>
+    <string name="install">"Cài đặt"</string>
+    <string name="install_busybox">"Cài đặt BusyBox"</string>
+    <string name="install_busybox_latest">"Xin chúc mừng ! Phiên bản mới nhất của BusyBox (v%s) có sẵn trên ứng dụng này đã được cài đặt trên thiết bị của bạn !"</string>
+    <string name="install_busybox_message">"Bạn muốn cài đặt BusyBox %s chứ ?"</string>
+    <string name="install_busybox_unavailable">"Rất tiếc,không thể cài đặt BusyBox trên nền tảng của bạn !"</string>
+    <string name="install_busybox_update">"Đã có bản cập nhật mới ! Bạn có muốn nâng cấp BusyBox đến v%s ?"</string>
+    <string name="install_busybox_failed">"Rất tiếc,trình cài đặt BusyBox không thể cài đặt các Applets BusyBox vào thư mục '/system/xbin' trên thiết bị của bạn !"</string>
+    <string name="install_busybox_success">"Cài đặt BusyBox thành công ! Bạn có muốn khởi động lại điện thoại ?"</string>
+    <string name="installing">"Cài đặt BusyBox v%s"</string>
+    <string name="language">"Ngôn ngữ"</string>
+    <string name="language_default">"Mặc định"</string>
+    <string name="list_applets">"Danh sách Applets"</string>
+    <string name="list_applets_summary">"Các Applets sau đang có trong bản cài đặt này !
+
+        - %s"</string>
+    <string name="no_root_message">"Không thể cài đặt BusyBox trên điện thoại chưa root !"</string>
+    <string name="press_back">"Nhấn quay về lần nữa để thoát ứng dụng !"</string>
+    <string name="reboot">"Khởi động lại"</string>
+    <string name="remove">"Xóa"</string>
+    <string name="remove_busybox_completed">"BusyBox v%s đã được xóa thành công khỏi điện thoại của bạn.Bạn có muốn khởi động lại điện thoại ?"</string>
+    <string name="remove_busybox_message">"Bạn có chắc là muốn xóa Applets trên BusyBox (v%s) khỏi '/system/xbin' ?
+
+        Lưu ý: Nó sẽ chỉ xóa các Applet được ứng dụng này cài đặt trên điện thoại của bạn !"</string>
+    <string name="removing_busybox">"Đang xóa BusyBox v%s"</string>
+    <string name="save_log">"Lưu nhật ký"</string>
+    <string name="save_log_summary">"Tệp nhật ký cài đặt được xuất dưới dạng '%s' !"</string>
+    <string name="share">"Chia sẻ"</string>
+    <string name="share_app">"Cài đặt BusyBox Installer %s từ https://play.google.com/store/apps/details?id=com.smartpack.busyboxinstaller"</string>
+    <string name="source_code">"Mã nguồn"</string>
+    <string name="support_acknowledged">"Danh sách đóng góp \u2665"</string>
+    <string name="support_development">"Hỗ trợ nhà phát triển !"</string>
+    <string name="support_development_summary">"Nếu bạn đánh giá cao nỗ lực của nhà phát triển trong việc cung cấp ứng dụng miễn phí này,vui lòng cân nhắc gửi một khoản đóng góp nhỏ bằng cách nhấp vào một trong số các tùy chọn được cung cấp bên dưới !"</string>
+    <string name="support_dinner">"Mua cho tôi một ly Bia "</string>
+    <string name="support_meal">"Mua cho tôi một miếng Thịt"</string>
+    <string name="support_coffee">"Mua cho tôi một ly Cà phê"</string>
+    <string name="support_already_received_message">"Bạn đã đóng góp cho nhà phát triển với vật phẩm này !"</string>
+    <string name="support_received_message">"Cảm ơn sự đóng góp của bạn rất nhiều \u2665
+        Nó sẽ giúp tôi rất nhiều để tiếp tục phát triển các dự án của mình !"</string>
+    <string name="support_retry_message">"Vui lòng thanh toán lại !"</string>
+    <string name="support_group">"Nhóm hỗ trợ"</string>
+    <string name="update">"Nâng cấp"</string>
+    <string name="update_busybox">"Đã có bản cập nhật BusyBox mới !"</string>
+    <string name="updated_message">"Chúc mừng ! Bạn đang dùng phiên bản mới nhất !"</string>
+    <string name="upsupported">"Nền tảng kiến trúc này không được hỗ trợ !"</string>
+    <string name="version">"Phiên bản"</string>
+</resources>

@@ -1,0 +1,57 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+    <string name="about">"O apliakcji"</string>
+    <string name="billing_client_disconnected">"Nie udało się połączyć z klientem Google Play Billing!"</string>
+    <string name="busybox_version">"Wersja BusyBox"</string>
+    <string name="cancel">"Anuluj"</string>
+    <string name="change_log">"Dzienniki zmian"</string>
+    <string name="credits">"Autorzy"</string>
+    <string name="donations">"Darowizny"</string>
+    <string name="donation_app">"Kup aplikację Donation"</string>
+    <string name="hide">"Ukryj"</string>
+    <string name="install">"Zainstaluj"</string>
+    <string name="install_busybox">"Zainstaluj BusyBox!"</string>
+    <string name="install_busybox_latest">"Gratulacje! Najnowsza wersja BusyBox (v%s) dostępna w tej aplikacji jest już zainstalowana na Twoim urządzeniu!"</string>
+    <string name="install_busybox_message">"Czy na pewno chcesz zainstalować BusyBox %s?"</string>
+    <string name="install_busybox_unavailable">"Niestety, instalacja BuyBox z tej aplikacji nie jest jeszcze dostępna dla Twojej architektury (%s)!"</string>
+    <string name="install_busybox_update">"Dostępna jest nowa aktualizacja! Czy chcesz zaktualizować BusyBox do v%s?"</string>
+    <string name="install_busybox_failed">"Niestety instalator BusyBox nie może zapisać apletów BusyBox w katalogu '/system/xbin' Twojego urządzenia!"</string>
+    <string name="install_busybox_success">"Instalacja BusyBox zakończona! Czy chcesz zrestartować swoje urządzenie?"</string>
+    <string name="installing">"Instalowanie BusyBox v%s"</string>
+    <string name="language">"Języki (%s)"</string>
+    <string name="language_default">"Domyślny"</string>
+    <string name="list_applets">"Lista apletów"</string>
+    <string name="list_applets_summary">"W tym pakiecie znajdują się następujące aplety!
+
+        - %s"</string>
+    <string name="no_root_message">"Instalacja BusyBox nie zadziała bez Root Access! Przerywanie"</string>
+    <string name="press_back">"Naciśnij ponownie, aby wyjść!"</string>
+    <string name="reboot">"Restart"</string>
+    <string name="remove">"Usuń"</string>
+    <string name="remove_busybox_completed">"BusyBox v%s został pomyślnie usunięty z urządzenia. Czy chcesz je zrestartować?"</string>
+    <string name="remove_busybox_message">"Czy na pewno chcesz usunąć aplety BusyBox (v%s) z '/system/xbin'?
+
+        Uwaga: Spowoduje to usunięcie tylko apletów zainstalowanych przez tę aplikację na Twoim urządzeniu!"</string>
+    <string name="removing_busybox">"Usuwanie BusyBox v%s"</string>
+    <string name="save_log">"Zapisz dziennik"</string>
+    <string name="save_log_summary">"Plik dziennika instalacji jest eksportowany jako '%s'!"</string>
+    <string name="share">"Udostępnij"</string>
+    <string name="share_app">"Pobierz BusyBox Installer %s z https://play.google.com/store/apps/details?id=com.smartpack.busyboxinstaller"</string>
+    <string name="source_code">"Kod źródłowy"</string>
+    <string name="support_acknowledged">"Darowizna uznana \u2665"</string>
+    <string name="support_development">"Wesprzyj programistę!"</string>
+    <string name="support_development_summary">"Jeśli chcesz docenić wysiłek programisty, aby udostępnić to narzędzie całkowicie za darmo, rozważ przesłanie niewielkiej darowizny, klikając jedną z poniższych opcji!"</string>
+    <string name="support_dinner">"Kup mi obiad"</string>
+    <string name="support_meal">"Kup mi posiłek"</string>
+    <string name="support_coffee">"Kup mi kawę"</string>
+    <string name="support_already_received_message">"Już wcześniej wspierałeś rozwój tego projektu!"</string>
+    <string name="support_received_message">"Bardzo dziękuję za wsparcie \u2665
+        Bardzo mnie to zmotywuje do aktywnej kontynuacji moich projektów!"</string>
+    <string name="support_retry_message">"Spróbuj kupić ponownie!"</string>
+    <string name="support_group">"Grupa wsparcia"</string>
+    <string name="update">"Aktualizacja"</string>
+    <string name="update_busybox">"Dostępna aktualizacja BusyBox!"</string>
+    <string name="updated_message">"Gratulacje! Jesteś na bieżąco!"</string>
+    <string name="upsupported">"Nieobsługiwana architektura!"</string>
+    <string name="version">"Wersja"</string>
+</resources>
