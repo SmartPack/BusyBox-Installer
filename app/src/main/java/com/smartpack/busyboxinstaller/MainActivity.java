@@ -30,6 +30,8 @@ import com.smartpack.busyboxinstaller.utils.Billing;
 import com.smartpack.busyboxinstaller.utils.RootUtils;
 import com.smartpack.busyboxinstaller.utils.Utils;
 
+import in.sunilpaulmathew.crashreporter.Utils.CrashReporter;
+
 /*
  * Created by sunilpaulmathew <sunil.kde@gmail.com> on April 11, 2020
  */
@@ -53,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
         // Set App Language
         Utils.setLanguage(this);
         setContentView(R.layout.activity_main);
+
+        new CrashReporter("E-Mail: smartpack.org@gmail.com", this).initialize();
 
         mProgress = findViewById(R.id.progress_layout);
         mProgressText = findViewById(R.id.progress_text);
