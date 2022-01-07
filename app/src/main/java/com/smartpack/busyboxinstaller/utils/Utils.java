@@ -19,7 +19,6 @@ import com.google.android.material.snackbar.Snackbar;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -53,12 +52,8 @@ public class Utils {
         return !isNotDonated(context) || getBoolean("support_received", false, context);
     }
 
-    public static void initializeAppTheme(Context context) {
-        if (isDarkTheme(context)) {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-        } else {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-        }
+    public static void initializeAppTheme() {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
     }
 
     public static boolean isDarkTheme(Context context) {
@@ -71,9 +66,13 @@ public class Utils {
     }
 
     public static void delete(String path) {
-        if (Utils.existFile(path)) {
+        if (existFile(path)) {
             RootUtils.runCommand("rm -r " + path);
         }
+    }
+
+    private static void mkdir(String dir) {
+        RootUtils.runCommand("mkdir " + dir);
     }
 
     public static void move(String source, String dest) {
@@ -112,43 +111,11 @@ public class Utils {
     }
 
     public static String readFile(String file) {
-        return readFile(file, true);
-    }
-
-
-    private static String readFile(String file, boolean root) {
-        if (root) {
-            return new RootFile(file).readFile();
-        }
-
-        BufferedReader buf = null;
-        try {
-            buf = new BufferedReader(new FileReader(file));
-
-            StringBuilder stringBuilder = new StringBuilder();
-            String line;
-            while ((line = buf.readLine()) != null) {
-                stringBuilder.append(line).append("\n");
-            }
-
-            return stringBuilder.toString().trim();
-        } catch (IOException ignored) {
-        } finally {
-            try {
-                if (buf != null) buf.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        return null;
+        return new RootFile(file).readFile();
     }
 
     public static boolean existFile(String file) {
-        return existFile(file, true);
-    }
-
-    private static boolean existFile(String file, boolean root) {
-        return !root ? new File(file).exists() : new RootFile(file).exists();
+        return new RootFile(file).exists();
     }
 
     public static boolean getBoolean(String name, boolean defaults, Context context) {
@@ -203,6 +170,10 @@ public class Utils {
         }
     }
 
+    public static boolean isMagiskSupported() {
+        return existFile("/data/adb/magisk");
+    }
+
     public static boolean isWritableSystem() {
         return !mountSystem("rw").equals("mount: '/system' not in /proc/mounts");
     }
@@ -217,7 +188,8 @@ public class Utils {
         OutputStream out;
         try {
             in = assetManager.open(getArch());
-            File outFile = new File(context.getExternalFilesDir("") + "/busybox_" + version);
+            File outFile = new File(mountable ? context.getExternalFilesDir("") + "/busybox_" + version :
+                    context.getExternalFilesDir("/system/xbin/") + "/busybox_" + version);
             out = new FileOutputStream(outFile);
             byte[] buffer = new byte[1024];
             int read;
@@ -228,9 +200,23 @@ public class Utils {
         }
     }
 
+    public static void initializeModule() {
+        mkdir("/data/adb/modules/bbi");
+        chmod("755", "/data/adb/modules/bbi");
+        create("id=BBI\n" +
+                        "name=BusyBox Installer\n" +
+                        "version=v1.0\n" +
+                        "versionCode=1\n" +
+                        "author=sunilpaulmathew\n" +
+                        "description=Systemless BusyBox Installer",
+                "/data/adb/modules/bbi/module.prop");
+        chmod("644", "/data/adb/modules/bbi/module.prop");
+    }
+
     public static String getBusyBoxVersion() {
         try {
-            for (String line : RootUtils.runAndGetOutput("/system/xbin/busybox_" + version).split("\\r?\\n")) {
+            for (String line : RootUtils.runAndGetOutput(existFile("/data/adb/modules/bbi/system/xbin/busybox_" + Utils.version) ?
+                    "/data/adb/modules/bbi/system/xbin/busybox_" + Utils.version : "/system/xbin/busybox_" + version).split("\\r?\\n")) {
                 if (line.startsWith("BusyBox v")) {
                     return line.replace("BusyBox v", "");
                 }
@@ -241,7 +227,8 @@ public class Utils {
     }
 
     public static String getAppletsList() {
-        return RootUtils.runAndGetOutput("/system/xbin/busybox_" + version + " --list").replace("su\n", "");
+        return RootUtils.runAndGetOutput((existFile("/data/adb/modules/bbi/system/xbin/busybox_" + Utils.version) ?
+                "/data/adb/modules/bbi/system/xbin/busybox_" : "/system/xbin/busybox_") + version + " --list").replace("su\n", "");
     }
 
     public static String getLanguage(Context context) {

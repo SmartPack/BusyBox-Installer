@@ -42,12 +42,13 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout mProgress;
     private MaterialTextView mInstallText;
     private MaterialTextView mProgressText;
+    private String mBinaryFile, mVersionFile;
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint({"SetTextI18n", "StringFormatInvalid"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // Initialize App Theme
-        Utils.initializeAppTheme(this);
+        Utils.initializeAppTheme();
         super.onCreate(savedInstanceState);
         // Set App Language
         Utils.setLanguage(this);
@@ -59,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
         mInstall = findViewById(R.id.install);
         AppCompatImageButton settings = findViewById(R.id.settings_menu);
 
+        setPaths();
+
         refreshTitles();
 
         mInstall.setVisibility(View.VISIBLE);
@@ -68,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         settings.setOnClickListener(v -> {
             PopupMenu popupMenu = new PopupMenu(this, settings);
             Menu menu = popupMenu.getMenu();
-            if (Utils.existFile("/system/xbin/bb_version")) {
+            if (Utils.existFile(mVersionFile)) {
                 menu.add(Menu.NONE, 1, Menu.NONE, getString(R.string.remove));
             }
             @SuppressLint({"StringFormatInvalid", "LocalSuppress"})
@@ -101,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
                     .setChecked(Utils.getString("appLanguage", java.util.Locale.getDefault().getLanguage(), this).equals("ar"));
             language.add(Menu.NONE, 23, Menu.NONE, getString(R.string.language_hr)).setCheckable(true)
                     .setChecked(Utils.getString("appLanguage", java.util.Locale.getDefault().getLanguage(), this).equals("hr"));
-            if (Utils.existFile("/system/xbin/busybox_" + Utils.version)) {
+            if (Utils.existFile(mBinaryFile)) {
                 menu.add(Menu.NONE, 2, Menu.NONE, getString(R.string.list_applets));
                 menu.add(Menu.NONE, 3, Menu.NONE, getString(R.string.version));
             }
@@ -258,8 +261,8 @@ public class MainActivity extends AppCompatActivity {
         install.setIcon(R.mipmap.ic_launcher);
         if (Utils.getArch().equals("aarch64") || Utils.getArch().equals("armv7l") || Utils.getArch().equals("armv8l")
                 || Utils.getArch().equals("i686")) {
-            if (Utils.existFile("/system/xbin/bb_version")) {
-                if (Utils.readFile("/system/xbin/bb_version").equals(Utils.version)) {
+            if (Utils.existFile(mVersionFile)) {
+                if (Utils.readFile(mVersionFile).equals(Utils.version)) {
                     install.setTitle(R.string.updated_message);
                     install.setMessage(getString(R.string.install_busybox_latest, Utils.version));
                     install.setPositiveButton(R.string.cancel, (dialog, which) -> {
@@ -347,36 +350,39 @@ public class MainActivity extends AppCompatActivity {
                     Utils.mOutput.append("** Mounting 'root' partition: Done *\n\n");
                 } else {
                     Utils.mountable = false;
-                    Utils.mOutput.append("** Both 'root' & '/system' partitions on your device are not writable! *\n\n");
-                    Utils.mOutput.append(activity.getString(R.string.install_busybox_failed));
+                    if (Utils.isMagiskSupported()) {
+                        Utils.mOutput.append(activity.getString(R.string.install_busybox_systemless_message));
+                    } else {
+                        Utils.mOutput.append("** Both 'root' & '/system' partitions on your device are not writable! *\n\n");
+                        Utils.mOutput.append(activity.getString(R.string.install_busybox_failed));
+                    }
                 }
+                Utils.sleep(1);
+                Utils.mOutput.append("\n\n** Copying BusyBox v" + Utils.version + " binary into '").append(getExternalFilesDir("")).append("': Done *\n\n");
+                Utils.copyBinary(activity);
                 if (Utils.mountable) {
-                    Utils.sleep(1);
-                    Utils.mOutput.append("** Copying BusyBox v" + Utils.version + " binary into '").append(getExternalFilesDir("")).append("': Done *\n\n");
-                    Utils.copyBinary(activity);
                     if (!Utils.existFile("/system/xbin/")) {
                         RootUtils.runCommand("mkdir /system/xbin/");
                         Utils.mOutput.append("** Creating '/system/xbin/': Done*\n\n");
                     }
                     Utils.mOutput.append("** Moving BusyBox binary into '/system/xbin/': ");
                     Utils.move(getExternalFilesDir("") + "/busybox_" + Utils.version, "/system/xbin/\n");
-                    Utils.mOutput.append(Utils.existFile("/system/xbin/busybox_" + Utils.version) ? "Done *\n\n" : "Failed *\n\n");
-                    if (Utils.existFile("/system/xbin/busybox_" + Utils.version)) {
+                    Utils.mOutput.append(Utils.existFile(mBinaryFile) ? "Done *\n\n" : "Failed *\n\n");
+                    if (Utils.existFile(mBinaryFile)) {
                         Utils.mOutput.append("** Detecting 'su' binary: ");
                         if (Utils.existFile("/system/xbin/su")) Utils.superUser = true;
                         Utils.mOutput.append(Utils.superUser ? "Detected *\n\n" : "Not Detected *\n\n");
                         Utils.mOutput.append("** Setting permissions: Done *\n");
-                        Utils.mOutput.append(Utils.chmod("755", "/system/xbin/busybox_" + Utils.version)).append("\n");
+                        Utils.mOutput.append(Utils.chmod("755", mBinaryFile)).append("\n");
                         Utils.mOutput.append("** Installing applets: ");
-                        RootUtils.runCommand("cd /system/xbin/");
-                        Utils.mOutput.append(RootUtils.runAndGetError("busybox_" + Utils.version + " --install ."));
+                        Utils.mOutput.append(RootUtils.runAndGetError(mBinaryFile + " --install ."));
                         Utils.mOutput.append("Done *\n\n");
                         if (!Utils.superUser) {
                             Utils.mOutput.append("** Removing 'su' binary to avoid SafetyNet failure: ");
                             Utils.delete("/system/xbin/su");
                             Utils.mOutput.append("Done *\n\n");
                         }
-                        Utils.create(Utils.version, "/system/xbin/bb_version");
+                        Utils.create(Utils.version, mVersionFile);
                         Utils.mOutput.append("** Syncing file systems: ");
                         RootUtils.runCommand("sync");
                         Utils.mOutput.append("Done *\n\n");
@@ -390,7 +396,31 @@ public class MainActivity extends AppCompatActivity {
                         Utils.mOutput.append("** Making 'system' partition read-only: Done*\n\n");
                     }
                     Utils.mOutput.append(activity.getString(R.string.install_busybox_success));
+                } else if (Utils.isMagiskSupported()) {
+                    Utils.sleep(1);
+                    Utils.initializeModule();
+                    Utils.move(getExternalFilesDir("/system/").getAbsolutePath(), "/data/adb/modules/bbi");
+                    setPaths();
+                    Utils.mOutput.append("** Detecting 'su' binary: ");
+                    if (Utils.existFile("/system/xbin/su")) Utils.superUser = true;
+                    Utils.mOutput.append(Utils.superUser ? "Detected *\n\n" : "Not Detected *\n\n");
+                    Utils.mOutput.append("** Setting permissions: Done *\n");
+                    Utils.mOutput.append(Utils.chmod("755", mBinaryFile)).append("\n");
+                    Utils.mOutput.append("** Installing applets: ");
+                    Utils.mOutput.append(RootUtils.runAndGetError(mBinaryFile + " --install /data/adb/modules/bbi/system/xbin/"));
+                    Utils.mOutput.append("Done *\n\n");
+                    if (!Utils.superUser) {
+                        Utils.mOutput.append("** Removing 'su' binary to avoid SafetyNet failure: ");
+                        Utils.delete("/data/adb/modules/bbi/system/xbin/su");
+                        Utils.mOutput.append("Done *\n\n");
+                    }
+                    Utils.create(Utils.version, "/data/adb/modules/bbi/system/xbin/bb_version");
+                    Utils.mOutput.append("** Syncing file systems: ");
+                    RootUtils.runCommand("sync");
+                    Utils.mOutput.append("Done *\n\n");
+                    Utils.sleep(1);
                 }
+                setPaths();
                 return null;
             }
             @SuppressLint("StringFormatInvalid")
@@ -405,7 +435,7 @@ public class MainActivity extends AppCompatActivity {
                 status.setIcon(R.mipmap.ic_launcher_round);
                 status.setTitle(R.string.app_name);
                 status.setMessage(Utils.mOutput.toString());
-                if (Utils.existFile("/system/xbin/bb_version") && Utils.readFile("/system/xbin/bb_version").equals(Utils.version)) {
+                if (Utils.existFile(mVersionFile) && Utils.readFile(mVersionFile).equals(Utils.version)) {
                     status.setNeutralButton(R.string.save_log, (dialog, which) -> {
                         Utils.create("## BusyBox Installation log created by BusyBox Installer v" + BuildConfig.VERSION_NAME + "\n\n" +
                                 Utils.mOutput.toString(),getExternalFilesDir("") + "/bb_log");
@@ -445,32 +475,39 @@ public class MainActivity extends AppCompatActivity {
             @SuppressLint("StringFormatInvalid")
             @Override
             protected Void doInBackground(Void... voids) {
-                if (Utils.isWritableSystem()) {
-                    Utils.mOutput.append("** Mounting '/system' partition: Done *\n\n");
-                } else if (Utils.isWritableRoot()) {
-                    Utils.SAR = true;
-                    Utils.mOutput.append("** System-As-Root device detected\n");
-                    Utils.mOutput.append("** Mounting 'root' partition: Done *\n\n");
-                }
-                Utils.sleep(1);
-                Utils.mOutput.append("** Removing BusyBox v" + Utils.version + "  applets: ");
-                RootUtils.runCommand("cd /system/xbin/");
-                RootUtils.runCommand("rm -r " + Utils.getAppletsList().replace("\n", " "));
-                Utils.delete("/system/xbin/bb_version");
-                Utils.delete("/system/xbin/busybox_" + Utils.version);
-                Utils.mOutput.append("Done *\n\n");
-                Utils.mOutput.append("** Syncing file systems: ");
-                RootUtils.runCommand("sync");
-                Utils.mOutput.append("Done *\n\n");
-                Utils.sleep(1);
-                if (Utils.SAR) {
-                    Utils.mOutput.append(Utils.mountRootFS("ro"));
-                    Utils.mOutput.append("** Making 'root' file system read-only: Done*\n\n");
+                if (Utils.existFile(mBinaryFile)) {
+                    Utils.mOutput.append("** Removing BusyBox v" + Utils.version + "  applets: ");
+                    Utils.delete("/data/adb/modules/bbi/");
+                    Utils.mOutput.append("Done *\n\n");
                 } else {
-                    Utils.mOutput.append(Utils.mountSystem("ro"));
-                    Utils.mOutput.append("** Making 'system' partition read-only: Done*\n\n");
+                    if (Utils.isWritableSystem()) {
+                        Utils.mOutput.append("** Mounting '/system' partition: Done *\n\n");
+                    } else if (Utils.isWritableRoot()) {
+                        Utils.SAR = true;
+                        Utils.mOutput.append("** System-As-Root device detected\n");
+                        Utils.mOutput.append("** Mounting 'root' partition: Done *\n\n");
+                    }
+                    Utils.sleep(1);
+                    Utils.mOutput.append("** Removing BusyBox v" + Utils.version + "  applets: ");
+                    RootUtils.runCommand("cd /system/xbin/");
+                    RootUtils.runCommand("rm -r " + Utils.getAppletsList().replace("\n", " "));
+                    Utils.delete(mVersionFile);
+                    Utils.delete(mBinaryFile);
+                    Utils.mOutput.append("Done *\n\n");
+                    Utils.mOutput.append("** Syncing file systems: ");
+                    RootUtils.runCommand("sync");
+                    Utils.mOutput.append("Done *\n\n");
+                    Utils.sleep(1);
+                    if (Utils.SAR) {
+                        Utils.mOutput.append(Utils.mountRootFS("ro"));
+                        Utils.mOutput.append("** Making 'root' file system read-only: Done*\n\n");
+                    } else {
+                        Utils.mOutput.append(Utils.mountSystem("ro"));
+                        Utils.mOutput.append("** Making 'system' partition read-only: Done*\n\n");
+                    }
+                    Utils.mOutput.append(activity.getString(R.string.remove_busybox_completed, Utils.version));
                 }
-                Utils.mOutput.append(activity.getString(R.string.remove_busybox_completed, Utils.version));
+                setPaths();
                 return null;
             }
             @Override
@@ -484,7 +521,7 @@ public class MainActivity extends AppCompatActivity {
                 status.setIcon(R.mipmap.ic_launcher_round);
                 status.setTitle(R.string.app_name);
                 status.setMessage(Utils.mOutput.toString());
-                status.setNeutralButton(R.string.cancel, (dialog, which) -> {
+                status.setNegativeButton(R.string.cancel, (dialog, which) -> {
                 });
                 status.setPositiveButton(R.string.reboot, (dialog, which) -> {
                     RootUtils.runCommand("svc power reboot");
@@ -495,14 +532,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void refreshTitles() {
-        if (Utils.existFile("/system/xbin/bb_version")) {
-            if (Utils.readFile("/system/xbin/bb_version").equals(Utils.version)) {
+        if (Utils.existFile(mVersionFile)) {
+            if (Utils.readFile(mVersionFile).equals(Utils.version)) {
                 mInstallText.setText(R.string.updated_message);
             } else {
                 mInstallText.setText(R.string.update_busybox);
             }
         } else {
             mInstallText.setText(R.string.install_busybox);
+        }
+    }
+
+    private void setPaths() {
+        if (Utils.existFile("/data/adb/modules/bbi/system/xbin/busybox_" + Utils.version)) {
+            mBinaryFile = "/data/adb/modules/bbi/system/xbin/busybox_" + Utils.version;
+            mVersionFile = "/data/adb/modules/bbi/system/xbin/bb_version";
+        } else {
+            mBinaryFile = "/system/xbin/busybox_" + Utils.version;
+            mVersionFile = "/system/xbin/bb_version";
         }
     }
 
@@ -515,7 +562,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (Utils.getArch().equals("aarch64") || Utils.getArch().equals("armv7l") || Utils.getArch().equals("i686")) {
-            if (Utils.existFile("/system/xbin/bb_version") && !Utils.readFile("/system/xbin/bb_version").equals(Utils.version)) {
+            if (Utils.existFile(mVersionFile) && !Utils.readFile(mVersionFile).equals(Utils.version)) {
                 View checkBoxView = View.inflate(this, R.layout.layout_checkbox, null);
                 MaterialCheckBox checkBox = checkBoxView.findViewById(R.id.checkbox);
                 checkBox.setText(getString(R.string.hide));

@@ -19,6 +19,7 @@
     <string name="install_busybox_update">New update available! Do you want to update BusyBox to v%s?</string>
     <string name="install_busybox_failed">Unfortunately, BusyBox installer is failed to write BusyBox applets on your device\'s \'/system/xbin\' folder!</string>
     <string name="install_busybox_success">BusyBox installation Finished! Do you want to reboot your device?</string>
+    <string name="install_busybox_systemless_message">Trying system-less installation</string>
     <string name="installing">Installing BusyBox v%s</string>
     <string name="language">Language (%s)</string>
     <string name="language_am" translatable="false">አማርኛ</string>
