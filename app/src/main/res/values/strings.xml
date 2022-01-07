@@ -42,6 +42,7 @@
     <string name="press_back">Press back again to exit!</string>
     <string name="reboot">Reboot</string>
     <string name="remove">Remove</string>
+    <string name="remove_busybox">Remove BusyBox!</string>
     <string name="remove_busybox_completed">BusyBox v%s is successfully removed from your device. Do you wan\'t to reboot?</string>
     <string name="remove_busybox_message">Are you sure to remove BusyBox (v%s) applets from \'/system/xbin\'?\n\nPlease Note: It will only remove the applets installed by this app on your device!</string>
     <string name="removing_busybox">Removing BusyBox v%s</string>

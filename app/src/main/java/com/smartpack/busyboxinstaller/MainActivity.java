@@ -10,7 +10,6 @@ package com.smartpack.busyboxinstaller;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
@@ -26,6 +25,7 @@ import com.google.android.material.checkbox.MaterialCheckBox;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textview.MaterialTextView;
 import com.smartpack.busyboxinstaller.utils.AboutActivity;
+import com.smartpack.busyboxinstaller.utils.AsyncTask;
 import com.smartpack.busyboxinstaller.utils.Billing;
 import com.smartpack.busyboxinstaller.utils.RootUtils;
 import com.smartpack.busyboxinstaller.utils.Utils;
@@ -65,9 +65,7 @@ public class MainActivity extends AppCompatActivity {
         refreshTitles();
 
         mInstall.setVisibility(View.VISIBLE);
-        mInstall.setOnClickListener(v -> {
-            installDialog();
-        });
+        mInstall.setOnClickListener(v -> installDialog());
         settings.setOnClickListener(v -> {
             PopupMenu popupMenu = new PopupMenu(this, settings);
             Menu menu = popupMenu.getMenu();
@@ -272,18 +270,14 @@ public class MainActivity extends AppCompatActivity {
                     install.setMessage(getString(R.string.install_busybox_update, Utils.version));
                     install.setNegativeButton(R.string.cancel, (dialog, which) -> {
                     });
-                    install.setPositiveButton(R.string.update, (dialog, which) -> {
-                        installBusyBox(mInstall, this);
-                    });
+                    install.setPositiveButton(R.string.update, (dialog, which) -> installBusyBox(mInstall, this));
                 }
             } else {
                 install.setTitle(R.string.install_busybox);
                 install.setMessage((getString(R.string.install_busybox_message, Utils.version)));
                 install.setNegativeButton(R.string.cancel, (dialog, which) -> {
                 });
-                install.setPositiveButton(R.string.install, (dialog, which) -> {
-                    installBusyBox(mInstall, this);
-                });
+                install.setPositiveButton(R.string.install, (dialog, which) -> installBusyBox(mInstall, this));
             }
         } else {
             install.setTitle(R.string.upsupported);
@@ -297,12 +291,12 @@ public class MainActivity extends AppCompatActivity {
     @SuppressLint("StringFormatInvalid")
     private void removeBusyBox() {
             new MaterialAlertDialogBuilder(this)
+                    .setIcon(R.mipmap.ic_launcher)
+                    .setTitle(R.string.remove_busybox)
                     .setMessage(getString(R.string.remove_busybox_message, Utils.version))
                     .setNegativeButton(R.string.cancel, (dialog, which) -> {
                     })
-                    .setPositiveButton(R.string.remove, (dialog, which) -> {
-                        removeBusyBox(this);
-                    })
+                    .setPositiveButton(R.string.remove, (dialog, which) -> removeBusyBox(this))
                     .show();
     }
 
@@ -323,13 +317,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(shareIntent);
     }
 
-    @SuppressLint("StaticFieldLeak")
     public void installBusyBox(View view, Activity activity) {
-        new AsyncTask<Void, Void, Void>() {
-            @SuppressLint({"SetTextI18n", "StringFormatInvalid"})
+        new AsyncTask() {
+            @SuppressLint({"StringFormatInvalid", "SetTextI18n"})
             @Override
-            protected void onPreExecute() {
-                super.onPreExecute();
+            public void onPreExecute() {
                 mProgressText.setText(activity.getString(R.string.installing, Utils.version) + " ...");
                 mProgress.setVisibility(View.VISIBLE);
                 mInstall.setVisibility(View.GONE);
@@ -339,8 +331,9 @@ public class MainActivity extends AppCompatActivity {
                     Utils.mOutput.setLength(0);
                 }
             }
+
             @Override
-            protected Void doInBackground(Void... voids) {
+            public void doInBackground() {
                 Utils.mOutput.append("** Preparing to install BusyBox v" + Utils.version + "...\n\n");
                 Utils.mOutput.append("** Checking device partitions...\n");
                 if (Utils.isWritableSystem()) {
@@ -421,12 +414,11 @@ public class MainActivity extends AppCompatActivity {
                     Utils.sleep(1);
                 }
                 setPaths();
-                return null;
             }
+
             @SuppressLint("StringFormatInvalid")
             @Override
-            protected void onPostExecute(Void aVoid) {
-                super.onPostExecute(aVoid);
+            public void onPostExecute() {
                 if (activity.isFinishing() || activity.isDestroyed()) return;
                 mProgress.setVisibility(View.GONE);
                 mInstall.setVisibility(View.VISIBLE);
@@ -443,9 +435,7 @@ public class MainActivity extends AppCompatActivity {
                     });
                     status.setNegativeButton(R.string.cancel, (dialog, which) -> {
                     });
-                    status.setPositiveButton(R.string.reboot, (dialog, which) -> {
-                        RootUtils.runCommand("svc power reboot");
-                    });
+                    status.setPositiveButton(R.string.reboot, (dialog, which) -> RootUtils.runCommand("svc power reboot"));
                 } else {
                     status.setPositiveButton(R.string.cancel, (dialog, which) -> {
                     });
@@ -455,13 +445,11 @@ public class MainActivity extends AppCompatActivity {
         }.execute();
     }
 
-    @SuppressLint("StaticFieldLeak")
     public void removeBusyBox(Activity activity) {
-        new AsyncTask<Void, Void, Void>() {
+        new AsyncTask() {
             @SuppressLint({"SetTextI18n", "StringFormatInvalid"})
             @Override
-            protected void onPreExecute() {
-                super.onPreExecute();
+            public void onPreExecute() {
                 mProgressText.setText(activity.getString(R.string.removing_busybox, Utils.version) + " ...");
                 mProgress.setVisibility(View.VISIBLE);
                 mInstall.setVisibility(View.GONE);
@@ -472,9 +460,10 @@ public class MainActivity extends AppCompatActivity {
                 }
                 Utils.mOutput.append("** Preparing to remove BusyBox v" + Utils.version + "...\n\n");
             }
+
             @SuppressLint("StringFormatInvalid")
             @Override
-            protected Void doInBackground(Void... voids) {
+            public void doInBackground() {
                 if (Utils.existFile(mBinaryFile)) {
                     Utils.mOutput.append("** Removing BusyBox v" + Utils.version + "  applets: ");
                     Utils.delete("/data/adb/modules/bbi/");
@@ -508,11 +497,10 @@ public class MainActivity extends AppCompatActivity {
                     Utils.mOutput.append(activity.getString(R.string.remove_busybox_completed, Utils.version));
                 }
                 setPaths();
-                return null;
             }
+
             @Override
-            protected void onPostExecute(Void aVoid) {
-                super.onPostExecute(aVoid);
+            public void onPostExecute() {
                 if (activity.isFinishing() || activity.isDestroyed()) return;
                 mProgress.setVisibility(View.GONE);
                 mInstall.setVisibility(View.VISIBLE);
@@ -523,9 +511,7 @@ public class MainActivity extends AppCompatActivity {
                 status.setMessage(Utils.mOutput.toString());
                 status.setNegativeButton(R.string.cancel, (dialog, which) -> {
                 });
-                status.setPositiveButton(R.string.reboot, (dialog, which) -> {
-                    RootUtils.runCommand("svc power reboot");
-                });
+                status.setPositiveButton(R.string.reboot, (dialog, which) -> RootUtils.runCommand("svc power reboot"));
                 status.show();
             }
         }.execute();
