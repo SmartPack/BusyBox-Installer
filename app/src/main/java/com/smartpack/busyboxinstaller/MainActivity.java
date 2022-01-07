@@ -102,6 +102,12 @@ public class MainActivity extends AppCompatActivity {
                     .setChecked(Utils.getString("appLanguage", java.util.Locale.getDefault().getLanguage(), this).equals("ar"));
             language.add(Menu.NONE, 23, Menu.NONE, getString(R.string.language_hr)).setCheckable(true)
                     .setChecked(Utils.getString("appLanguage", java.util.Locale.getDefault().getLanguage(), this).equals("hr"));
+            language.add(Menu.NONE, 24, Menu.NONE, getString(R.string.language_fr)).setCheckable(true)
+                    .setChecked(Utils.getString("appLanguage", java.util.Locale.getDefault().getLanguage(), this).equals("fr"));
+            language.add(Menu.NONE, 25, Menu.NONE, getString(R.string.language_pl)).setCheckable(true)
+                    .setChecked(Utils.getString("appLanguage", java.util.Locale.getDefault().getLanguage(), this).equals("pl"));
+            language.add(Menu.NONE, 26, Menu.NONE, getString(R.string.language_vi)).setCheckable(true)
+                    .setChecked(Utils.getString("appLanguage", java.util.Locale.getDefault().getLanguage(), this).equals("vi"));
             if (Utils.existFile(mBinaryFile)) {
                 menu.add(Menu.NONE, 2, Menu.NONE, getString(R.string.list_applets));
                 menu.add(Menu.NONE, 3, Menu.NONE, getString(R.string.version));
@@ -239,6 +245,24 @@ public class MainActivity extends AppCompatActivity {
                     case 23:
                         if (!Utils.getLanguage(this).equals("hr")) {
                             Utils.saveString("appLanguage", "hr", this);
+                            restartApp();
+                        }
+                        break;
+                    case 24:
+                        if (!Utils.getLanguage(this).equals("fr")) {
+                            Utils.saveString("appLanguage", "fr", this);
+                            restartApp();
+                        }
+                        break;
+                    case 25:
+                        if (!Utils.getLanguage(this).equals("pl")) {
+                            Utils.saveString("appLanguage", "pl", this);
+                            restartApp();
+                        }
+                        break;
+                    case 26:
+                        if (!Utils.getLanguage(this).equals("vi")) {
+                            Utils.saveString("appLanguage", "vi", this);
                             restartApp();
                         }
                         break;

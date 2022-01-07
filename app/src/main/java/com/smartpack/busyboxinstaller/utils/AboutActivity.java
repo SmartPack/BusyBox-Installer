@@ -76,6 +76,11 @@ public class AboutActivity extends AppCompatActivity {
         mData.add(new RecycleViewItem("Khalid1717", "Arabic Translations", null));
         mData.add(new RecycleViewItem("Yadi", "Chinese (Traditional) Translations", null));
         mData.add(new RecycleViewItem("Dorian Ivancic", "Croatian Translations", null));
+        mData.add(new RecycleViewItem("Lucas", "French Translations", null));
+        mData.add(new RecycleViewItem("Valdnet", "Polish Translations", null));
+        mData.add(new RecycleViewItem("hm", "Vietnamese Translations", null));
+        mData.add(new RecycleViewItem("Hoa Gia Đại Thiếu", "Vietnamese Translations", null));
+
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, 1));
         RecycleViewAdapter mRecycleViewAdapter = new RecycleViewAdapter(mData);
         mRecyclerView.setAdapter(mRecycleViewAdapter);
@@ -132,7 +137,7 @@ public class AboutActivity extends AppCompatActivity {
         }
 
         public static class ViewHolder extends RecyclerView.ViewHolder {
-            private MaterialTextView Title, Description;
+            private final MaterialTextView Title, Description;
 
             public ViewHolder(View view) {
                 super(view);
@@ -143,9 +148,7 @@ public class AboutActivity extends AppCompatActivity {
     }
 
     private static class RecycleViewItem implements Serializable {
-        private String mTitle;
-        private String mDescription;
-        private String mURL;
+        private final String mTitle,  mDescription, mURL;
 
         public RecycleViewItem(String title, String description, String url) {
             this.mTitle = title;

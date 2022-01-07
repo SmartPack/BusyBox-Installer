@@ -29,13 +29,16 @@
     <string name="language_el" translatable="false">Ελληνικά</string>
     <string name="language_es" translatable="false">Español</string>
     <string name="language_en" translatable="false">English</string>
+    <string name="language_fr" translatable="false">français</string>
     <string name="language_hr" translatable="false">Hrvatski</string>
     <string name="language_in" translatable="false">bahasa Indonesia</string>
     <string name="language_ko" translatable="false">한국어</string>
     <string name="language_my" translatable="false">ဗမာ</string>
+    <string name="language_pl" translatable="false">Polski"</string>
     <string name="language_pt" translatable="false">Português</string>
     <string name="language_ru" translatable="false">русский</string>
     <string name="language_tr" translatable="false">Türkçe</string>
+    <string name="language_vi" translatable="false">Tiếng Việt</string>
     <string name="list_applets">Applets List</string>
     <string name="list_applets_summary">The following applets are included in this package!\n\n - %s</string>
     <string name="no_root_message">BusyBox installation won\'t work without Root Access! Aborting</string>
