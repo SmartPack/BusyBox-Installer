@@ -1,0 +1,6 @@
+* Implemented system-less installation mode if normal mode is unavailable (experimental).
+* App now targets targets SDK 31.
+* Implemented crash reporting.
+* Added French, Polish, and Vietnamese translations.
+* Updated build tools and dependencies.
+* Miscellaneous changes.
