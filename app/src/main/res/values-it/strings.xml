@@ -1,0 +1,74 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="app_name" translatable="false">BusyBox Installer</string>
+
+    <string name="about">Informazioni</string>
+    <string name="billing_client_disconnected">Errore di connessione con il client Google Play Billing!</string>
+    <string name="busybox_version">Versione BusyBox</string>
+    <string name="cancel">Annulla</string>
+    <string name="change_log">Change-logs</string>
+    <string name="copyright">Copyright: © %s</string>
+    <string name="credits">Crediti</string>
+    <string name="donations">Donations</string>
+    <string name="donation_app">Compra App Donazione</string>
+    <string name="hide">Nascondi</string>
+    <string name="install">Installa</string>
+    <string name="install_busybox">Installa BusyBox!</string>
+    <string name="install_busybox_latest">Congratulazioni! L\'ultima versione di BusyBox (v%s) disponibile in questa app è già installata sul tuo dispositivo!</string>
+    <string name="install_busybox_message">Sei sicuro di installare BusyBox %s?</string>
+    <string name="install_busybox_unavailable">Purtroppo, l\'installazione di BuyBox da questa app non è ancora disponibile per la tua architettura (%s)!</string>
+    <string name="install_busybox_update">Nuovo aggiornamento disponibile! Vuoi aggiornare BusyBox a v%s?</string>
+    <string name="install_busybox_failed">Purtroppo, l\'installer di BusyBox ha fallito nel scrivere gli applets di BusyBox sulla tua cartella \'/system/xbin\' del dispositivo!</string>
+    <string name="install_busybox_success">Installazione di BusyBox Finita! Vuoi riavviare il tuo dispositivo?</string>
+    <string name="install_busybox_systemless_message">Provando installazione system-less</string>
+    <string name="installing">Installando BusyBox v%s</string>
+    <string name="language">Lingua (%s)</string>
+    <string name="language_am" translatable="false">አማርኛ</string>
+    <string name="language_ar" translatable="false">العربية</string>
+    <string name="language_cs" translatable="false">čeština</string>
+    <string name="language_default">Predefinito</string>
+    <string name="language_el" translatable="false">Ελληνικά</string>
+    <string name="language_es" translatable="false">Español</string>
+    <string name="language_en" translatable="false">English</string>
+    <string name="language_fr" translatable="false">français</string>
+    <string name="language_hr" translatable="false">Hrvatski</string>
+    <string name="language_in" translatable="false">bahasa Indonesia</string>
+    <string name="language_ko" translatable="false">한국어</string>
+    <string name="language_my" translatable="false">ဗမာ</string>
+    <string name="language_pl" translatable="false">Polski"</string>
+    <string name="language_pt" translatable="false">Português</string>
+    <string name="language_ru" translatable="false">русский</string>
+    <string name="language_tr" translatable="false">Türkçe</string>
+    <string name="language_vi" translatable="false">Tiếng Việt</string>
+    <string name="list_applets">Lista Applets</string>
+    <string name="list_applets_summary">I seguenti applets sono inclusi in questo pachetto!\n\n - %s</string>
+    <string name="no_root_message">L\'installazione di BusyBox non funzionerà se permessi di Amministratore! Annullamento</string>
+    <string name="press_back">Premi indietro ancora per uscire!</string>
+    <string name="reboot">Riavvio</string>
+    <string name="remove">Rimuovi</string>
+    <string name="remove_busybox">Rimuovi BusyBox!</string>
+    <string name="remove_busybox_completed">BusyBox v%s è stato rimosso con successo dal tuo dispositivo. Vuoi riavviare?</string>
+    <string name="remove_busybox_message">Sei sicuro di rimuovere gli applets di BusyBox (v%s) da \'/system/xbin\'?\n\nAttenzione: Rimuoverà solo gli applets installati da quest\'app sul tuo dispositivo!</string>
+    <string name="removing_busybox">Rimuovendo BusyBox v%s</string>
+    <string name="save_log">Salva Log</string>
+    <string name="save_log_summary">File log di installazione esportato come \'%s\'!</string>
+    <string name="share">Condividi</string>
+    <string name="share_app">Ottieni BusyBox Installer %s da https://play.google.com/store/apps/details?id=com.smartpack.busyboxinstaller</string>
+    <string name="source_code">Codice Sorgente</string>
+    <string name="support_acknowledged">Donazione Riconosciuta \u2665</string>
+    <string name="support_development">Supporta lo Sviluppatore!</string>
+    <string name="support_development_summary">Se apprezzi gli sforzi dello sviluppatore per offrire questo strumento interamente gratis, prendi in considerazione di effettuare una piccola donazione cliccando una delle opzioni fornite qui sotto per favore! Comprando uno di questi prodotti sarai ricompensato qui con un badge da supporter.</string>
+    <string name="support_dinner">Comprami una Cena</string>
+    <string name="support_meal">Comprami un Pranzo</string>
+    <string name="support_status_message">Grazie mille per il tuo supporto!</string>
+    <string name="support_coffee">Comprami un Caffè</string>
+    <string name="support_already_received_message">Hai già supportato lo sviluppo con questa opzione!</string>
+    <string name="support_received_message">Grazie per il tuo supporto \u2665\nMi spingerà molto a continuare i miei progetti più attivamente. Inoltre riceverai un badge da supporter in cima a questa pagina.</string>
+    <string name="support_retry_message">Prova ad acquistare di nuovo per favore</string>
+    <string name="support_group">Gruppo di Supporto</string>
+    <string name="translations">Traduzioni</string>
+    <string name="update">Aggiorna</string>
+    <string name="update_busybox">Aggiornamento di BusyBox Disponibile!</string>
+    <string name="updated_message">Congratulazioni! Sei aggiornato all\'ultima versione!</string>
+    <string name="upsupported">Architettura non SUpportata!</string>
+    <string name="version">Versione</string>
+</resources>
