@@ -1,5 +1,4 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="app_name" translatable="false">BusyBox Installer</string>
 
     <string name="about">Informazioni</string>
     <string name="billing_client_disconnected">Errore di connessione con il client Google Play Billing!</string>
@@ -22,23 +21,7 @@
     <string name="install_busybox_systemless_message">Provando installazione system-less</string>
     <string name="installing">Installando BusyBox v%s</string>
     <string name="language">Lingua (%s)</string>
-    <string name="language_am" translatable="false">አማርኛ</string>
-    <string name="language_ar" translatable="false">العربية</string>
-    <string name="language_cs" translatable="false">čeština</string>
     <string name="language_default">Predefinito</string>
-    <string name="language_el" translatable="false">Ελληνικά</string>
-    <string name="language_es" translatable="false">Español</string>
-    <string name="language_en" translatable="false">English</string>
-    <string name="language_fr" translatable="false">français</string>
-    <string name="language_hr" translatable="false">Hrvatski</string>
-    <string name="language_in" translatable="false">bahasa Indonesia</string>
-    <string name="language_ko" translatable="false">한국어</string>
-    <string name="language_my" translatable="false">ဗမာ</string>
-    <string name="language_pl" translatable="false">Polski"</string>
-    <string name="language_pt" translatable="false">Português</string>
-    <string name="language_ru" translatable="false">русский</string>
-    <string name="language_tr" translatable="false">Türkçe</string>
-    <string name="language_vi" translatable="false">Tiếng Việt</string>
     <string name="list_applets">Lista Applets</string>
     <string name="list_applets_summary">I seguenti applets sono inclusi in questo pachetto!\n\n - %s</string>
     <string name="no_root_message">L\'installazione di BusyBox non funzionerà se permessi di Amministratore! Annullamento</string>
