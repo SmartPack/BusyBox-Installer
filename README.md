@@ -25,7 +25,7 @@ height="80">](https://apt.izzysoft.de/fdroid/index/apk/com.smartpack.busyboxinst
 * Install BusyBox in one click.
 
 ## Support
-[<img src="https://github.com/SmartPack/SmartPack.github.io/blob/master/asset/pic006.png?raw=true"
+[<img src="https://github.com/SmartPack/SmartPack.github.io/blob/master/assets/pic006.png?raw=true"
      alt=""
      height="80">](https://t.me/smartpack_kmanager)
      
@@ -36,24 +36,30 @@ You can report a bug or request a feature by [opening an issue](https://github.c
 Please help me to translate this application via [POEditor](https://poeditor.com/join/project?hash=JsnaHsMpUk). You may also translate after downloading the original language string available [here](app/src/main/res/values/strings.xml).
 
 ## Donations
-If you like to appreciate my work, please consider donating to me (either via [PayPal](https://www.paypal.me/menacherry/), or [Ko-fi](https://ko-fi.com/sunilpaulmathew/), or by purchasing the [SmartPack Donation Package](https://play.google.com/store/apps/details?id=com.smartpack.donate) from playstore) as it is helpful to continue my projects more active, although it is not at all necessary.
+If you like to appreciate my efforts to provide this applications entirely free, non-intrusive and without Ads, please consider supporting the development in some way.
 
-[<img src="https://raw.githubusercontent.com/SmartPack/SmartPack.github.io/master/asset/pic005.png"
+[<img src="https://raw.githubusercontent.com/SmartPack/SmartPack.github.io/master/assets/pic014.png"
      alt=""
-     height="80">](https://www.paypal.me/menacherry/)
+     height="50">](https://github.com/sponsors/sunilpaulmathew)
+[<img src="https://liberapay.com/assets/widgets/donate.svg"
+     alt=""
+     height="50">](https://liberapay.com/sunilpaulmathew/donate)
+[<img src="https://raw.githubusercontent.com/SmartPack/SmartPack.github.io/master/assets/pic005.png"
+     alt=""
+     height="50">](https://www.paypal.me/menacherry/)
 [<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png"
      alt=""
-     height="80">](https://play.google.com/store/apps/details?id=com.smartpack.donate)
-[<img src="https://raw.githubusercontent.com/SmartPack/SmartPack.github.io/master/asset/pic010.png"
+     height="50">](https://play.google.com/store/apps/details?id=com.smartpack.donate)
+[<img src="https://raw.githubusercontent.com/SmartPack/SmartPack.github.io/master/assets/pic010.png"
      alt=""
-     height="80">](https://ko-fi.com/sunilpaulmathew/)
+     height="50">](https://ko-fi.com/sunilpaulmathew/)
 
 ## Credits
 A list of people who contributed to this project is available [here](Credits.md).
 
 ## License
 
-    Copyright (C) 2020-2021 sunilpaulmathew <sunil.kde@gmail.com>
+    Copyright (C) 2022-2023 sunilpaulmathew <sunil.kde@gmail.com>
 
     BusyBox Installer is a free softwares: you can redistribute it and/or
     modify it under the terms of the GNU General Public License as published
